@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CBL Team Dashboards</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:24px;background:#fff;color:#111}
+    h1{margin:0 0 8px}
+    .sub{color:#555;margin:0 0 18px}
+    ul{columns:2; column-gap:40px; padding-left:18px}
+    li{break-inside:avoid; margin:8px 0}
+    a{color:#DF4601; font-weight:700; text-decoration:none}
+    a:hover{text-decoration:underline}
+    @media (max-width:900px){ul{columns:1}}
+  
+    /* League-wide navigation bar */
+    .leaguebar-wrap{
+      border-bottom:1px solid rgba(0,0,0,.12);
+      background:#ffffff;
+    }
+    .leaguebar{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      padding:10px 14px;
+      overflow:hidden;
+    }
+    .leaguebar-title{
+      font-weight:900;
+      color:#111;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+    .leaguebar-links{
+      display:flex;
+      gap:8px;
+      overflow:auto;
+      padding-bottom:2px;
+      scrollbar-width:thin;
+    }
+    .teamlink{
+      display:inline-flex;
+      align-items:center;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(0,0,0,.18);
+      background:#fff;
+      color:#111;
+      text-decoration:none;
+      font-weight:750;
+      white-space:nowrap;
+    }
+    .teamlink:hover{
+      border-color: rgba(223,70,1,.75);
+      background:#fff7f2;
+    }
+    .teamlink.active{
+      border-color:#DF4601;
+      box-shadow: inset 0 0 0 2px rgba(223,70,1,.35);
+      background:#fff7f2;
+    }
+
+  
+    /* KPI chips (auto counts) */
+    .kpi{
+      display:inline-flex;
+      gap:6px;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(0,0,0,.18);
+      background: rgba(255,255,255,.75);
+      font-weight:800;
+      color:#111;
+      white-space:nowrap;
+    }
+    .kpi .lbl{ font-weight:800; opacity:.85; }
+    .kpi .val{ font-weight:900; }
+
+  
+.team-switcher{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-left:auto;
+}
+.team-switcher label{
+  font-weight:700;
+  font-size:12px;
+}
+.team-switcher select{
+  padding:4px 6px;
+  border-radius:6px;
+  border:1px solid rgba(0,0,0,.3);
+  font-weight:600;
+}
+
+  
+    /* Team dropdown switcher */
+    .team-switch{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-left: 10px;
+      flex: 0 0 auto;
+    }
+    .team-switch-label{
+      font-weight:800;
+      color:#111;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      font-size:12px;
+      opacity:.9;
+      white-space:nowrap;
+    }
+    .team-select{
+      appearance:none;
+      -webkit-appearance:none;
+      -moz-appearance:none;
+      padding:8px 34px 8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.18);
+      background:#fff;
+      font-weight:800;
+      color:#111;
+      cursor:pointer;
+      position:relative;
+    }
+    .team-select:focus{
+      outline:none;
+      border-color:#DF4601;
+      box-shadow: 0 0 0 3px rgba(223,70,1,.15);
+    }
+    .team-switch{
+      position:relative;
+    }
+    .team-switch::after{
+      content:"▾";
+      position:absolute;
+      right:12px;
+      top:50%;
+      transform:translateY(-50%);
+      pointer-events:none;
+      color:#111;
+      opacity:.7;
+      font-weight:900;
+    }
+
+  </style>
+</head>
+<body>
+  <header style="padding:14px 14px 0;"><h1 style="margin:0;">CBL Team Dashboards</h1><p style="margin:6px 0 14px;color:#555;">Select a team.</p></header>
+<h1>CBL Team Dashboards</h1>
+  <p class="sub">Hitters/Pitchers + splits + Available Players for each team.</p>
+  <ul>
+    <li><a href="ATN.html">Atlanta Braves (ATN)</a> — Manager: Don Decker</li>
+<li><a href="BAA.html">Baltimore Orioles (BAA)</a> — Manager: Kevin Gordon</li>
+<li><a href="BOA.html">Boston Red Sox (BOA)</a> — Manager: Cam Comfort</li>
+<li><a href="CHA.html">Chicago White Sox (CHA)</a> — Manager: Kim Comfort</li>
+<li><a href="CHN.html">Chicago Cubs (CHN)</a> — Manager: John Arient</li>
+<li><a href="CIN.html">Cincinnati Reds (CIN)</a> — Manager: David Steinman</li>
+<li><a href="CLA.html">Cleveland Indians (CLA)</a> — Manager: Ken Atkins</li>
+<li><a href="CON.html">Colorado Rockies (CON)</a> — Manager: Steve Nieroda</li>
+<li><a href="DEA.html">Detroit Tigers (DEA)</a> — Manager: Brian Comfort</li>
+<li><a href="KCA.html">Kansas City Royals (KCA)</a> — Manager: Jake Comfort</li>
+<li><a href="LAA.html">Los Angeles Angels (LAA)</a> — Manager: </li>
+<li><a href="LAN.html">Los Angeles Dodgers (LAN)</a> — Manager: Rob Calia</li>
+<li><a href="MNA.html">Minnesota Twins (MNA)</a> — Manager: Ben Comfort</li>
+<li><a href="NYA.html">New York Yankees (NYA)</a> — Manager: Andy Comfort</li>
+<li><a href="NYN.html">New York Mets (NYN)</a> — Manager: Matt Slippy</li>
+<li><a href="OAA.html">Oakland Athletics (OAA)</a> — Manager: Chris Speer</li>
+<li><a href="PHN.html">Philadelphia Phillies (PHN)</a> — Manager: Joel Comfort</li>
+<li><a href="PIN.html">Pittsburgh Pirates (PIN)</a> — Manager: Steve Fleming</li>
+<li><a href="SDN.html">San Diego Padres (SDN)</a> — Manager: Jeremiah Petrowski</li>
+<li><a href="SFN.html">San Francisco Giants (SFN)</a> — Manager: Jason Northway</li>
+<li><a href="SEA.html">Seattle Mariners (SEA)</a> — Manager: Josh Comfort</li>
+<li><a href="SLN.html">St. Louis Cardinals (SLN)</a> — Manager: Mick Bauchan</li>
+<li><a href="TOA.html">Toronto Blue Jays (TOA)</a> — Manager: Jim Werschler</li>
+<li><a href="WAN.html">Washington Nationals (WAN)</a> — Manager: Brian Aucoin</li>
+  </ul>
+<script>
+    // highlight active team in league nav
+    (function(){
+      const file = (location.pathname.split('/').pop() || '').toUpperCase();
+      const code = file.endsWith('.HTML') ? file.slice(0,-5) : file;
+      document.querySelectorAll('.teamlink').forEach(a=>{
+        if((a.dataset.team||'').toUpperCase() === code){
+          a.classList.add('active');
+          // keep the active pill visible in the scroller
+          setTimeout(()=>{ try{ a.scrollIntoView({inline:'center', block:'nearest'}); }catch(e){} }, 0);
+        }
+      });
+    })();
+
+    // KPI totals from players= lists in the menu (dynamic counts)
+    (function(){
+      function countPlayers(url){
+        try{
+          const m = url.match(/[?&]players=([^&]+)/);
+          if(!m) return 0;
+          const ids = m[1].split(',').map(s=>s.trim()).filter(Boolean);
+          return ids.length;
+        }catch(e){ return 0; }
+      }
+
+      const links = Array.from(document.querySelectorAll('.link[data-url]'));
+      const byTitle = {};
+      links.forEach(btn=>{
+        const t = btn.getAttribute('data-title') || '';
+        const u = btn.getAttribute('data-url') || '';
+        byTitle[t] = countPlayers(u);
+      });
+
+      const hitters = byTitle["Hitters (All)"] || 0;
+      const pitchers = byTitle["Pitchers (All)"] || 0;
+      const availH = byTitle["Available Hitters"] || 0;
+      const availP = byTitle["Available Pitchers"] || 0;
+
+      const meta = document.querySelector('.main-top .meta');
+      if(meta && !document.getElementById('kpis')){
+        const wrap = document.createElement('span');
+        wrap.id = 'kpis';
+        wrap.style.display = 'flex';
+        wrap.style.gap = '8px';
+        wrap.style.alignItems = 'center';
+
+        wrap.innerHTML = `
+          <span class="kpi"><span class="lbl">Roster</span> <span class="val">${hitters+pitchers}</span></span>
+          <span class="kpi"><span class="lbl">Hitters</span> <span class="val">${hitters}</span></span>
+          <span class="kpi"><span class="lbl">Pitchers</span> <span class="val">${pitchers}</span></span>
+          <span class="kpi"><span class="lbl">Available</span> <span class="val">${availH+availP}</span></span>
+        `;
+        const fgLabel = document.getElementById('currentUrlLabel');
+        if(fgLabel){
+          meta.insertBefore(wrap, fgLabel);
+        }else{
+          meta.appendChild(wrap);
+        }
+      }
+    })();
+
+  
+    // Team dropdown navigation
+    (function(){
+      const sel = document.getElementById('teamSelect');
+      if(!sel) return;
+      const file = (location.pathname.split('/').pop() || '').toUpperCase();
+      const code = file.endsWith('.HTML') ? file.slice(0,-5) : file;
+
+      // set current
+      for(const opt of sel.options){
+        if(opt.value.toUpperCase() === (code + '.HTML')){
+          sel.value = opt.value;
+          break;
+        }
+      }
+      sel.addEventListener('change', ()=>{
+        const v = sel.value;
+        if(v) location.href = v;
+      });
+    })();
+
+  </script>
+</body>
+</html>
