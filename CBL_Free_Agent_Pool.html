@@ -421,7 +421,7 @@
           <span id="currentUrlLabel">FanGraphs</span>
         </div>
       </div>
-      <iframe id="fgFrame" src="https://www.fangraphs.com/leaders/major-league?ind=0&lg=all&pos=all&qual=0&season=2025&season1=2025&type=1&stats=bat&month=0&players=26288,12976,28312,18373,16442,31781,27815,19997,26289,23401,19262,31166,19556,29591,18345,27493,14551,14387,11038,11828,24492" loading="lazy"></iframe>
+      <iframe id="fgFrame" src="https://www.fangraphs.com/leaders/major-league?ind=0&lg=all&pos=all&qual=0&season=2025&season1=2025&type=1&stats=bat&month=0&players=23372,26546,29844,16398,10655,10200,16925,21587,31396,27501,26148,29949,30028,23395,26143,33280,25629,21535,21547,19877,29830,27789,29571,29646,31363,27963,23802,28253,19455,30038,19562,21496,19458,25183,27915,25477,26202,18054,31583,25705,24878,25999,31661,31370,26374,23968,24605,31912,23695,26244,22766,19960,30063,15654,35108,27690" loading="lazy"></iframe>
     </main>
   </div>
 
@@ -435,6 +435,7 @@
     const search = document.getElementById('search');
     const links = Array.from(document.querySelectorAll('.link'));
     let currentUrl = fgFrame.src;
+    const popout = document.getElementById('popout');
 
     function setActive(btn){
       links.forEach(b => b.classList.remove('active'));
@@ -447,6 +448,7 @@
       if(!url) return;
       currentUrl = url;
       fgFrame.src = url;
+      if(popout) popout.href = url;
       mainTitle.textContent = title;
       subtitle.textContent = title;
       
