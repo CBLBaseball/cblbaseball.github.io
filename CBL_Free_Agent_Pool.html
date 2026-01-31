@@ -45,7 +45,9 @@
       #sidebar{position:relative;top:0;height:auto;overflow:visible}
       th{top:0}
     }
-  </style>
+  /* Ensure any accidental anchor HTML renders as plain text (no link styling/click) */
+#tbl a { color: inherit !important; text-decoration: none !important; pointer-events: none !important; cursor: default !important; }
+</style>
 </head>
 <body>
   <div class="topbar">
@@ -142,7 +144,20 @@
         const tr = document.createElement('tr');
         currentCols.forEach(c => {
           const td = document.createElement('td');
-          td.textContent = (r[c] ?? '').toString();
+          (function(){
+          const v = (r[c] ?? '');
+          if (typeof v === 'string' && v.indexOf('<') !== -1 && v.indexOf('>') !== -1) {
+            // If FanGraphs returns HTML (e.g., <a ...>Name</a>), strip tags safely.
+            try {
+              const doc = new DOMParser().parseFromString(v, 'text/html');
+              td.textContent = (doc.body && doc.body.textContent) ? doc.body.textContent.trim() : v.replace(/<[^>]*>/g,'').trim();
+            } catch (e) {
+              td.textContent = v.replace(/<[^>]*>/g,'').trim();
+            }
+          } else {
+            td.textContent = (v ?? '').toString();
+          }
+        })();
           tr.appendChild(td);
         });
         tbody.appendChild(tr);
