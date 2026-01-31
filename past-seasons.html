@@ -5,18 +5,233 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CBL • Past Seasons</title>
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:24px;background:#fff;color:#111}
-    a{color:#0b3d91;font-weight:800;text-decoration:none}
-    a:hover{text-decoration:underline}
-    .card{max-width:920px;margin:0 auto;border:1px solid rgba(0,0,0,.12);border-radius:16px;padding:18px;box-shadow:0 12px 28px rgba(0,0,0,.10)}
-    .muted{color:#555;font-weight:700}
+    :root{
+      --ink:#141414;
+      --muted:#4a4a4a;
+      --paper:#f7f2e6;
+      --paper2:#fbf8f1;
+      --rule: rgba(0,0,0,.35);
+      --thin: rgba(0,0,0,.18);
+      --shadow: 0 14px 34px rgba(0,0,0,.14);
+      --r:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family: Georgia, "Times New Roman", Times, serif;
+      background: linear-gradient(180deg, #ffffff 0%, #eef1f4 100%);
+      padding: 18px 14px 40px;
+    }
+    a{color:inherit}
+    .page{
+      max-width: 1100px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, var(--paper2), var(--paper));
+      border: 1px solid rgba(0,0,0,.22);
+      box-shadow: var(--shadow);
+      border-radius: 18px;
+      overflow:hidden;
+    }
+    header{
+      padding: 16px 16px 12px;
+      text-align:center;
+      border-bottom: 4px double var(--rule);
+    }
+    .kicker{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight: 900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:12px;
+      color: var(--muted);
+    }
+    h1{
+      margin: 8px 0 6px;
+      font-size: 36px;
+      letter-spacing:.06em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+    .sub{
+      margin:0;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing:.03em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+    .bar{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      align-items:center;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--thin);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight: 900;
+    }
+    .bar a{text-decoration:none;border-bottom:2px solid rgba(0,0,0,.25);padding-bottom:2px}
+    .bar a:hover{border-bottom-color: rgba(0,0,0,.65)}
+    main{padding: 16px}
+    .grid{display:grid;grid-template-columns: 1.2fr .8fr;gap: 14px}
+    .card{border: 1px solid rgba(0,0,0,.22);border-radius: var(--r);background: rgba(255,255,255,.55);padding: 14px}
+    .card h2{
+      margin:0 0 10px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing:.08em;
+      text-transform: uppercase;
+      font-weight: 950;
+      border-bottom: 2px solid rgba(0,0,0,.35);
+      padding-bottom: 6px;
+    }
+    .hint{color: var(--muted);font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;font-weight: 750;font-size: 12px;line-height:1.35}
+    select{
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.22);
+      background: rgba(255,255,255,.85);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight: 900;
+      font-size: 14px;
+      cursor:pointer;
+    }
+    .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top: 10px}
+    .btn{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      text-decoration:none;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.18);
+      background: rgba(255,255,255,.85);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight: 950;
+    }
+    .btn:hover{border-color: rgba(122,31,31,.55); color:#7a1f1f}
+    .list{margin:0;padding-left: 18px}
+    .list li{margin: 8px 0}
+    .list a{text-decoration:none;border-bottom:1px dotted rgba(0,0,0,.45)}
+    .list a:hover{border-bottom-color: rgba(122,31,31,.8); color:#7a1f1f}
+    @media (max-width: 900px){.grid{grid-template-columns:1fr} h1{font-size:30px}}
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1 style="margin:0 0 8px;">Past Seasons</h1>
-    <p class="muted">Create a year-by-year archive page with standings, playoff results, and recaps.</p>
-    <p><a href="index.html">← Back to Home</a> &nbsp;|&nbsp; <a href="dashboards.html">Dashboards</a></p>
+  <div class="page">
+    <header>
+      <div class="kicker">The Archives</div>
+      <h1>Past Seasons</h1>
+      <p class="sub">Stats • Standings • Playoffs</p>
+    </header>
+
+    <div class="bar">
+      <span>Quick Links: <a href="index.html">Homepage</a> • <a href="dashboards.html">Dashboards</a><a class="teamlink" href="CBL_Free_Agent_Pool.html">Free Agent Pool</a> • <a href="trades-drafts.html">Trades & Drafts</a></span>
+      <span class="hint">Opens archives from the legacy Tripod site</span>
+    </div>
+
+    <main>
+      <div class="grid">
+        <section class="card">
+          <h2>Jump to a Season</h2>
+          <select id="archiveSelect" aria-label="Select archive link">
+            <option value="" selected>---Archives---</option>
+<option value="https://cblbaseball.tripod.com/2020CBLPlayoffs.html">2020 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2020CB/WebBuilder/index.html">2020 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/2019CBLPlayoffsWSa.html">2019 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2019CB/WebBuilder/index.html">2019 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/2018CBLPlayoffsWS.html">2018 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2018CB/WebBuilder/index.html">2018 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/2017CBLPlayoffsWS.html">2017 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2017CB/WebBuilder/index.html">2017 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/16CBLPlayoffs.htm">2016 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2016CB/WebBuilder/index.html">2016 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/15CBLPlayoffs.htm">2015 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2015CB/WebBuilder/index.html">2015 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/14CBLPlayoffs.htm">2014 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2014CB/WebBuilder/index.html">2014 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/13CBLPlayoffs.htm">2013 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2013cb/WebBuilder/index.html">2013 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/12CBLPlayoffs.htm">2012 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2012cb/WebBuilder/index.html">2012 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/11CBLPlayoffs.htm">2011 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2011cb/WebBuilder/index.html">2011 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/10CBLPlayoffs.htm">2010 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2010CB/index.html">2010 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/09CBLPlayoffs.htm">2009 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2009CB/index.html">2009 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/08CBLPlayoffs.htm">2008 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2008CB/index.html">2008 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/07CBLPlayoffs.htm">2007 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2007CB/index.html">2007 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/06CBLPlayoffs.htm">2006 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2006CB/index.html">2006 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/2005_cbl_playoffs_DS.htm">2005 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2005CB/index.html">2005 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/2004_cbl_playoffs.htm">2004 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2004CB/index.html">2004 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/2003_cbl_playoffs.htm">2003 CBL Playoffs</option>
+<option value="https://cblbaseball.tripod.com/2003CB/index.html">2003 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/2002CB/index.html">2002 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/2001CB/index.html">2001 CBL Stats & Standings</option>
+<option value="https://cblbaseball.tripod.com/2000CB/index.html">2000 CBL Stats & Standings</option>
+          </select>
+          <div class="btnrow">
+            <a class="btn" href="#" id="openHere">Open Here →</a>
+            <a class="btn" href="#" id="openNew">Open in New Tab ↗</a>
+          </div>
+          <p class="hint" style="margin-top:10px;">
+            Tip: If you later copy these archive files into this new site, we can switch the links from <b>cblbaseball.tripod.com</b> to local files so everything lives in one place.
+          </p>
+        </section>
+
+        <aside class="card">
+          <h2>Most Recent</h2>
+          <ul class="list">
+            <li><a href="https://cblbaseball.tripod.com/2020CB/WebBuilder/index.html">2020 CBL Stats & Standings</a></li>
+            <li><a href="https://cblbaseball.tripod.com/2020CBLPlayoffs.html">2020 CBL Playoffs</a></li>
+            <li><a href="https://cblbaseball.tripod.com/2019CB/WebBuilder/index.html">2019 CBL Stats & Standings</a></li>
+            <li><a href="https://cblbaseball.tripod.com/2019CBLPlayoffsWSa.html">2019 CBL Playoffs</a></li>
+          </ul>
+          <p class="hint">Older seasons are available in the dropdown. We can also add a year-by-year index page if you prefer.</p>
+        </aside>
+      </div>
+    </main>
   </div>
+
+  <script>
+    (function(){
+      const sel = document.getElementById('archiveSelect');
+      const openHere = document.getElementById('openHere');
+      const openNew = document.getElementById('openNew');
+
+      function getUrl(){
+        const v = sel.value || "";
+        return v.trim();
+      }
+      function sync(){
+        const url = getUrl();
+        openHere.href = url || "#";
+        openNew.href = url || "#";
+        openNew.target = "_blank";
+        openNew.rel = "noopener";
+        openHere.style.opacity = url ? "1" : ".55";
+        openNew.style.opacity = url ? "1" : ".55";
+        openHere.style.pointerEvents = url ? "auto" : "none";
+        openNew.style.pointerEvents = url ? "auto" : "none";
+      }
+      sel.addEventListener('change', sync);
+      openHere.addEventListener('click', (e)=>{
+        const url = getUrl();
+        if(!url){ e.preventDefault(); return; }
+        location.href = url;
+      });
+      sync();
+    })();
+  </script>
 </body>
 </html>
