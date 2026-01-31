@@ -53,37 +53,27 @@
   <div class="topbar">
     <div class="title">
       <h1>CBL Free Agent Pool</h1>
-      <div class="sub">2025 standard leaderboards • data refreshed automatically by GitHub Actions</div>
+      <div class="sub">2025 leaderboards • hitters shown with custom standard columns</div>
     </div>
     <a class="btn" href="dashboards.html">Back to Dashboards</a>
   </div>
 
   <div class="layout" id="app">
     <aside id="sidebar">
-      <div class="sectionTitle">Hitters A–M</div>
-      <button class="link active" data-file="data/fa/hit_am_bat_all.json">All <span class="pill">BAT</span></button>
-      <button class="link" data-file="data/fa/hit_am_bat_lhp.json">vs LHP <span class="pill">BAT</span></button>
-      <button class="link" data-file="data/fa/hit_am_bat_rhp.json">vs RHP <span class="pill">BAT</span></button>
-
-      <div class="sectionTitle" style="margin-top:14px;">Hitters N–Z</div>
-      <button class="link" data-file="data/fa/hit_nz_bat_all.json">All <span class="pill">BAT</span></button>
-      <button class="link" data-file="data/fa/hit_nz_bat_lhp.json">vs LHP <span class="pill">BAT</span></button>
-      <button class="link" data-file="data/fa/hit_nz_bat_rhp.json">vs RHP <span class="pill">BAT</span></button>
+<div class="sectionTitle">Hitters</div>
+      <button class="link active" data-file="data/fa/hit_bat_all.json">All <span class="pill">BAT</span></button>
+      <button class="link" data-file="data/fa/hit_bat_lhp.json">vs LHP <span class="pill">BAT</span></button>
+      <button class="link" data-file="data/fa/hit_bat_rhp.json">vs RHP <span class="pill">BAT</span></button>
 
       <div class="sectionTitle" style="margin-top:14px;">Starting Pitchers</div>
       <button class="link" data-file="data/fa/sp_pit_all.json">All <span class="pill">PIT</span></button>
       <button class="link" data-file="data/fa/sp_pit_lhb.json">vs LHB <span class="pill">PIT</span></button>
       <button class="link" data-file="data/fa/sp_pit_rhb.json">vs RHB <span class="pill">PIT</span></button>
 
-      <div class="sectionTitle" style="margin-top:14px;">Relief Pitchers A–M</div>
-      <button class="link" data-file="data/fa/rp_am_pit_all.json">All <span class="pill">PIT</span></button>
-      <button class="link" data-file="data/fa/rp_am_pit_lhb.json">vs LHB <span class="pill">PIT</span></button>
-      <button class="link" data-file="data/fa/rp_am_pit_rhb.json">vs RHB <span class="pill">PIT</span></button>
-
-      <div class="sectionTitle" style="margin-top:14px;">Relief Pitchers N–Z</div>
-      <button class="link" data-file="data/fa/rp_nz_pit_all.json">All <span class="pill">PIT</span></button>
-      <button class="link" data-file="data/fa/rp_nz_pit_lhb.json">vs LHB <span class="pill">PIT</span></button>
-      <button class="link" data-file="data/fa/rp_nz_pit_rhb.json">vs RHB <span class="pill">PIT</span></button>
+      <div class="sectionTitle" style="margin-top:14px;">Relief Pitchers</div>
+      <button class="link" data-file="data/fa/rp_pit_all.json">All <span class="pill">PIT</span></button>
+      <button class="link" data-file="data/fa/rp_pit_lhb.json">vs LHB <span class="pill">PIT</span></button>
+      <button class="link" data-file="data/fa/rp_pit_rhb.json">vs RHB <span class="pill">PIT</span></button>
 
       <div class="small" style="margin-top:14px;">
         If you just uploaded this, the tables may be empty until the first GitHub Action run completes.
@@ -94,7 +84,7 @@
       <div class="card">
         <div class="row" style="justify-content:space-between;">
           <div>
-            <h2 id="tableTitle">Hitters A–M • All</h2>
+            <h2 id="tableTitle">Hitters • All</h2>
             <div class="small" id="status">Loading…</div>
           </div>
           <input id="search" placeholder="Search (filters visible rows)…" />

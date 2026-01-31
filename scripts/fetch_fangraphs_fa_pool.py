@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Update CBL Free Agent Pool leaderboards using FanGraphs' leaders JSON endpoint.
+"""Update CBL Free Agent Pool leaderboards using FanGraphs' JSON endpoint.
 
-Key fix:
-- Use the SAME parameter set the FanGraphs major-league leaders page uses,
-  especially `type=8` for the standard leaderboard view.
+- Hitters output is normalized to a fixed column set you specified:
+  Bats, Name, Age, Team, Season, G, AB, PA, H, 2B, 3B, HR, R, RBI, BB, SO, HBP, SB, CS, AVG, OBP, SLG, OPS
+  with AVG/OBP/SLG/OPS formatted to 3 decimals.
+- Pitchers remain 'standard' (FanGraphs rows) so you can decide columns later.
 
 Endpoint:
   https://www.fangraphs.com/api/leaders/major-league/data
@@ -25,7 +26,7 @@ SEASON = 2025
 API = "https://www.fangraphs.com/api/leaders/major-league/data"
 
 SEGMENTS = {
-  "hit_am": [
+  "hit": [
     26546,
     27915,
     19455,
@@ -65,9 +66,7 @@ SEGMENTS = {
     26244,
     29844,
     27963,
-    24605
-  ],
-  "hit_nz": [
+    24605,
     10655,
     18054,
     27789,
@@ -111,7 +110,7 @@ SEGMENTS = {
     16358,
     20629
   ],
-  "rp_am": [
+  "rp": [
     31764,
     25327,
     29633,
@@ -176,9 +175,7 @@ SEGMENTS = {
     26353,
     22288,
     29770,
-    20827
-  ],
-  "rp_nz": [
+    20827,
     17732,
     19281,
     29564,
@@ -193,6 +190,8 @@ SEGMENTS = {
     20379
   ]
 }
+
+HITTER_COLS = ["Bats", "Name", "Age", "Team", "Season", "G", "AB", "PA", "H", "2B", "3B", "HR", "R", "RBI", "BB", "SO", "HBP", "SB", "CS", "AVG", "OBP", "SLG", "OPS"]
 
 def call_api(params: Dict[str, Any], tries: int = 6) -> Dict[str, Any]:
     delay = 2.0
@@ -232,12 +231,12 @@ def leaders_params(players: List[int], stats: str, month: int) -> Dict[str, Any]
         "type": "8",
         "sortcol": "17",
         "sortdir": "default",
-        "pageitems": "2000",
+        "pageitems": "5000",
         "pagenum": "1",
         "filter": "",
     }
 
-def normalize(payload: Dict[str, Any]) -> List[Dict[str, Any]]:
+def normalize_rows(payload: Dict[str, Any]) -> List[Dict[str, Any]]:
     data = payload.get("data")
     if isinstance(data, list):
         return [r for r in data if isinstance(r, dict)]
@@ -247,37 +246,83 @@ def normalize(payload: Dict[str, Any]) -> List[Dict[str, Any]]:
             return [r for r in v if isinstance(r, dict)]
     return []
 
+def first_present(row: Dict[str, Any], keys: List[str]) -> Any:
+    for k in keys:
+        if k in row:
+            return row.get(k)
+    return ""
+
+def fmt3(v: Any) -> Any:
+    # Keep empty as ""
+    if v is None or v == "":
+        return ""
+    try:
+        fv = float(v)
+        return f"{fv:.3f}"
+    except Exception:
+        return v
+
+def normalize_hitter(row: Dict[str, Any]) -> Dict[str, Any]:
+    # Map common variants seen in FanGraphs payloads
+    mapped = {}
+    mapped["Bats"] = first_present(row, ["Bats", "Bat", "B"])
+    mapped["Name"] = first_present(row, ["Name", "Player", "playerName", "PlayerName"])
+    mapped["Age"] = first_present(row, ["Age"])
+    mapped["Team"] = first_present(row, ["Team", "Tm", "TeamName", "AbbName"])
+    mapped["Season"] = first_present(row, ["Season", "season", "Year"])
+    mapped["G"] = first_present(row, ["G", "Games"])
+    mapped["AB"] = first_present(row, ["AB"])
+    mapped["PA"] = first_present(row, ["PA"])
+    mapped["H"] = first_present(row, ["H", "Hits"])
+    mapped["2B"] = first_present(row, ["2B", "2B+", "Doubles", "2B."])
+    mapped["3B"] = first_present(row, ["3B", "Triples", "3B."])
+    mapped["HR"] = first_present(row, ["HR", "HomeRuns"])
+    mapped["R"] = first_present(row, ["R", "Runs"])
+    mapped["RBI"] = first_present(row, ["RBI"])
+    mapped["BB"] = first_present(row, ["BB", "BBS"])
+    mapped["SO"] = first_present(row, ["SO", "K", "Ks"])
+    mapped["HBP"] = first_present(row, ["HBP"])
+    mapped["SB"] = first_present(row, ["SB"])
+    mapped["CS"] = first_present(row, ["CS"])
+    mapped["AVG"] = fmt3(first_present(row, ["AVG", "BA", "Avg"]))
+    mapped["OBP"] = fmt3(first_present(row, ["OBP"]))
+    mapped["SLG"] = fmt3(first_present(row, ["SLG"]))
+    mapped["OPS"] = fmt3(first_present(row, ["OPS"]))
+
+    # Return in requested order
+    return {k: mapped.get(k, "") for k in HITTER_COLS}
+
 def save_json(name: str, rows: List[Dict[str, Any]]):
     (OUT_DIR / f"{name}.json").write_text(json.dumps(rows, ensure_ascii=False), encoding="utf-8")
 
-def fetch_one(out_name: str, seg_key: str, stats: str, month: int):
+def fetch_and_save(out_name: str, seg_key: str, stats: str, month: int):
     players = SEGMENTS[seg_key]
     params = leaders_params(players, stats, month)
     payload = call_api(params)
-    rows = normalize(payload)
+    rows = normalize_rows(payload)
+
+    if stats == "bat":
+        rows = [normalize_hitter(r) for r in rows]
+
     save_json(out_name, rows)
     print(f"Saved {out_name}: {len(rows)} rows")
 
 def main():
     tasks = [
-        ("hit_am_bat_all", "hit_am", "bat", 0),
-        ("hit_am_bat_lhp", "hit_am", "bat", 13),
-        ("hit_am_bat_rhp", "hit_am", "bat", 14),
-        ("hit_nz_bat_all", "hit_nz", "bat", 0),
-        ("hit_nz_bat_lhp", "hit_nz", "bat", 13),
-        ("hit_nz_bat_rhp", "hit_nz", "bat", 14),
+        ("hit_bat_all", "hit", "bat", 0),
+        ("hit_bat_lhp", "hit", "bat", 13),
+        ("hit_bat_rhp", "hit", "bat", 14),
+
         ("sp_pit_all", "sp", "pit", 0),
         ("sp_pit_lhb", "sp", "pit", 13),
         ("sp_pit_rhb", "sp", "pit", 14),
-        ("rp_am_pit_all", "rp_am", "pit", 0),
-        ("rp_am_pit_lhb", "rp_am", "pit", 13),
-        ("rp_am_pit_rhb", "rp_am", "pit", 14),
-        ("rp_nz_pit_all", "rp_nz", "pit", 0),
-        ("rp_nz_pit_lhb", "rp_nz", "pit", 13),
-        ("rp_nz_pit_rhb", "rp_nz", "pit", 14),
+
+        ("rp_pit_all", "rp", "pit", 0),
+        ("rp_pit_lhb", "rp", "pit", 13),
+        ("rp_pit_rhb", "rp", "pit", 14),
     ]
     for out_name, seg_key, stats, month in tasks:
-        fetch_one(out_name, seg_key, stats, month)
+        fetch_and_save(out_name, seg_key, stats, month)
         time.sleep(1.2)
 
 if __name__ == "__main__":
