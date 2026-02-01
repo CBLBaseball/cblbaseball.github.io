@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 """Update CBL Free Agent Pool leaderboards using FanGraphs' leaders JSON endpoint.
 
-Fix for 'only 10 rows':
-- Some responses default to ~10 rows unless `pageitems` is set very high.
-- We try a 1-shot `pageitems` huge first, then fall back to paging with `pageitems=500`.
+Why you kept getting only ~10 rows:
+- FanGraphs enforces a per-request row cap in some situations (even if `pageitems` is large).
+- The reliable workaround is to request the data in **player-id batches** and merge the results.
 
-Hitters are normalized to fixed columns:
-  Bats, Name, Age, Team, Season, G, AB, PA, H, 2B, 3B, HR, R, RBI, BB, SO, HBP, SB, CS, AVG, OBP, SLG, OPS
-AVG/OBP/SLG/OPS are formatted to 3 decimals.
+This script:
+- Splits the player list into batches (default 40 IDs/request)
+- Fetches each batch and merges rows (deduped by player id when available)
+- Normalizes hitters to fixed columns (AVG/OBP/SLG/OPS to 3 decimals)
+
+Endpoint:
+  https://www.fangraphs.com/api/leaders/major-league/data
 """
 
 from __future__ import annotations
@@ -191,9 +195,10 @@ SEGMENTS = {
   ]
 }
 HITTER_COLS = ["Bats", "Name", "Age", "Team", "Season", "G", "AB", "PA", "H", "2B", "3B", "HR", "R", "RBI", "BB", "SO", "HBP", "SB", "CS", "AVG", "OBP", "SLG", "OPS"]
+BATCH_SIZE = 40
 
-BIG_PAGEITEMS = 2000000000
-FALLBACK_PAGEITEMS = 500
+def chunk(lst: List[int], n: int) -> List[List[int]]:
+    return [lst[i:i+n] for i in range(0, len(lst), n)]
 
 def call_api(params: Dict[str, Any], tries: int = 6) -> Dict[str, Any]:
     delay = 2.0
@@ -217,7 +222,7 @@ def call_api(params: Dict[str, Any], tries: int = 6) -> Dict[str, Any]:
             delay = min(delay * 1.8, 20.0)
     raise last_err or RuntimeError("Unknown error")
 
-def leaders_params(players: List[int], stats: str, month: int, pageitems: int, pagenum: int) -> Dict[str, Any]:
+def leaders_params(players: List[int], stats: str, month: int) -> Dict[str, Any]:
     return {
         "ind": "0",
         "lg": "all",
@@ -225,16 +230,16 @@ def leaders_params(players: List[int], stats: str, month: int, pageitems: int, p
         "qual": "0",
         "season": str(SEASON),
         "season1": str(SEASON),
-        "stats": stats,
-        "month": str(month),
+        "stats": stats,        # bat | pit
+        "month": str(month),   # 0 all; 13 vs L; 14 vs R
         "players": ",".join(map(str, players)),
         "team": "0,ts",
         "rost": "0",
         "type": "8",
         "sortcol": "17",
         "sortdir": "default",
-        "pageitems": str(pageitems),
-        "pagenum": str(pagenum),
+        "pageitems": "500",    # enough for a batch
+        "pagenum": "1",
         "filter": "",
     }
 
@@ -264,7 +269,7 @@ def fmt3(v: Any) -> Any:
         return v
 
 def normalize_hitter(row: Dict[str, Any]) -> Dict[str, Any]:
-    mapped = {}
+    mapped: Dict[str, Any] = {}
     mapped["Bats"] = first_present(row, ["Bats", "Bat", "B"])
     mapped["Name"] = first_present(row, ["Name", "Player", "playerName", "PlayerName"])
     mapped["Age"] = first_present(row, ["Age"])
@@ -293,31 +298,31 @@ def normalize_hitter(row: Dict[str, Any]) -> Dict[str, Any]:
 def save_json(name: str, rows: List[Dict[str, Any]]):
     (OUT_DIR / f"{name}.json").write_text(json.dumps(rows, ensure_ascii=False), encoding="utf-8")
 
-def fetch_all(players: List[int], stats: str, month: int) -> List[Dict[str, Any]]:
-    # 1-shot attempt
-    payload = call_api(leaders_params(players, stats, month, BIG_PAGEITEMS, 1))
-    rows = normalize_rows(payload)
-    if len(rows) > 10:
-        return rows
+def merge_rows(all_rows: List[Dict[str, Any]], new_rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    seen = set()
+    merged: List[Dict[str, Any]] = []
+    for r in all_rows + new_rows:
+        pid = first_present(r, ["playerid", "PlayerId", "playerId", "ID", "id"])
+        key = str(pid).strip() if pid not in ("", None) else (str(r.get("Name","")).strip() + "|" + str(r.get("Team","")).strip())
+        if key in seen:
+            continue
+        seen.add(key)
+        merged.append(r)
+    return merged
 
-    # fallback paging
-    all_rows: List[Dict[str, Any]] = []
-    p = 1
-    while True:
-        payload = call_api(leaders_params(players, stats, month, FALLBACK_PAGEITEMS, p))
-        chunk = normalize_rows(payload)
-        if not chunk:
-            break
-        all_rows.extend(chunk)
-        if len(chunk) < FALLBACK_PAGEITEMS:
-            break
-        p += 1
-        time.sleep(0.7)
-    return all_rows
+def fetch_batched(players: List[int], stats: str, month: int) -> List[Dict[str, Any]]:
+    rows: List[Dict[str, Any]] = []
+    batches = chunk(players, BATCH_SIZE)
+    for i, batch in enumerate(batches, start=1):
+        payload = call_api(leaders_params(batch, stats, month))
+        batch_rows = normalize_rows(payload)
+        rows = merge_rows(rows, batch_rows)
+        time.sleep(0.6)
+    return rows
 
 def fetch_and_save(out_name: str, seg_key: str, stats: str, month: int):
     players = SEGMENTS[seg_key]
-    rows = fetch_all(players, stats, month)
+    rows = fetch_batched(players, stats, month)
     if stats == "bat":
         rows = [normalize_hitter(r) for r in rows]
     save_json(out_name, rows)
