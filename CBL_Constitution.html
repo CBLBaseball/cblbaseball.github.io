@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CBL Constitution</title>
+  <style>
+    :root{
+      --ink:#141414;
+      --muted:#4a4a4a;
+      --paper:#fbf8f1;
+      --paper2:#f7f2e6;
+      --rule: rgba(0,0,0,.35);
+      --thin: rgba(0,0,0,.14);
+      --accent:#7a1f1f;
+      --link:#0a3d62;
+      --shadow: 0 16px 42px rgba(0,0,0,.18);
+      --r:16px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1100px 650px at 20% -10%, rgba(0,0,0,.08), rgba(0,0,0,0) 55%),
+        radial-gradient(900px 650px at 90% 0%, rgba(0,0,0,.06), rgba(0,0,0,0) 58%),
+        linear-gradient(180deg, #ffffff 0%, #eef1f4 100%);
+      padding: 18px 14px 36px;
+    }
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .page{
+      max-width: var(--max);
+      margin: 0 auto;
+      background:
+        radial-gradient(circle at 22% 18%, rgba(255,255,255,.75), rgba(255,255,255,0) 52%),
+        radial-gradient(circle at 78% 22%, rgba(255,255,255,.70), rgba(255,255,255,0) 55%),
+        linear-gradient(180deg, var(--paper), var(--paper2));
+      border: 1px solid rgba(0,0,0,.22);
+      box-shadow: var(--shadow);
+      border-radius: 20px;
+      overflow:hidden;
+      position:relative;
+    }
+    .page::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        repeating-linear-gradient(0deg, rgba(0,0,0,.012) 0px, rgba(0,0,0,.012) 1px, rgba(0,0,0,0) 3px, rgba(0,0,0,0) 6px),
+        repeating-linear-gradient(90deg, rgba(0,0,0,.010) 0px, rgba(0,0,0,.010) 1px, rgba(0,0,0,0) 4px, rgba(0,0,0,0) 8px);
+      opacity:.55;
+      pointer-events:none;
+      mix-blend-mode:multiply;
+    }
+    .wrap{position:relative; z-index:1; padding: 18px 18px 22px;}
+
+    /* Header */
+    .masthead{
+      border-bottom: 4px double var(--rule);
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      align-items:flex-end;
+      justify-content:space-between;
+    }
+    .brand{
+      display:flex; flex-direction:column; gap:4px;
+    }
+    .brand .kicker{
+      color:var(--muted);
+      font-weight: 800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size: 12px;
+    }
+    .brand h1{
+      margin:0;
+      font-size: 34px;
+      letter-spacing:.01em;
+      line-height:1.05;
+      font-weight: 950;
+      font-family: Georgia, "Times New Roman", Times, serif;
+    }
+    .brand .sub{
+      color:var(--muted);
+      font-weight: 800;
+      letter-spacing:.02em;
+      font-size: 13px;
+      text-transform:uppercase;
+    }
+    .meta{
+      text-align:right;
+      color:var(--muted);
+      font-weight: 850;
+      font-size: 12px;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      line-height:1.4;
+    }
+    .meta a{color:var(--muted)}
+
+    /* Layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 290px 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .toc{
+      position:sticky;
+      top: 14px;
+      align-self:start;
+      border: 1px solid rgba(0,0,0,.18);
+      border-radius: var(--r);
+      background: rgba(255,255,255,.65);
+      padding: 12px;
+    }
+    .toc h3{
+      margin:0 0 10px;
+      font-size: 13px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      font-weight: 950;
+      border-bottom: 2px solid rgba(0,0,0,.28);
+      padding-bottom: 6px;
+    }
+    .toc .links{
+      display:flex;
+      flex-direction:column;
+      gap: 6px;
+      max-height: 70vh;
+      overflow:auto;
+      padding-right: 4px;
+    }
+    .toc .links a{
+      display:block;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.12);
+      background: rgba(255,255,255,.82);
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 13px;
+    }
+    .toc .links a:hover{
+      border-color: rgba(122,31,31,.45);
+      color: var(--accent);
+    }
+    .toc .tools{
+      margin-top: 10px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.18);
+      background: rgba(255,255,255,.9);
+      font-weight: 900;
+      color: var(--ink);
+    }
+    .btn:hover{border-color: rgba(122,31,31,.5); color: var(--accent);}
+
+    /* Content */
+    .content{
+      border-left: 1px solid rgba(0,0,0,.14);
+      padding-left: 16px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color: var(--ink);
+    }
+    .content h2{
+      margin: 0 0 10px;
+      padding-top: 16px;
+      font-size: 22px;
+      line-height:1.15;
+      font-weight: 950;
+      letter-spacing:.01em;
+    }
+    .content p{
+      margin: 0 0 12px;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    .content ol, .content ul{
+      margin: 0 0 14px 22px;
+      padding:0;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    .content li{margin: 6px 0;}
+
+    .doc-section{
+      padding-bottom: 10px;
+      border-bottom: 1px dashed rgba(0,0,0,.18);
+    }
+    .doc-section:last-child{border-bottom:none}
+
+    .table-wrap{
+      margin: 10px 0 16px;
+      overflow:auto;
+      border: 1px solid rgba(0,0,0,.18);
+      border-radius: 14px;
+      background: rgba(255,255,255,.65);
+    }
+    table{
+      width:100%;
+      border-collapse: collapse;
+      min-width: 520px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    th, td{
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(0,0,0,.12);
+      border-right: 1px solid rgba(0,0,0,.10);
+      vertical-align: top;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    th{
+      position:sticky;
+      top:0;
+      background: rgba(255,255,255,.92);
+      font-weight: 950;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+    tr:last-child td{border-bottom:none}
+    td:last-child, th:last-child{border-right:none}
+
+    .footer{
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(0,0,0,.18);
+      text-align:center;
+      color: rgba(0,0,0,.55);
+      font-weight: 780;
+      font-size: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .grid{grid-template-columns: 1fr;}
+      .content{border-left:none; padding-left:0;}
+      .toc{position:relative; top:0;}
+      .meta{text-align:left;}
+    }
+
+    /* Print */
+    @media print {
+      body{background:#fff; padding:0;}
+      .page{box-shadow:none; border:none; border-radius:0;}
+      .toc, .btn{display:none !important;}
+      .content{border-left:none; padding-left:0;}
+      a{color:#000; text-decoration:none;}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="wrap">
+      <header class="masthead">
+        <div class="brand">
+          <div class="kicker">Continental Baseball League</div>
+          <h1>CBL Constitution</h1>
+          <div class="sub">Continental Baseball League • Constitution &amp; Rules</div>
+        </div>
+        <div class="meta">
+          <div>Document date: 11/10/08</div>
+          <div><a href="index.html">← Back to Front Page</a></div>
+        </div>
+      </header>
+
+      <div class="grid">
+        <nav class="toc" aria-label="Table of Contents">
+          <h3>On This Page</h3>
+          <div class="links">
+            <a href="#statement-of-existence">Statement of Existence</a>
+<a href="#the-commissioner">The Commissioner</a>
+<a href="#league-presidents">League Presidents</a>
+<a href="#ethics-and-rules-chairman">Ethics and Rules Chairman</a>
+<a href="#league-statistician">League Statistician</a>
+<a href="#the-league-council">The League Council</a>
+<a href="#appeals">Appeals</a>
+<a href="#manager-duties">Manager Duties</a>
+<a href="#managers-rights">Managers Rights</a>
+<a href="#continental-baseball-league-rules">Continental Baseball League Rules</a>
+<a href="#the-season">The Season</a>
+<a href="#the-playoffs">The Playoffs</a>
+<a href="#the-game">THE GAME</a>
+<a href="#schedule">SCHEDULE</a>
+<a href="#the-schedule-and-interleague-play">The Schedule and Interleague Play</a>
+<a href="#game-play">Game Play</a>
+<a href="#pitchers">Pitchers</a>
+<a href="#other-players">Other Players</a>
+<a href="#teams">TEAMS</a>
+<a href="#rosters">Rosters</a>
+<a href="#claiming-franchise-players">Claiming Franchise Players</a>
+<a href="#trading">Trading</a>
+<a href="#annual-and-free-agent-drafts">Annual and Free Agent Drafts</a>
+<a href="#post-season-play">Post Season Play</a>
+<a href="#continental-baseball-league-rules-2">Continental Baseball League Rules</a>
+<a href="#addendums">ADDENDUMS</a>
+<a href="#1-a-interleague-schedule">1.a Interleague schedule</a>
+<a href="#1-b-regular-season-schedule">1.b Regular Season Schedule</a>
+<a href="#2a-the-post-season-schedule-will-be-as-follows">2a. The Post Season schedule will be as follows;</a>
+<a href="#2b-start-eligibility-for-pitchers-in-playoff-games">2b. Start eligibility for pitchers in playoff games;</a>
+<a href="#3-penalties">3. Penalties</a>
+<a href="#understanding-strat-files">UNDERSTANDING STRAT FILES.</a>
+          </div>
+          <div class="tools">
+            <a class="btn" href="#" onclick="window.print();return false;">🖨️ Print / Save PDF</a>
+            <a class="btn" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">⬆️ Top</a>
+          </div>
+        </nav>
+
+        <main class="content" id="top">
+          <section class="doc-section" id="statement-of-existence">
+<h2>Statement of Existence</h2>
+<p>The league shall be known as the Continental Baseball League and shall use Strat-O-Matic as the official game. The League is unique in “Team Identity” and “rookie” claiming procedures.</p>
+</section>
+<section class="doc-section" id="the-commissioner">
+<h2>The Commissioner</h2>
+<p>There will be a permanent office of the commissioner who shall have the following duties;</p>
+<ol><li>Appoint and/or dismiss all board members/officers.</li><li>Enforce this constitution, rules and addendums.</li><li>Approve all managers.</li><li>Keep the League informed with necessary information.</li><li>Initiate and impose penalties for the benefit of the League.</li><li>Act as the final rule on items and occurrences not covered herein.</li><li>Enact &quot;Commissioner&#x27;s Authority&quot; to set a situation straight.</li></ol>
+</section>
+<section class="doc-section" id="league-presidents">
+<h2>League Presidents</h2>
+<p>There will be a league president appointed to overseeing each league who shall have the following duties;</p>
+<ol><li>Insure that managers in their league do not fall behind schedule.</li><li>Initiate trade vetoes within their league.</li><li>Have a vote on “Council” decisions not concerning their team.</li></ol>
+</section>
+<section class="doc-section" id="ethics-and-rules-chairman">
+<h2>Ethics and Rules Chairman</h2>
+<p>The Commissioner shall appoint a chairman who will have the following duties;</p>
+<ol><li>Provide for the “proper” interpretation of the rules through “addendums”.</li><li>Impose penalties whenever player usage is abused.</li><li>Track and impose penalties for lateness.</li><li>Initiate any and all changes to this document.</li></ol>
+<ul><li>Changes to the League Constitution will require an 70% majority</li><li>Changes to the Rules will require a simple majority.</li><li>All Changes will be in effect the season following confirmation.</li></ul>
+</section>
+<section class="doc-section" id="league-statistician">
+<h2>League Statistician</h2>
+<p>The Commissioner may appoint a League Statistician who will have the following duties;</p>
+<ol><li>Manage the League Web Site</li><li>Collate League Statistics.</li></ol>
+</section>
+<section class="doc-section" id="the-league-council">
+<h2>The League Council</h2>
+<p>The Commissioner, both league presidents, the Ethics and Rules Chairman and the League Statistician will comprise the League Council with the following duties;</p>
+<ol><li>Handle all appeals.</li></ol>
+<ul><li>Trade Vetoes may be overturned by simple majority.</li><li>Assessed Penalties require unanimous decisions</li></ul>
+<ol><li>The Commissioner shall only vote in the event of a tie.</li></ol>
+</section>
+<section class="doc-section" id="appeals">
+<h2>Appeals</h2>
+<p>The League Council shall be the sole body with the power to overturn Officer’s decisions.</p>
+<ol><li>An appeal over ANY act in the League may be made to the Council, through the proper league president.</li><li>The ruling of the Council is final. There is no further appeal.</li></ol>
+</section>
+<section class="doc-section" id="manager-duties">
+<h2>Manager Duties</h2>
+<p>Managers in the CBL shall have the following responsibilities;</p>
+<ol><li>Pay their yearly duties prior to making any team transactions</li><li>Play their games on time and in a fair manner.</li><li>Make all attempts to improve their team.</li><li>Accept all Council decisions.</li><li>Not disrupt the League.</li><li>Send in proper League files.</li><li>Send game results to opponents in the form requested.</li></ol>
+</section>
+<section class="doc-section" id="managers-rights">
+<h2>Managers Rights</h2>
+<p>Current managers in the CBL shall have the following rights if they meet the above duties;</p>
+<ol><li>To retain the team they had the previous season.</li><li>To make trades of players and draft picks.</li><li>Appeal any Officer’s decision.</li><li>Appeal a trade veto.</li><li>Change to a different team (if available, given out by seniority).</li></ol>
+</section>
+<section class="doc-section" id="continental-baseball-league-rules">
+<h2>Continental Baseball League Rules</h2>
+</section>
+<section class="doc-section" id="the-season">
+<h2>The Season</h2>
+<p>The following represents the normal order of events in the CBL;</p>
+<ol><li>Dues for following season due September 1</li><li>Previous year ends with a champion.</li><li>Trading Season begins November 1 (if dues are paid).</li><li>Trading ends. Rosters cut to 22, draft picks for the following season become available for trades. (January 15)</li><li>Trading resumes January 16 till 36 man roster due (March )</li><li>Draft list sent to managers (late January)</li><li>Annual draft is held. (mid February)</li><li>Trading ends, Free-agent draft, teams 36 man roster due (March).</li><li>Computer managers are due.</li><li>League file posted.</li><li>Play Ball.</li><li>A New League file will be posted prior to the start of each game block.</li></ol>
+<p>The regular season will include 162 games with 81 of these being played by each manager. Teams play their “road” schedule. Net/play is encouraged.</p>
+</section>
+<section class="doc-section" id="the-playoffs">
+<h2>The Playoffs</h2>
+<ol><li>The Division winners, plus the second place team with the best overall record, will meet in a seven game series for the right to play for the league title. The Division winner with the best home record will host the wild card team unless the two teams are from the same division. The Division winner with the second best home record will also host a series. In case of a tie, best overall record, then head to head play and finally League Record will determine. If still tied, a coin toss will decide.</li></ol>
+<p>If a manager can not net-play their games, they shall choose a substitute manager to play in their place.</p>
+<ol><li>All playoff series will follow a 2-3-2 format.</li><li>For the League Championship, the Division winner with the best regular season home record will be home first for the first 2 games.</li><li>The World Series will also follow this format with the American League champion being home first on even numbered years.</li></ol>
+</section>
+<section class="doc-section" id="the-game">
+<h2>THE GAME</h2>
+</section>
+<section class="doc-section" id="schedule">
+<h2>SCHEDULE</h2>
+<ol><li>Managers will play their road games during the current block against the opposing teams computer manager or live via net-play. Only Strat-O-Matic carded players are eligible for any game play.</li><li>Managers are only responsible for their road games in each block.</li><li>Trades made during the block will take affect after each block is completed.</li><li>Prior to the end of each block all games must be submitted. If not submitted, the Commissioner will auto play missing games using each team’s computer manager. The Rules Chairman will then assess any lateness penalties for the block.</li><li>Managers will select “New Scheduled Game” when preparing to play a game and must follow the dates in order.</li><li>A new Lzp. file with updated Computer managers (if any) will be sent prior to the start of each block. Do not start a block without the new file.</li></ol>
+</section>
+<section class="doc-section" id="the-schedule-and-interleague-play">
+<h2>The Schedule and Interleague Play</h2>
+<ol><li>The schedule will be determined by the Statistician.</li><li>Each team will play 18 games against each division rival (9 home games and 9 road games), 12 games against other league teams (6 home games and 6 road games), and 12 games against teams from the opposite league (6 home games and 6 road games) to be determined by the chart listed in the Addendums 1.a. &amp; 1.b</li></ol>
+</section>
+<section class="doc-section" id="game-play">
+<h2>Game Play</h2>
+<ol><li>Injuries and Weather effect will not be used in CBL games.</li><li>All other Super-Advanced Rules shall apply.</li></ol>
+</section>
+<section class="doc-section" id="pitchers">
+<h2>Pitchers</h2>
+<ol><li>Starting pitchers will be confined to their actual number of starts and innings pitched (plus 5%) and must rest 4 days before and after each start. (Strat designated * starters may start on 3 days rest)</li><li>Relief pitchers will be confined to their actual innings pitched (plus 5%). There is no limit on the number of games they may pitch.</li><li>Pitchers may pitch tired.</li><li>Pitchers must have relief ratings in order to enter a game in a relief role, unless all other pitchers are tired or otherwise ineligible.</li></ol>
+</section>
+<section class="doc-section" id="other-players">
+<h2>Other Players</h2>
+<ol><li>Position players are limited to their actual number of AB’s (plus 5%).</li><li>Position players must have played 25% or 25 of their games at a position to start at that position in home games. Each position is separate including all outfield positions. Any Player may DH, which is used by both Leagues.</li></ol>
+</section>
+<section class="doc-section" id="teams">
+<h2>TEAMS</h2>
+</section>
+<section class="doc-section" id="rosters">
+<h2>Rosters</h2>
+<ol><li>Prior to the start of the season teams will have 36 man rosters (38 for lottery teams, 37 for other non-playoff teams)</li><li>Prior to the Annual Draft teams must cut down to 22 players (24 for lottery teams and 23 for other non-playoff teams.</li><li>During the season, there is no minimum or maximum players that maybe on any roster.</li><li>During each game block, all teams may have only 25 active players to play their games, both home and away. The 25 active players may be changed with each block, but the same 25 are used both home and away.</li><li>Rosters will expand to an unlimited number of players for the final 2 blocks.</li><li>Rosters must be submitted with the players listed in the following order; 1B, 2B, 3B, SS, LF, CF, RF, C, SP, RP, and alphabetically within those categories.</li></ol>
+</section>
+<section class="doc-section" id="claiming-franchise-players">
+<h2>Claiming Franchise Players</h2>
+<p>The “claiming” of un-owned players is what makes the CBL unique, but is a complicated process. You must do the following;</p>
+<ol><li>If you have or can acquire 9 players who were on a CBL roster and played the previous season in Major League Baseball, with your franchise;</li><li>Then you may claim any un-owned player who finished the Major League Baseball season with a contract with your franchise.</li><li>This includes rookies and veterans who were not on an active CBL roster.</li><li>The above named 9 players must be on your 22 man roster along with any players you choose to claim. (along with your non-franchise players).</li><li>The total of the 9 franchise, claims and holdovers can not exceed the roster cut down limits. (22-24)</li></ol>
+</section>
+<section class="doc-section" id="trading">
+<h2>Trading</h2>
+<ol><li>No trades are to be made unless League dues are paid and both managers are current with all their managerial duties. That means games played on time and other deadlines met. Doing so will void the trade and will cause a forfeiture of a first round draft pick.</li><li>Only “rostered” players and draft picks may be traded. “Claimable” players are not “rostered” players.</li><li>All trades are subject to President approval. If the trade involves both Leagues, then both Presidents must approve the trade.</li><li>The Commissioner, or his designate, may trade for un-owned teams.</li><li>In-season trading is approved for the CBL during the period between season start, and the designated end of play, at the end of Block #4.</li><li>Rosters are fixed with the start of each block, and may not be changed as a result of activity related to in-season trading until the completion of that block.</li><li>In-season trades are conducted under same provisions as regular trades with additional stipulation that each team is required to maintain adequate usage to complete season.</li><li>Any changes to team rosters resulting from in-season trades, made between ` blocks, and must be reflected on team instructions. Updated instructions are the responsibility of the affected managers and must be submitted by the end of each block.</li></ol>
+</section>
+<section class="doc-section" id="annual-and-free-agent-drafts">
+<h2>Annual and Free Agent Drafts</h2>
+<ol><li>The Annual Draft will include free agents, rookies and players released after the 22 man roster cut down.</li><li>The first four positions of the draft are decided by lottery between the 2 worse teams in each League as chosen by the Commissioner. Picks 5-24 will be in reverse order of final road record with ties being broken by the worse overall record.</li><li>The Annual draft will take place in February, with the final date set in Jan.</li></ol>
+<ul><li>The draft is comprised of 10 rounds.</li><li>The League will supply a list of eligible players prior to the draft.</li><li>Any player playing in one game, either an at bat, pinch running, fielding or portion of inning pitched, is available to be drafted, but only carded players will be available for game play.</li><li>Any manager discovering unlisted but eligible players may draft those players.</li><li>The draft will be held in a League sponsored draft room and have a chat available. Those managers unable to attend may set up their draft prior, or designate another manager to draft for them. No one will call.</li><li>The Commissioner or his designate will draft for any team not represented.</li></ul>
+<ol><li>Free agent drafting of the Strat-O-Matic rated carded players will be done as follows:</li></ol>
+<ul><li>List of all eligible free agents sent to managers.</li><li>Date set for the free agent draft.</li><li>Draft order will be the same as the Annual Draft.</li></ul>
+<p>D The Commissioner or his designate, will conduct the draft in the same manner as the Annual Draft with managers stating if they want to be included in the next round after each pick.</p>
+<ul><li>Free Agent draft picks may not be traded. Free Agents may not be cut by the CBL team that drafted them. Remember any free agent chosen must remain on the team’s roster.</li></ul>
+</section>
+<section class="doc-section" id="post-season-play">
+<h2>Post Season Play</h2>
+<ol><li>The Post Season schedule will be as follows;</li></ol>
+<p>See Addendum 2a.</p>
+<ol><li>Position players will be allowed 5% of their regular season usage per series. Batters with more than 450 at bats will have unlimited playoff use.</li><li>Starters must experience the same rest as during the regular season and the schedule is continuous. (see addendum 2a.)</li><li>For chart outlining Starting eligibility, see Addendum 2b.</li><li>All pitchers are allowed 10% of their regular season innings with a relief maximum of 9 innings per series.</li><li>25 man rosters may change between Series.</li><li>Regular season rules regarding player position eligibility, apply to ROAD games during the playoffs.</li></ol>
+</section>
+<section class="doc-section" id="continental-baseball-league-rules-2">
+<h2>Continental Baseball League Rules</h2>
+</section>
+<section class="doc-section" id="addendums">
+<h2>ADDENDUMS</h2>
+<ol><li>Addendums shall be added as necessary to clarify rules. They shall not be used in place of rule changes.</li></ol>
+</section>
+<section class="doc-section" id="1-a-interleague-schedule">
+<h2>1.a Interleague schedule</h2>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>2007</th><th>2007</th><th>2008</th><th>2008</th><th>2009</th><th>2009</th></tr></thead>
+<tbody>
+<tr><td>Orioles</td><td>@ Mets</td><td>@ Nationals</td><td>@ Cubs</td><td>@ Pirates</td><td>@ Astros</td><td>@ Padres</td></tr>
+<tr><td>Yankees</td><td>@ Nationals</td><td>@ Mets</td><td>@ Pirates</td><td>@ Cubs</td><td>@ Padres</td><td>@ Astros</td></tr>
+<tr><td>Blue Jays</td><td>@ Phillies</td><td>@ Braves</td><td>@ Reds</td><td>@ Cardinals</td><td>@ Dodgers</td><td>@ Giants</td></tr>
+<tr><td>Red Sox</td><td>@ Braves</td><td>@ Phillies</td><td>@ Cardinals</td><td>@ Reds</td><td>@ Giants</td><td>@ Dodgers</td></tr>
+<tr><td>Tigers</td><td>@ Cubs</td><td>@ Pirates</td><td>@ Astros</td><td>@ Padres</td><td>@ Mets</td><td>@ Nationals</td></tr>
+<tr><td>Twins</td><td>@ Pirates</td><td>@ Cubs</td><td>@ Padres</td><td>@ Astros</td><td>@ Nationals</td><td>@ Mets</td></tr>
+<tr><td>Indians</td><td>@ Reds</td><td>@ Cardinals</td><td>@ Dodgers</td><td>@ Giants</td><td>@ Phillies</td><td>@ Braves</td></tr>
+<tr><td>White Sox</td><td>@ Cardinals</td><td>@ Reds</td><td>@ Giants</td><td>@ Dodgers</td><td>@ Braves</td><td>@ Phillies</td></tr>
+<tr><td>Athletics</td><td>@ Astros</td><td>@ Padres</td><td>@ Mets</td><td>@ Nationals</td><td>@ Cubs</td><td>@ Pirates</td></tr>
+<tr><td>Mariners</td><td>@ Padres</td><td>@ Astros</td><td>@ Nationals</td><td>@ Mets</td><td>@ Pirates</td><td>@ Cubs</td></tr>
+<tr><td>Royals</td><td>@ Dodgers</td><td>@ Giants</td><td>@ Phillies</td><td>@ Braves</td><td>@ Reds</td><td>@ Cardinals</td></tr>
+<tr><td>Angels</td><td>@ Giants</td><td>@ Dodgers</td><td>@ Braves</td><td>@ Phillies</td><td>@ Cardinals</td><td>@ Reds</td></tr>
+<tr><td></td><td>2007</td><td>2007</td><td>2008</td><td>2008</td><td>2009</td><td>2009</td></tr>
+<tr><td>Mets</td><td>@ Blue Jays</td><td>@ Red Sox</td><td>@ Royals</td><td>@ Angels</td><td>@ Indians</td><td>@ White Sox</td></tr>
+<tr><td>Nationals</td><td>@ Red Sox</td><td>@ Blue Jays</td><td>@ Angels</td><td>@ Royals</td><td>@ White Sox</td><td>@ Indians</td></tr>
+<tr><td>Phillies</td><td>@ Orioles</td><td>@ Yankees</td><td>@ Athletics</td><td>@ Mariners</td><td>@ Tigers</td><td>@ Twins</td></tr>
+<tr><td>Braves</td><td>@ Yankees</td><td>@ Orioles</td><td>@ Mariners</td><td>@ Athletics</td><td>@ Twins</td><td>@ Tigers</td></tr>
+<tr><td>Cubs</td><td>@ Indians</td><td>@ White Sox</td><td>@ Blue Jays</td><td>@ Red Sox</td><td>@ Royals</td><td>@ Angels</td></tr>
+<tr><td>Pirates</td><td>@ White Sox</td><td>@ Indians</td><td>@ Red Sox</td><td>@ Blue Jays</td><td>@ Angels</td><td>@ Royals</td></tr>
+<tr><td>Cardinals</td><td>@ Tigers</td><td>@ Twins</td><td>@ Orioles</td><td>@ Yankees</td><td>@ Athletics</td><td>@ Mariners</td></tr>
+<tr><td>Reds</td><td>@ Twins</td><td>@ Tigers</td><td>@ Yankees</td><td>@ Orioles</td><td>@ Mariners</td><td>@ Athletics</td></tr>
+<tr><td>Dodgers</td><td>@ Athletics</td><td>@ Mariners</td><td>@ Tigers</td><td>@ Twins</td><td>@ Orioles</td><td>@ Yankees</td></tr>
+<tr><td>Giants</td><td>@ Mariners</td><td>@ Athletics</td><td>@ Twins</td><td>@ Tigers</td><td>@ Yankees</td><td>@ Orioles</td></tr>
+<tr><td>Astros</td><td>@ Royals</td><td>@ Angels</td><td>@ Indians</td><td>@ White Sox</td><td>@ Blue Jays</td><td>@ Red Sox</td></tr>
+<tr><td>Padres</td><td>@ Angels</td><td>@ Royals</td><td>@ White Sox</td><td>@ Indians</td><td>@ Red Sox</td><td>@ Blue Jays</td></tr>
+</tbody></table></div>
+<p>Figure 1</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>2010</th><th>2010</th><th>2011</th><th>2011</th><th>2012</th><th>2012</th></tr></thead>
+<tbody>
+<tr><td>Orioles</td><td>@ Phillies</td><td>@ Braves</td><td>@ Reds</td><td>@ Cardinals</td><td>@ Dodgers</td><td>@ Giants</td></tr>
+<tr><td>Yankees</td><td>@ Braves</td><td>@ Phillies</td><td>@ Cardinals</td><td>@ Reds</td><td>@ Giants</td><td>@ Dodgers</td></tr>
+<tr><td>Blue Jays</td><td>@ Mets</td><td>@ Nationals</td><td>@ Cubs</td><td>@ Pirates</td><td>@ Astros</td><td>@ Padres</td></tr>
+<tr><td>Red Sox</td><td>@ Nationals</td><td>@ Mets</td><td>@ Pirates</td><td>@ Cubs</td><td>@ Padres</td><td>@ Astros</td></tr>
+<tr><td>Tigers</td><td>@ Reds</td><td>@ Cardinals</td><td>@ Dodgers</td><td>@ Giants</td><td>@ Phillies</td><td>@ Braves</td></tr>
+<tr><td>Twins</td><td>@ Cardinals</td><td>@ Reds</td><td>@ Giants</td><td>@ Dodgers</td><td>@ Braves</td><td>@ Phillies</td></tr>
+<tr><td>Indians</td><td>@ Cubs</td><td>@ Pirates</td><td>@ Astros</td><td>@ Padres</td><td>@ Mets</td><td>@ Nationals</td></tr>
+<tr><td>White Sox</td><td>@ Pirates</td><td>@ Cubs</td><td>@ Padres</td><td>@ Astros</td><td>@ Nationals</td><td>@ Mets</td></tr>
+<tr><td>Athletics</td><td>@ Dodgers</td><td>@ Giants</td><td>@ Phillies</td><td>@ Braves</td><td>@ Reds</td><td>@ Cardinals</td></tr>
+<tr><td>Mariners</td><td>@ Giants</td><td>@ Dodgers</td><td>@ Braves</td><td>@ Phillies</td><td>@ Cardinals</td><td>@ Reds</td></tr>
+<tr><td>Royals</td><td>@ Astros</td><td>@ Padres</td><td>@ Mets</td><td>@ Nationals</td><td>@ Cubs</td><td>@ Pirates</td></tr>
+<tr><td>Angels</td><td>@ Padres</td><td>@ Astros</td><td>@ Nationals</td><td>@ Mets</td><td>@ Pirates</td><td>@ Cubs</td></tr>
+<tr><td></td><td>2010</td><td>2010</td><td>2011</td><td>2011</td><td>2012</td><td>2012</td></tr>
+<tr><td>Mets</td><td>@ Orioles</td><td>@ Yankees</td><td>@ Athletics</td><td>@ Mariners</td><td>@ Tigers</td><td>@ Twins</td></tr>
+<tr><td>Nationals</td><td>@ Yankees</td><td>@ Orioles</td><td>@ Mariners</td><td>@ Athletics</td><td>@ Twins</td><td>@ Tigers</td></tr>
+<tr><td>Phillies</td><td>@ Blue Jays</td><td>@ Red Sox</td><td>@ Royals</td><td>@ Angels</td><td>@ Indians</td><td>@ White Sox</td></tr>
+<tr><td>Braves</td><td>@ Red Sox</td><td>@ Blue Jays</td><td>@ Angels</td><td>@ Royals</td><td>@ White Sox</td><td>@ Indians</td></tr>
+<tr><td>Cubs</td><td>@ Tigers</td><td>@ Twins</td><td>@ Orioles</td><td>@ Yankees</td><td>@ Athletics</td><td>@ Mariners</td></tr>
+<tr><td>Pirates</td><td>@ Twins</td><td>@ Tigers</td><td>@ Yankees</td><td>@ Orioles</td><td>@ Mariners</td><td>@ Athletics</td></tr>
+<tr><td>Cardinals</td><td>@ Indians</td><td>@ White Sox</td><td>@ Blue Jays</td><td>@ Red Sox</td><td>@ Royals</td><td>@ Angels</td></tr>
+<tr><td>Reds</td><td>@ White Sox</td><td>@ Indians</td><td>@ Red Sox</td><td>@ Blue Jays</td><td>@ Angels</td><td>@ Royals</td></tr>
+<tr><td>Dodgers</td><td>@ Royals</td><td>@ Angels</td><td>@ Indians</td><td>@ White Sox</td><td>@ Blue Jays</td><td>@ Red Sox</td></tr>
+<tr><td>Giants</td><td>@ Angels</td><td>@ Royals</td><td>@ White Sox</td><td>@ Indians</td><td>@ Red Sox</td><td>@ Blue Jays</td></tr>
+<tr><td>Astros</td><td>@ Athletics</td><td>@ Mariners</td><td>@ Tigers</td><td>@ Twins</td><td>@ Orioles</td><td>@ Yankees</td></tr>
+<tr><td>Padres</td><td>@ Mariners</td><td>@ Athletics</td><td>@ Twins</td><td>@ Tigers</td><td>@ Yankees</td><td>@ Orioles</td></tr>
+</tbody></table></div>
+</section>
+<section class="doc-section" id="1-b-regular-season-schedule">
+<h2>1.b Regular Season Schedule</h2>
+<p>The schedule is;</p>
+<p>Block 1 (April games)</p>
+<p>Games due on April 23rd</p>
+<p>Trades due on April 23rd</p>
+<p>New computer managers due April 30th</p>
+<p>Block 2 (May games)</p>
+<p>Games due on May 24th</p>
+<p>Trades due on May 24th</p>
+<p>New computer managers due May 31st</p>
+<p>Block 3 (June games)</p>
+<p>Games due on June 23rd</p>
+<p>Trades due on June 23rd</p>
+<p>New computer managers due June 30th</p>
+<p>Block 4 (July games)</p>
+<p>Games due on July 24th</p>
+<p>Trades due on July 24th</p>
+<p>New computer managers due July 31st</p>
+<p>Trading Season Ends on July 24th</p>
+<p>Block 5 (August games)</p>
+<p>Games due on August 24th</p>
+<p>New computer managers due August 31st</p>
+<p>Block 6 (September games)</p>
+<p>Games due on September 24th</p>
+<p>Playoffs begin on October 1.</p>
+</section>
+<section class="doc-section" id="2a-the-post-season-schedule-will-be-as-follows">
+<h2>2a. The Post Season schedule will be as follows;</h2>
+<p>Oct. 1 – Any Play-in games will be played.</p>
+<p>Oct. 2 – Any additional play-in games.</p>
+<p>Oct. 3 – Game 1 Divisional Series</p>
+<p>Oct. 4 – Game 2</p>
+<p>Oct. 5 – Rest Day</p>
+<p>Oct. 6 – Game 3</p>
+<p>Oct. 7 – Game 4</p>
+<p>Oct. 8 – Game 5</p>
+<p>Oct. 9 – Rest Day</p>
+<p>Oct.10 – Game 6</p>
+<p>Oct. 11 – Game 7</p>
+<p>Oct. 12 – Rest</p>
+<p>Oct. 13 – Game 1 League Championship</p>
+<p>Oct. 14 – Game 2</p>
+<p>Oct. 15 – Rest</p>
+<p>Oct. 16 – Game 3</p>
+<p>Oct. 17 – Game 4</p>
+<p>Oct. 18 – Game 5</p>
+<p>Oct. 19 – Rest</p>
+<p>Oct. 20 – Game 6</p>
+<p>Oct. 21 – Game 7</p>
+<p>Oct. 22 – Rest</p>
+<p>Oct. 23 – Game 1 CBL Championship</p>
+<p>Oct. 24 – Game 2</p>
+<p>Oct. 25 – Rest</p>
+<p>Oct. 26 – Game 3</p>
+<p>Oct. 27 – Game 4</p>
+<p>Oct. 28 – Game 5</p>
+<p>Oct. 29 – Rest</p>
+<p>Oct. 30 – Game 6</p>
+<p>Oct. 31 – Game 7</p>
+</section>
+<section class="doc-section" id="2b-start-eligibility-for-pitchers-in-playoff-games">
+<h2>2b. Start eligibility for pitchers in playoff games;</h2>
+<ol><li>A pitcher with 30 or more real life starts may start 3 games in a playoff series if proper rest is achieved using the schedule in addendum 2a.</li><li>A pitcher with 20-29real life starts may start 2 games in a playoff series if proper rest is achieved using the schedule in addendum 2a.</li><li>A pitcher with 10-19real life starts may start 1 game in a playoff series if proper rest is achieved using the schedule in addendum 2a.</li><li>A pitcher with 1-9real life starts may start 1 game in the post -season if proper rest is achieved using the schedule in addendum 2a.</li></ol>
+</section>
+<section class="doc-section" id="3-penalties">
+<h2>3. Penalties</h2>
+<p>3A. Penalties for Lateness
+For purposes of determining if games or CMs are submitted late, deadlines are defined as 11:59 PM Pacific on the date announced (for instance the CMs for block 1 were due at 11:59 PM on Sat. April 3rd).
+
+3a. Games not turned in by deadlines - For any games not played by the announced deadline, the games will be auto-played by league using the lineups in your CM plus you will be penalized according to the following schedule:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Total Blocks Late</th><th>Penalty</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>10th Rd. Draft Pick</td></tr>
+<tr><td>2</td><td>8th Rd. Draft Pick</td></tr>
+<tr><td>3</td><td>4th Rd. Draft Pick</td></tr>
+<tr><td>4</td><td>2nd Rd. Draft Pick</td></tr>
+<tr><td>5</td><td>1st Rd. Draft Pick</td></tr>
+<tr><td>6</td><td>Roster Spot + 1st Rd. Draft Pick</td></tr>
+</tbody></table></div>
+<p>3b. CM(s) not turned in by deadlines - The total days your CMs are submitted late throughout the season will be added together and you will be penalized according to the table below:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Total Days Late for all CM Submittals</th><th>Penalty</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Warning</td></tr>
+<tr><td>2</td><td>Warning</td></tr>
+<tr><td>3</td><td>10th Rd. Draft Pick</td></tr>
+<tr><td>4</td><td>9th Rd. Draft Pick</td></tr>
+<tr><td>5</td><td>7th Rd. Draft Pick</td></tr>
+<tr><td>6</td><td>5th Rd. Draft Pick</td></tr>
+<tr><td>7</td><td>3rd Rd. Draft Pick</td></tr>
+<tr><td>8</td><td>1st Rd. Draft Pick</td></tr>
+<tr><td>9</td><td>Roster Spot + 3rd Rd. Draft Pick</td></tr>
+<tr><td>10</td><td>Roster Spot + 1st Rd. Draft Pick</td></tr>
+<tr><td>11+</td><td>League Sanctions (possible dismissal from league)</td></tr>
+</tbody></table></div>
+<p>For both game lateness and CM lateness penalties, in the event that you do not own the pick you are penalized you will be penalized your next highest pick (either yours or one obtained in a trade). If you do not own your 1st round pick (or one better) you will be penalized a roster spot at the 23-man cut and will not be permitted to claim any rookies. Penalization occurs at the 23-man cut, so any picks obtained up to that point are fair game to satisfy the penalty.
+
+3B. Penalties for Overusage
+3a. At the end of the each block any player that has reached their 105% AB/IP usage limit will be declared ineligible for the remainder of the season and will be demoted to the minors. Additionally, at the end of the season the following penalties will be assessed to each team:
+
+AB/IP Overusage (per player)-
+up to 105% = No penalty
+more than 105% but not over 107% = Player is ineligible for use in the playoffs
+more than 107% but not over 110% = Immediate forfeiture of the overused player
+more 110% = Immediate forfeiture of the overused player plus forfeiture of a roster spot for the subsequent season
+
+3b. If you have more than 4 players that violate the overusage rules (more than 105% usage) you will be subject to further discipline and possible removal as a manager. REMEMBER, the 5% extra usage is meant to be used as a buffer, when you get up near those limits it is time to seriously consider shutting a guy down or you will have to pay the price if you go beyond that limit.
+
+
+4A. Playing a CBL series</p>
+<p>1) Make sure you have loaded the latest LZP distributed by the league.
+
+2) In the Strat-o-Matic program, select the current CBL league from the main screen and select &quot;New Scheduled...&quot; from the file menu (or click on the associated icon).
+
+3) In the schedule window that pops up, scroll to the first day of the series you intend to play.
+
+4) If you haven&#x27;t already done so, switch the game setting for the game you wish to play from &quot;Hold&quot; to &quot;Manual&quot; by selecting the game and selecting &quot;Manual&quot; from the drop down menu in the upper left corner of the window.
+
+5) Click on the &quot;Play Day&quot; button of the schedule window, then on the &quot;Manual&quot; button of the next window that pops up, this will bring up the Game Setup window.
+
+6) In the Game Setup window, for the 1st game of the series click the &quot;Days Off&quot; button, then the &quot;Yes&quot; button on the warning window that pops up, to make sure there is no pitcher fatigue carried over from a previously played/imported series. DO NOT click on this button for games 2 or 3 of a series as normal SADV pitcher fatigue rules apply.
+
+7) In the Game Setup window, verify that the &quot;Use DH Rule&quot; and &quot;Create Game Result Files&quot; are checked and that the home manager is set to &quot;Computer&quot;
+
+8) Set your lineup as you see fit. Position eligibility does not apply to the road team, so any of your eligible hitters may start at any positions you choose.
+
+9) Make sure you use the starting pitcher you set in your computer manager. You may not switch starting pitchers after you submitted your CM.</p>
+<p>10) If a pitcher is both a starter and reliever, he must have 4 days rest before each start, so do not use him in relief if he will be scheduled to start with in the next 5 days. This is hard to control at home, so be extra cautious.</p>
+<p>11) Once your lineup is set, click the &quot;Play Ball&quot; button.
+
+12) Enjoy playing your game.
+
+13) Once the final out is recorded, Click on the &quot;Get Boxscore&quot; button of the first pop-up window and &quot;OK&quot; of the second (Subsets) pop-up window.
+
+14) This brings up the boxscore for your completed game, you do not need to save anything as the Boxscore and Play Account files to be submitted are automatically saved, but you may review, print or save the game results as you wish for your own records.
+
+15) Once you are finished reviewing the game stats, click on the &quot;End Game&quot; button to close the window.
+
+16) For games 1 and 2 of a series, return to Step #2 above to move on to the next game of the series (remember to skip Step #6). For game 3 of a series, move on to the steps for compiling and submitting game results.
+
+
+Compiling and Submitting Results from a CBL series
+15) Once a series is completed, open windows explorer and navigate to the &quot;C:\CDROMBB\Print\2010cb&quot; folder (or instead of CDROMBB, the folder where you installed the game)
+
+16) Select the BOX and PAC files from the series you just completed (they will be named &quot;BOX date visiting_team @ home_team&quot; and &quot;PAC date visiting_team @ home_team&quot; for each game played) and add them to a ZIP file. It is important for tracking purposes to use a naming system for the zip file similar to that John selected - for instance for my 1st series, vs. KC, I would use s1SEA@KCA.ZIP, for my second series, vs. Oakland, I would use s2SEA@OAA.ZIP</p>
+<p>.
+
+17) Once the ZIP file is created, navigate to the &quot;C:\CDROMBB\Export&quot; folder and select the six game result files from the series you just completed and add them to the ZIP file you created in Step #16. One good method for determining the correct files is by looking at the date created, but I&#x27;ll also give a quick primer on how those files are named below.
+
+18) Once the ZIP file contains the proper files (the BOX, PAC and game result files = 12 files per 3 game series), upload the ZIP file to the proper folder on the Yahoo! group page (http://games.groups.yahoo.com/group/CBLSL/files/) and/or email the ZIP file to ME (cblbaseball@charter.net), Kevin (kmgordon8@verizon.net), Josh (jcomfort@gonzaga.edu) and your opponent.
+
+19) Get cracking on your next series. IF YOU FAIL TO COMPLETE ANY PART OF THE ABOVE, YOU HAVE NOT COMPLETED YOUR OBLIGATION FOR THAT SERIES AND IT WILL BE CONSIDERED LATE!!!!!!!!!!!!!</p>
+</section>
+<section class="doc-section" id="understanding-strat-files">
+<h2>UNDERSTANDING STRAT FILES.</h2>
+<p>One thing that can slow us down is when someone sends the wrong file and it gets imported, so please read the following to prevent this from happening this year;
+
+Without getting too technical, the game results files use the 8.3 filenaming scheme from the old DOS and early windows operating systems. What this means is that the file names are always 8 characters long (before the period) with a 3 character extension (after the period). An example is &quot;2010cbJ9.v07&quot;.
+
+There are three parts to these file names:
+1) the first 6 characters identifies the league associated with the file, &quot;2010cb&quot; in the example above. These are the 6 characters that identifies the 2010 CBL in the Strat program and for the CBL regular season this year all game result file names will begin with thes 6 characters
+
+2) the two characters that directly precede the period (&quot;J9&quot; above) are the one character codes that identify the away (the first of the two characters) and home teams (the second of the two characters). Essentially, each team is assigned a one character code (0 - 9 or A to Z) that represents them in the Strat file naming system for game results. The biggest thing to understanding the file names is knowing which character is assigned to each team. I&#x27;ve listed the key for identifying the 2010 CBL teams is at the end of this email.
+
+3) the three characters after the period indicate whether the file contains data for the home (h) or away team (v) and the number of times the two teams have played based on the current stats in the league. In the example above the &quot;v07&quot; indicates that the file contains data for the away team and that it is the for the 7th game the two teams played against each other. For the 1st series you play against a team the numbers will be 01, 02 and 03 (assuming you don&#x27;t import the stats from the games that team plays against you). After that it will depend on how many games (home and away) you&#x27;ve previously played against the team, but they&#x27;ll always be 3 numbers in sequential order for any given series assuming you don&#x27;t import other stats in the middle of a series.
+
+If this confused you, you can always fall back on using the date created to verify that the game result files are the correct ones. The date created will always match that for the BOX and PAC files from the same game. Shoot me an email if you have any questions.
+
+Character Key for Identifying 2011 CBL Teams in a given Game Results File
+0 - Atlanta
+1- Baltimore
+2- Boston
+3 - Chicago (AL)
+4 - Chicago (NL)
+5 - Cincinnati
+6 - Cleveland
+7 - Detroit
+8 - Houston
+9 - Kansas City
+A - Los Angeles (AL)
+B - Los Angeles (NL)
+C - Minnesota
+D - New York (AL)
+E - New York (NL)
+F - Oakland
+G - Philadelphia
+H - Pittsburgh
+I - San Diego
+J - San Francisco
+K - Seattle
+L - St. Louis
+M - Toronto
+N - Washington</p>
+</section>
+          <div class="footer">© Continental Baseball League • Constitution</div>
+        </main>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
