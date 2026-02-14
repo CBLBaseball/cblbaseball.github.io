@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 3.2 FINAL//EN'>
+<!-- Copyright 2002 (c) Strat-O-Matic Game Co. -->
+<!-- Knowledge of HMTL and Javascript is recommended before editing this document -->
+<!-- Be sure to make backup copies before any changes -->
+<!-- For use with Web Builder 1.3  -->
+<HTML>
+<HEAD>
+  <META NAME="description" CONTENT="My Strat-O-Matic Baseball">
+  <META NAME="keywords" CONTENT="Team Stats">  
+  <TITLE>Strat-O-Matic Team Statistics</TITLE>
+	<LINK REL=stylesheet TYPE="text/css" HREF="stats.css">
+   	<SCRIPT LANGUAGE=JAVASCRIPT1.2 src='custom.js'></SCRIPT>
+  	<SCRIPT LANGUAGE=JAVASCRIPT1.2 src='stats.js'></SCRIPT>
+	<SCRIPT LANGUAGE=JAVASCRIPT1.2 src='leaguedata.js'></SCRIPT>
+	<SCRIPT LANGUAGE=JAVASCRIPT1.2 src='teams.js'></SCRIPT>
+	<SCRIPT LANGUAGE=JAVASCRIPT1.2>	
+		var dataFile;
+		var vTeamName = getTeam();
+		if(vTeamName == "DEF")
+			dataFile  =  "defteam.js";
+		else
+		{
+			var tla = vTeamName.toLowerCase();
+			dataFile  =  "team" + tla + ".js";
+		}
+		</SCRIPT>
+			
+  	<SCRIPT LANGUAGE=JAVASCRIPT1.2 src='dyndata.js'></SCRIPT>
+</HEAD>
+	
+<BODY topmargin=0 background='back.jpg' bgcolor=Silver>
+
+	<SCRIPT LANGUAGE=JAVASCRIPT1.2>	
+		var teamImage;
+		var vTeam = getTeam();
+		if(vTeam == "DEF")
+			teamImage = "defteam.jpg";
+		else
+			teamImage = vTeam.toLowerCase() + ".jpg";
+		
+		var tbgColor = "silver";
+		
+		title = eval(vTeam)[3];		// Team Name
+
+		document.write("<TABLE align=center><TR><TD bgcolor='" + backColor + "'>");
+
+		DisplayBanner();
+		DisplayHeader();	
+		
+
+		BeginTable( backColor);
+		
+		var sortColumn = getParam("sort");
+		var sortTable = getParam("table");
+		var sort1=1;	// default sort column
+		var sort2=1;
+		var direction=1;
+		
+		if ( sortColumn == "")
+			sortColumn = 1;		// default sort column
+		else
+			sortColumn = sortColumn - 0;
+			
+		if(sortTable == 1)
+		{
+			sort1 = sortColumn;
+		}
+		if(sortTable == 2)
+		{
+			sort2 = sortColumn;
+		}
+		
+	
+		
+
+		document.write("<table align=center bgcolor=Silver>");
+		document.write("<TR><TD valign=top  align=center>");
+  		TeamLeaderTable( title + " Batting", 16, "headTeam1Bat", "B1team", 0, 520, sort1, direction, 1);
+		document.write("</TD></TR></TABLE>");
+			
+			
+		if(sort2 == 1)	
+		{
+			direction = 0;
+		}	
+		document.write("<table align=center bgcolor=Silver>");
+		document.write("<TR><TD valign=top  align=center>");
+		TeamLeaderTable( title + " Pitching", 17, "headTeam1Pitch", "P1team", 1, 520, sort2,direction, 2);
+		document.write("</TD></TR></TABLE>");
+
+
+
+		EndTable( backColor);
+		DisplayFooter();
+	</SCRIPT>
+	
+</TD></TR></TABLE>
+</BODY>
+</HTML>
