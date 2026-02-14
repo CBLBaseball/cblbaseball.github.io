@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 3.2 FINAL//EN'>
+<!-- Copyright 2002 (c) Strat-O-Matic Game Co. -->
+<!-- Knowledge of HMTL and Javascript is recommended before editing this document -->
+<!-- Be sure to make backup copies before any changes -->
+<!-- For use with Web Builder 1.1  -->
+<HTML>
+<HEAD>
+  <META NAME="description" CONTENT="My Stat-O-Matic Baseball League">
+  <META NAME="keywords" CONTENT="baseball, stats">  
+  <TITLE>Strat-o-matic Baseball</TITLE>
+  <LINK REL=stylesheet TYPE="text/css" HREF="stats.css">
+ 	<SCRIPT LANGUAGE=JAVASCRIPT1.2 src='custom.js'></SCRIPT>
+	<SCRIPT LANGUAGE=JAVASCRIPT src="leaders.js"></SCRIPT>    
+	<SCRIPT LANGUAGE=JAVASCRIPT src="leaguedata.js"></SCRIPT>    
+	<SCRIPT LANGUAGE=JAVASCRIPT src="stats.js"></SCRIPT>    
+</HEAD>
+
+<BODY topmargin=0 background='back.jpg'>
+
+<SCRIPT LANGUAGE=JAVASCRIPT >
+	document.write("<TABLE align=center><TR><TD bgcolor='" + backColor + "'>");
+
+	DisplayBanner();
+	DisplayHeader();
+	BeginTable( backColor);	
+</SCRIPT>
+	
+	
+<SCRIPT LANGUAGE=JAVASCRIPT >
+	// first param is the number of leaders to display
+	// second param is the ordinal value of leader type as defined in stats.js
+	BoxLeaders( 6, 6 );
+	BoxLeaders( 6, 7 );
+	BoxLeaders( 6, 0 );
+	document.write("<br>");
+	BoxLeaders( 6, 30 );
+	BoxLeaders( 6, 27 );
+	BoxLeaders( 6, 37 );
+</SCRIPT> 
+
+
+</TD>
+
+
+    <!--   Column 2 --->
+    <TD valign=top align='center'>
+       <SCRIPT LANGUAGE=JAVASCRIPT>
+       
+			var iSubCount = sub.length;
+			var iDivCount;
+			var	i;
+			var	k;
+			var	subName;
+			var subNameLong;
+			var divName;
+			
+			
+			document.write("<table border=0 cellspacing=1 cellpadding=2 align=center>");
+			for(i = 0; i < iSubCount; i++)
+			{
+				subName =		sub[i];
+				subNameLong =   sublong[i];
+				
+				
+				iDivCount = eval(sub[i]).length;
+				document.write("<tr>");
+				document.write("<td colspan='7' align='center' class='BoxHead3' width='100%' nowrap>");
+				document.write(subNameLong +  "</td>");
+				document.write("</tr>");
+				
+				
+				for(k = 0; k < iDivCount; k++)
+				{
+					divName = subName+eval(subName)[k];
+					//	Division, Sub_Div, columns
+					BoxStandings(eval(subName)[k], divName, 6);
+				}
+				
+			// space
+			document.write("<tr><td colspan='7' align='center' width='100%'>");
+			document.write("<hr color=white> </td></tr>");
+			}
+			
+			document.write("</table>"); 
+			
+        </SCRIPT>    
+
+<SCRIPT LANGUAGE=JAVASCRIPT>
+	EndTable();
+	DisplayFooter();
+</SCRIPT>    
+	
+</TD></TR></TABLE>
+
+</BODY></HTML>
