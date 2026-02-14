@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CBL Past Seasons • 1985–2020</title>
+<style>
+body{margin:0;font-family:Georgia,serif;background:#f4efe3;color:#111;}
+header{text-align:center;padding:40px 20px;border-bottom:4px double #333;}
+h1{margin:0;font-size:42px;font-weight:900;}
+.sub{margin-top:8px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;}
+.grid{max-width:1200px;margin:40px auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;padding:0 20px;}
+.card{background:#fff;border:2px solid #222;border-radius:16px;padding:60px 18px 18px;position:relative;box-shadow:0 8px 20px rgba(0,0,0,.15);}
+.card.dynasty{border-color:#7a1f1f;}
+.top-badges{position:absolute;top:12px;left:12px;right:12px;display:flex;gap:8px;flex-wrap:wrap;}
+.pill{background:#7a1f1f;color:#fff;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900;}
+.pill.navy{background:#0b4a7d;}
+.year{font-size:30px;font-weight:900;margin-bottom:10px;}
+.champ{display:flex;align-items:center;gap:10px;}
+.logo{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border:1px solid #ccc;border-radius:10px;background:#fff;}
+.logo img{max-width:100%;max-height:100%;object-fit:contain;}
+.meta{display:flex;flex-direction:column;}
+.owner{font-weight:900;font-size:12px;color:#555;}
+a{text-decoration:none;color:inherit;}
+footer{text-align:center;padding:30px;font-size:12px;color:#666;}
+</style>
+</head>
+<body>
+<header>
+<h1>CBL Past Seasons</h1>
+<div class="sub">Champions Archive • 1985–2020</div>
+</header>
+<div class="grid" id="grid"></div>
+<footer>Continental Baseball League Historical Archive</footer>
+
+<script>
+const seasons = [{"year": 2020, "team": "New York Yankees", "owner": "Randy Holt", "titles": 2, "dynasty": null, "href": "/past-seasons/2020CB/index.html", "logo": "/team-logos/NYYankees.png"}, {"year": 2019, "team": "Detroit Tigers", "owner": "Brian Comfort", "titles": 1, "dynasty": null, "href": "/past-seasons/2019CB/index.html", "logo": "/team-logos/Detroit.png"}, {"year": 2018, "team": "New York Yankees", "owner": "Randy Holt", "titles": 2, "dynasty": null, "href": "/past-seasons/2018CB/index.html", "logo": "/team-logos/NYYankees.png"}, {"year": 2017, "team": "Boston Red Sox", "owner": "Cam Comfort", "titles": 1, "dynasty": null, "href": "/past-seasons/2017CB/index.html", "logo": "/team-logos/Boston.png"}, {"year": 2016, "team": "Kansas City Royals", "owner": "Franke Sylvester", "titles": 1, "dynasty": null, "href": "/past-seasons/2016CB/index.html", "logo": "/team-logos/KansasCity.png"}, {"year": 2015, "team": "Seattle Mariners", "owner": "Josh Comfort", "titles": 5, "dynasty": null, "href": "/past-seasons/2015CB/index.html", "logo": "/team-logos/Seattle.png"}, {"year": 2014, "team": "Los Angeles Angels", "owner": "Steve Nieroda", "titles": 1, "dynasty": null, "href": "/past-seasons/2014CB/index.html", "logo": "/team-logos/LAAngels.png"}, {"year": 2013, "team": "San Francisco Giants", "owner": "Jason Northway", "titles": 1, "dynasty": null, "href": "/past-seasons/2013CB/index.html", "logo": "/team-logos/SanFrancisco.png"}, {"year": 2012, "team": "Seattle Mariners", "owner": "Josh Comfort", "titles": 5, "dynasty": {"owner": "Josh Comfort", "start": 2011, "end": 2012, "len": 2}, "href": "/past-seasons/2012CB/index.html", "logo": "/team-logos/Seattle.png"}, {"year": 2011, "team": "Seattle Mariners", "owner": "Josh Comfort", "titles": 5, "dynasty": {"owner": "Josh Comfort", "start": 2011, "end": 2012, "len": 2}, "href": "/past-seasons/2011CB/index.html", "logo": "/team-logos/Seattle.png"}, {"year": 2010, "team": "Chicago Cubs", "owner": "John Arient", "titles": 3, "dynasty": null, "href": "/past-seasons/2010CB/index.html", "logo": "/team-logos/ChicagoCubs.png"}, {"year": 2009, "team": "Philadelphia Phillies", "owner": "Chris Holt", "titles": 1, "dynasty": null, "href": "/past-seasons/2009CB/index.html", "logo": "/team-logos/Philadelphia.png"}, {"year": 2008, "team": "Baltimore Orioles", "owner": "Kevin Gordon", "titles": 2, "dynasty": null, "href": "/past-seasons/2008CB/index.html", "logo": "/team-logos/Baltimore.png"}, {"year": 2007, "team": "Seattle Mariners", "owner": "Josh Comfort", "titles": 5, "dynasty": {"owner": "Josh Comfort", "start": 2006, "end": 2007, "len": 2}, "href": "/past-seasons/2007CB/index.html", "logo": "/team-logos/Seattle.png"}, {"year": 2006, "team": "Seattle Mariners", "owner": "Josh Comfort", "titles": 5, "dynasty": {"owner": "Josh Comfort", "start": 2006, "end": 2007, "len": 2}, "href": "/past-seasons/2006CB/index.html", "logo": "/team-logos/Seattle.png"}, {"year": 2005, "team": "Baltimore Orioles", "owner": "Kevin Gordon", "titles": 2, "dynasty": null, "href": "/past-seasons/2005CB/index.html", "logo": "/team-logos/Baltimore.png"}, {"year": 2004, "team": "Cleveland Indians", "owner": "Rick Baker", "titles": 3, "dynasty": null, "href": "/past-seasons/2004CB/index.html", "logo": "/team-logos/Cleveland.png"}, {"year": 2003, "team": "Oakland Athletics", "owner": "Chris Speer", "titles": 1, "dynasty": null, "href": "/past-seasons/2003CB/index.html", "logo": "/team-logos/Oakland.png"}, {"year": 2002, "team": "Seattle Mariners", "owner": "Jeff Hammerlund", "titles": 9, "dynasty": null, "href": "/past-seasons/2002CB/index.html", "logo": "/team-logos/Seattle.png"}, {"year": 2001, "team": "Houston Astros", "owner": "Larry Spencer", "titles": 3, "dynasty": null, "href": "/past-seasons/2001CB/index.html", "logo": "/team-logos/Houston.png"}, {"year": 2000, "team": "Chicago Cubs", "owner": "John Arient", "titles": 3, "dynasty": null, "href": "/past-seasons/2000CB/index.html", "logo": "/team-logos/ChicagoCubs.png"}, {"year": 1999, "team": "Cleveland Indians", "owner": "Rick Baker", "titles": 3, "dynasty": {"owner": "Rick Baker", "start": 1998, "end": 1999, "len": 2}, "href": "/past-seasons/1999CB/index.html", "logo": "/team-logos/Cleveland.png"}, {"year": 1998, "team": "Cleveland Indians", "owner": "Rick Baker", "titles": 3, "dynasty": {"owner": "Rick Baker", "start": 1998, "end": 1999, "len": 2}, "href": "/past-seasons/1998CB/index.html", "logo": "/team-logos/Cleveland.png"}, {"year": 1997, "team": "Chicago Cubs", "owner": "John Arient", "titles": 3, "dynasty": null, "href": "/past-seasons/1997CB/index.html", "logo": "/team-logos/ChicagoCubs.png"}, {"year": 1996, "team": "Houston Astros", "owner": "Larry Spencer", "titles": 3, "dynasty": {"owner": "Larry Spencer", "start": 1995, "end": 1996, "len": 2}, "href": "/past-seasons/1996CB/index.html", "logo": "/team-logos/Houston.png"}, {"year": 1995, "team": "Houston Astros", "owner": "Larry Spencer", "titles": 3, "dynasty": {"owner": "Larry Spencer", "start": 1995, "end": 1996, "len": 2}, "href": "/past-seasons/1995CB/index.html", "logo": "/team-logos/Houston.png"}, {"year": 1994, "team": "Toronto Blue Jays", "owner": "Jeff Hammerlund", "titles": 9, "dynasty": null, "href": "/past-seasons/1994CB/index.html", "logo": "/team-logos/Toronto.png"}, {"year": 1993, "team": "Montreal Expos", "owner": "Kevin Stafford", "titles": 1, "dynasty": null, "href": "/past-seasons/1993CB/index.html", "logo": "/team-logos/Montreal.png"}, {"year": 1992, "team": "Toronto Blue Jays", "owner": "Jeff Hammerlund", "titles": 9, "dynasty": {"owner": "Jeff Hammerlund", "start": 1990, "end": 1992, "len": 3}, "href": "/past-seasons/1992CB/index.html", "logo": "/team-logos/Toronto.png"}, {"year": 1991, "team": "Toronto Blue Jays", "owner": "Jeff Hammerlund", "titles": 9, "dynasty": {"owner": "Jeff Hammerlund", "start": 1990, "end": 1992, "len": 3}, "href": "/past-seasons/1991CB/index.html", "logo": "/team-logos/Toronto.png"}, {"year": 1990, "team": "Toronto Blue Jays", "owner": "Jeff Hammerlund", "titles": 9, "dynasty": {"owner": "Jeff Hammerlund", "start": 1990, "end": 1992, "len": 3}, "href": "/past-seasons/1990CB/index.html", "logo": "/team-logos/Toronto.png"}, {"year": 1989, "team": "San Diego Padres", "owner": "Bob Clineman", "titles": 1, "dynasty": null, "href": "/past-seasons/1989CB/index.html", "logo": "/team-logos/SanDiego.png"}, {"year": 1988, "team": "New York Mets", "owner": "Jeff Hammerlund", "titles": 9, "dynasty": {"owner": "Jeff Hammerlund", "start": 1985, "end": 1988, "len": 4}, "href": "/past-seasons/1988CB/index.html", "logo": "/team-logos/NYMets.png"}, {"year": 1987, "team": "New York Mets", "owner": "Jeff Hammerlund", "titles": 9, "dynasty": {"owner": "Jeff Hammerlund", "start": 1985, "end": 1988, "len": 4}, "href": "/past-seasons/1987CB/index.html", "logo": "/team-logos/NYMets.png"}, {"year": 1986, "team": "New York Mets", "owner": "Jeff Hammerlund", "titles": 9, "dynasty": {"owner": "Jeff Hammerlund", "start": 1985, "end": 1988, "len": 4}, "href": "/past-seasons/1986CB/index.html", "logo": "/team-logos/NYMets.png"}, {"year": 1985, "team": "New York Mets", "owner": "Jeff Hammerlund", "titles": 9, "dynasty": {"owner": "Jeff Hammerlund", "start": 1985, "end": 1988, "len": 4}, "href": "/past-seasons/1985CB/index.html", "logo": "/team-logos/NYMets.png"}];
+const grid = document.getElementById("grid");
+
+seasons.forEach(s => {
+  const card = document.createElement("div");
+  card.className = "card" + (s.dynasty ? " dynasty" : "");
+  
+  let dynBadge = "";
+  if (s.dynasty) {
+    dynBadge = `<span class="pill">🔥 ${s.dynasty.len} in a row</span>`;
+  }
+
+  card.innerHTML = `
+    <div class="top-badges">
+      <span class="pill">🏆 Champion</span>
+      <span class="pill navy">⭐ ${s.titles}</span>
+      ${dynBadge}
+    </div>
+    <a href="${s.href}">
+      <div class="year">${s.year}</div>
+      <div class="champ">
+        <div class="logo">
+          <img src="${s.logo}" alt="team logo" onerror="this.style.display='none'">
+        </div>
+        <div class="meta">
+          <div><strong>${s.team}</strong></div>
+          <div class="owner">(${s.owner})</div>
+        </div>
+      </div>
+    </a>
+  `;
+
+  grid.appendChild(card);
+});
+</script>
+</body>
+</html>
