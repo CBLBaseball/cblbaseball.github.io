@@ -268,6 +268,50 @@
       font-weight: 780;
       font-size: 12px;
     }
+    
+    .upcoming {
+      border: 1px solid rgba(0,0,0,.25);
+      border-radius: 14px;
+      padding: 14px;
+      background: rgba(255,255,255,.6);
+      break-inside: avoid;
+    }
+
+    .upcoming h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight: 950;
+      border-bottom: 2px solid rgba(0,0,0,.35);
+      padding-bottom: 6px;
+    }
+
+    .date-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 8px;
+      border-bottom: 1px solid rgba(0,0,0,.15);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight: 850;
+    }
+
+    .date-item:last-child {
+      border-bottom: none;
+    }
+
+    .date {
+      font-weight: 950;
+      letter-spacing: .05em;
+      color: var(--accent2);
+    }
+
+    .event {
+      text-align: right;
+    }
+
     @media (max-width: 980px){
       .grid{grid-template-columns:1fr}
       .lede{border-right:none; padding-right:0}
@@ -307,12 +351,39 @@
           </div>
 
           <div class="cols">
-            <p class="dropcap">Upcoming Dates:  Roster Cuts Due on 2/25
-                                                CBL Annual Draft - 3/7
-                                                Free Agent Draft - 3/19
-                                                Computer Managers Due on 4/1
-                                                Playball File Posted on 4/7
-                                                April Games Due on 4/25</p>
+            <div class="upcoming">
+              <h3>Upcoming League Dates</h3>
+
+              <div class="date-item">
+                <span class="date">Feb 25</span>
+                <span class="event">Roster Cuts Due</span>
+              </div>
+
+              <div class="date-item">
+                <span class="date">Mar 7</span>
+                <span class="event">CBL Annual Draft</span>
+              </div>
+
+              <div class="date-item">
+                <span class="date">Mar 19</span>
+                <span class="event">Free Agent Draft</span>
+              </div>
+
+              <div class="date-item">
+                <span class="date">Apr 1</span>
+                <span class="event">Computer Managers Due</span>
+              </div>
+
+              <div class="date-item">
+                <span class="date">Apr 7</span>
+                <span class="event">Playball File Posted</span>
+              </div>
+
+              <div class="date-item">
+                <span class="date">Apr 25</span>
+                <span class="event">April Games Due</span>
+              </div>
+            </div>
           </div>
         </section>
 
