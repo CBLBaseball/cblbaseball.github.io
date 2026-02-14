@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 3.2 FINAL//EN'>
+<!-- Copyright 2002 (c) Strat-O-Matic Game Co. -->
+<!-- Knowledge of HMTL and Javascript is recommended before editing this document -->
+<!-- Be sure to make backup copies before any changes -->
+<!-- For use with Web Builder 1.3  -->
+<HTML>
+<HEAD>
+  <META NAME="description" CONTENT="Stat-o-Matic Baseball League Leaders">
+  <META NAME="keywords" CONTENT="leaders, doubles,triples, hits, batting ave, baseball, stats">  
+  <TITLE>League Leaders</TITLE>
+  <LINK REL=stylesheet TYPE="text/css" HREF="stats.css">
+  <SCRIPT LANGUAGE=JAVASCRIPT1.2 src='custom.js'></SCRIPT>
+  <SCRIPT LANGUAGE=JAVASCRIPT src="stats.js"></SCRIPT>
+  <SCRIPT LANGUAGE=JAVASCRIPT src="leaguedata.js"></SCRIPT>  
+  	<SCRIPT LANGUAGE=JAVASCRIPT1.2>	
+		var vParam = getParam("subleague");
+		var dataFile;
+
+		if(vParam == "")
+			 dataFile =  "leaders.js";
+		else
+			dataFile =  vParam + "leaders.js"
+	
+		
+	</SCRIPT>
+  
+  	<SCRIPT LANGUAGE=JAVASCRIPT1.2 src='dyndata.js'></SCRIPT>
+  
+  
+</HEAD>
+
+<BODY topmargin=0  background='back.jpg'>
+
+<SCRIPT LANGUAGE=JAVASCRIPT >
+	document.write("<TABLE align=center><TR><TD bgcolor='" + backColor + "'>");
+
+	DisplayBanner();
+	DisplayHeader();
+
+	document.write("<TABLE width=600 align=center bgcolor=" + backColor + ">");
+	document.write("<TR><TD class='THead' align=center>");
+</SCRIPT>
+
+
+			<form action="leaders.html" method=get>
+			<table width=480 border='0' cellpadding="0" cellspacing="0"  align=right>
+				<tr><TD class='THead' align=left>League Leaders</TD>
+					<td valign=bottom align=right>
+
+					<SCRIPT LANGUAGE=JAVASCRIPT >
+					var iSubCount = sub.length;
+					var i;
+					var sel=getParam("leaders");
+					if(sel == "")  sel=5;
+
+				
+					document.write("<SELECT id=leaders name=leaders size=1 title=topics value=5>");				
+					for(i=1; i<11; i++)
+					{
+						if( i == sel )
+							document.write("<OPTION selected value='" + sel + "'>" + sel );
+						else
+							document.write("<OPTION value='"+ i +"'>" + i );
+					}
+					
+					
+
+					document.write("</SELECT>");
+	
+					sel=getParam("subleague");
+					if(sel == "")  sel="All Leaders";
+			
+					
+					document.write("<SELECT id=subleague name=subleague size=1 title=topics value='All'>");
+					document.write("<OPTION value=''>All Leaders");
+					if(iSubCount > 1)
+					{
+						for(i=0; i<iSubCount; i++)
+						{
+							if(sub[i] == sel)
+								document.write("<OPTION selected value='" + sub[i] + "'>" + sub[i] );
+							else
+								document.write("<OPTION value='" + sub[i] + "'>" + sub[i] );
+						}
+					}
+
+					document.write("</SELECT>");
+									
+					</SCRIPT>
+
+					
+				</td>
+				<td align=left valign=bottom><INPUT type='submit'  value='Update' >
+				</td >
+				</tr></table>
+				</form>
+
+	</TD></TR>
+	
+	
+	<TR><TD valign=top  align=center>
+	
+	
+	<TABLE  width=100% CELLSPACING="0" CELLPADDING="4" border="0">
+		<SCRIPT LANGUAGE=JAVASCRIPT>
+			var count = 0;
+			var k;
+			var rows=getParam("leaders");
+			if(rows == "")
+				rows=5;
+				
+			
+			for(k=0; k<24;k++)
+			{  
+				if(count < 57)
+				{
+					document.write("<TR>");
+					for(j=0; j<3;j++)
+					{
+						document.write("<TD>");
+						BoxLeaders( rows, count++ );
+						document.write("</TD>");
+					}
+					document.write("</TR>");
+				}
+			}
+		</SCRIPT>    
+	</TABLE>
+	
+    
+
+<SCRIPT LANGUAGE=JAVASCRIPT>
+	EndTable();
+	DisplayFooter();	//	Display Copyright information
+</SCRIPT>    
+
+
+	
+</TD></TR></TABLE>
+</BODY></HTML>
