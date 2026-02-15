@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CBL 2026 Annual Draft Order</title>
+  <style>
+    :root{
+      --ink:#111;
+      --muted:#555;
+      --bg:#f6f1e6;
+      --card:#ffffff;
+      --line:rgba(0,0,0,.10);
+      --accent:#7a1f1f;
+      --navy:#0b4a7d;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background: linear-gradient(180deg,#fff 0%, #eef3f8 100%);
+      padding: 18px 14px 44px;
+    }
+    .page{
+      max-width: 1600px;
+      margin: 0 auto;
+      background: radial-gradient(circle at 20% 0%, rgba(122,31,31,.08), transparent 55%),
+                  linear-gradient(180deg, var(--bg), #efe7d3);
+      border: 2px solid #222;
+      border-radius: 20px;
+      box-shadow: 0 18px 46px rgba(0,0,0,.16);
+      overflow:hidden;
+    }
+    header{
+      padding: 18px 18px 14px;
+      border-bottom: 4px double rgba(0,0,0,.28);
+      display:flex;
+      flex-wrap:wrap;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+    }
+    h1{
+      margin:0;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 40px;
+      font-weight: 900;
+      letter-spacing:.01em;
+    }
+    .sub{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-weight: 800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size: 12px;
+    }
+    .actions a{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 2px solid #222;
+      background: rgba(255,255,255,.7);
+      text-decoration:none;
+      color: var(--navy);
+      font-weight: 900;
+      white-space:nowrap;
+    }
+    .wrap{padding: 16px 18px 22px;}
+    .note{
+      margin: 0 0 12px;
+      color: rgba(0,0,0,.68);
+      font-weight: 750;
+      line-height: 1.45;
+    }
+    .tools{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      margin: 10px 0 12px;
+    }
+    .search{
+      flex: 1 1 320px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 2px solid #222;
+      background: rgba(255,255,255,.75);
+    }
+    .search input{
+      width:100%;
+      border:none;
+      outline:none;
+      background:transparent;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .legend{
+      color: rgba(0,0,0,.55);
+      font-weight: 800;
+      font-size: 12px;
+    }
+    .table-wrap{
+      overflow:auto;
+      border: 2px solid #222;
+      border-radius: 16px;
+      background: var(--card);
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      table-layout: auto;
+      
+    }
+    col.team{width: 260px;}
+    col.r{width: 110px;}
+    col.roster{width: 110px;}
+    thead th{border:1px solid #222;
+      position:sticky;
+      top:0;
+      z-index:2;
+      background: #f7f7f7;
+      border-bottom: 2px solid #222;
+      padding: 10px 10px;
+      font-size: 12px;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+      text-align:left;
+      color: rgba(0,0,0,.75);
+    }
+    tbody td{border:1px solid #222;
+      border-bottom: 1px solid #222;
+      padding: 10px 10px;
+      vertical-align:middle;
+      font-weight: 750;
+      }
+    tbody tr:hover{background:#fbfbfb}
+    td.team{font-weight: 950;}
+    td.pick{ text-align:center; font-weight:950; letter-spacing:.03em; white-space:nowrap; overflow:visible; }
+    td.pick.skip{color: var(--accent);}
+    td.roster{
+      text-align:right;
+      font-variant-numeric: tabular-nums;
+      font-weight: 900;
+      color: rgba(0,0,0,.70);
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,.14);
+      background: rgba(11,74,125,.06);
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 950;
+      
+      white-space: nowrap;
+    }
+    .pill.skip{
+      background: rgba(122,31,31,.08);
+      color: var(--accent);
+      border-color: rgba(122,31,31,.22);
+    }
+    footer{
+      padding: 14px 18px 18px;
+      border-top: 1px solid rgba(0,0,0,.14);
+      color: rgba(0,0,0,.55);
+      font-weight: 800;
+      font-size: 12px;
+      text-align:center;
+    }
+    @media (max-width: 720px){
+      h1{font-size: 32px;}
+      table{}
+    }
+    @media print{
+      body{background:#fff;padding:0;}
+      .page{box-shadow:none;border:none;border-radius:0;}
+      .tools,.actions{display:none;}
+      .table-wrap{box-shadow:none;border:1px solid #bbb;}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <h1>2026 Annual Draft Order</h1>
+        <div class="sub">Continental Baseball League</div>
+      </div>
+      <div class="actions">
+        <a href="/index.html">← Back to Front Page</a>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <p class="note">
+        Draft order by round. Search for a team, a pick code (e.g., <b>MNA</b>), or <b>SKIP</b>.
+      </p>
+
+      <div class="tools">
+        <div class="search" role="search" aria-label="Search draft order">
+          <span style="font-weight:950;color:rgba(0,0,0,.55)">🔎</span>
+          <input id="q" type="text" placeholder="Search (team, code, SKIP)..." autocomplete="off" />
+        </div>
+        <div class="legend">Codes are shown as pills • <span class="pill skip">SKIP</span> indicates a skipped pick</div>
+      </div>
+
+      <div class="table-wrap">
+        <table id="tbl" aria-label="2026 Annual Draft Order">
+          <colgroup><col style="width:60px;">
+            <col class="team">
+            <col class="r"><col class="r"><col class="r"><col class="r"><col class="r">
+            <col class="r"><col class="r"><col class="r"><col class="r"><col class="r">
+            <col class="roster">
+          </colgroup>
+          <thead>
+            <tr>
+              <th style='width:60px;text-align:center;'>#</th><th>Team</th>
+              <th>Rnd 1</th><th>Rnd 2</th><th>Rnd 3</th><th>Rnd 4</th><th>Rnd 5</th>
+              <th>Rnd 6</th><th>Rnd 7</th><th>Rnd 8</th><th>Rnd 9</th><th>Rnd 10</th>
+              <th style="text-align:right;">Roster Spots</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer>CBL • 2026 Annual Draft Order</footer>
+  </div>
+
+<script>
+const data = [{"Team":"Los Angeles (AL)","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"24\/40"},{"Team":"Chicago (AL)","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"24\/40"},{"Team":"Philadelphia","Rnd 1":"BOA","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"24\/40"},{"Team":"St Louis","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"SKIP","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"24\/40"},{"Team":"Oakland","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"23\/40"},{"Team":"MInnesota","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"SKIP","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"23\/40"},{"Team":"Los Angeles (NL)","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"23\/40"},{"Team":"Cincinnati","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"23\/40"},{"Team":"Chicago (NL)","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"SKIP","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"22\/40"},{"Team":"Pittsburgh","Rnd 1":"","Rnd 2":"","Rnd 3":"MNA","Rnd 4":"","Rnd 5":"","Rnd 6":"SKIP","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"23\/40"},{"Team":"Detroit","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"23\/40"},{"Team":"Kansas City","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"CON","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"23\/40"},{"Team":"Washington","Rnd 1":"DEA","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"23\/40"},{"Team":"New York (NL)","Rnd 1":"MNA","Rnd 2":"","Rnd 3":"","Rnd 4":"CIN","Rnd 5":"ATN","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"22\/40"},{"Team":"Toronto","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"23\/40"},{"Team":"Atlanta","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"22\/40"},{"Team":"Cleveland","Rnd 1":"ATN","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"22\/40"},{"Team":"San Francisco","Rnd 1":"","Rnd 2":"BOA","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"SKIP","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"23\/40"},{"Team":"New York (AL)","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"MNA","Rnd 10":"","Roster Spots":"22\/40"},{"Team":"Colorado","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"NYN","Rnd 10":"","Roster Spots":"22\/40"},{"Team":"Baltimore","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"22\/40"},{"Team":"Boston","Rnd 1":"","Rnd 2":"PHN","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"22\/40"},{"Team":"San Diego","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"22\/40"},{"Team":"Seattle","Rnd 1":"","Rnd 2":"","Rnd 3":"","Rnd 4":"","Rnd 5":"","Rnd 6":"","Rnd 7":"","Rnd 8":"","Rnd 9":"","Rnd 10":"","Roster Spots":"22\/40"}];
+
+const tbody = document.querySelector("#tbl tbody");
+const q = document.getElementById("q");
+
+function pill(val){
+  if(!val) return "";
+  const upper = String(val).toUpperCase();
+  const cls = upper === "SKIP" ? "pill skip" : "pill";
+  return `<span class="${cls}">${upper}</span>`;
+}
+
+function render(filter=""){
+  tbody.innerHTML = "";
+  const f = filter.trim().toLowerCase();
+
+  const rows = data.filter(r => {
+    const hay = Object.values(r).join(" ").toLowerCase();
+    return hay.includes(f);
+  });
+
+  let idx = 1;
+  for (const r of rows){
+    const tr = document.createElement("tr");
+    const picks = ["Rnd 1","Rnd 2","Rnd 3","Rnd 4","Rnd 5","Rnd 6","Rnd 7","Rnd 8","Rnd 9","Rnd 10"];
+    tr.innerHTML = `
+      <td style="text-align:center;font-weight:900;">${idx++}</td><td class="team">${r["Team"]}</td>
+      ${picks.map(k => {
+        const v = r[k] || "";
+        const up = String(v).toUpperCase();
+        const cls = up === "SKIP" ? "pick skip" : "pick";
+        return `<td class="${cls}">${pill(v)}</td>`;
+      }).join("")}
+      <td class="roster">${r["Roster Spots"] || ""}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+}
+
+q.addEventListener("input", () => render(q.value));
+render("");
+</script>
+</body>
+</html>
