@@ -1,38 +1,5 @@
 [
   {
-    "leftDate": "June 2025",
-    "rightDate": "1/30/2026",
-    "phase": "Pre-Cut Down",
-    "teams": [
-      {
-        "name": "Mets",
-        "items": [
-          "Corbin Burnes"
-        ]
-      },
-      {
-        "name": "Orioles",
-        "items": [
-          "Trevor Megill",
-          "Charlie Morton"
-        ]
-      },
-      {
-        "name": "Mets",
-        "items": [
-          "Jameson Taillon",
-          "KCA DP (6th)"
-        ]
-      },
-      {
-        "name": "Royals",
-        "items": [
-          "Seth Lugo"
-        ]
-      }
-    ]
-  },
-  {
     "leftDate": "2/1/2026",
     "rightDate": "2/4/2026",
     "phase": "",
@@ -92,6 +59,37 @@
         "name": "Yankees",
         "items": [
           "Brayan Bello"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "2/6/2026",
+    "rightDate": "2/8/2026",
+    "phase": "",
+    "teams": [
+      {
+        "name": "Twins",
+        "items": [
+          "PIN DP (4th)"
+        ]
+      },
+      {
+        "name": "Pirates",
+        "items": [
+          "Chris Paddack"
+        ]
+      },
+      {
+        "name": "Cardinals",
+        "items": [
+          "Willson Contreras"
+        ]
+      },
+      {
+        "name": "Cubs",
+        "items": [
+          "Yainer Diaz"
         ]
       }
     ]
