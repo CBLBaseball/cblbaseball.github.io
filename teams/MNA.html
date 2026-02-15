@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CBL – Minnesota Twins</title>
+  <style>
+    :root{
+      --bg:#0b1220; --panel:#0f1a2e; --panel2:#0c1628; --text:#e6eefc; --muted:#9fb0d0;
+      --border:rgba(255,255,255,.08); --accent:#4ea1ff; --shadow:0 10px 25px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,#070c16 0%,#0b1220 100%); color:var(--text);
+      height:100vh; overflow:hidden;
+    }
+    header{
+      height:56px; display:flex; align-items:center; justify-content:space-between;
+      padding:0 14px; border-bottom:1px solid var(--border);
+      background:rgba(10,16,28,.8); backdrop-filter:blur(8px);
+    }
+    header .left{display:flex; gap:10px; align-items:center; min-width:0;}
+    .brand{font-weight:750; letter-spacing:.3px; white-space:nowrap;}
+    .sub{color:var(--muted); font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:55vw;}
+    .btn{border:1px solid var(--border); background:rgba(255,255,255,.03); color:var(--text);
+      padding:8px 10px; border-radius:10px; cursor:pointer;}
+    .btn:hover{border-color:rgba(255,255,255,.18)}
+    .layout{height:calc(100vh - 56px); display:grid; grid-template-columns:320px 1fr; gap:12px; padding:12px;}
+    aside {
+      background: #ffffff;
+      position: relative;
+    }
+    .aside-top{padding:12px; border-bottom:1px solid var(--border);}
+    .search{width:100%; padding:10px 12px; border-radius:12px; border:1px solid var(--border);
+      outline:none; background:rgba(255,255,255,.03); color:var(--text);}
+    .search::placeholder{color:rgba(230,238,252,.45)}
+    nav{padding:10px; overflow:auto;}
+    .section-title{font-weight:900;font-size:12px; color:var(--muted); margin:10px 6px 6px; text-transform:uppercase; letter-spacing:.08em;}
+    .link{display:flex; gap:10px; align-items:center; width:100%; text-align:left;
+      border:1px solid transparent; background:transparent; color:var(--text);
+      padding:10px 10px; border-radius:12px; cursor:pointer; margin:2px 0;}
+    .link:hover{background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.08);}
+    .link.active{background:rgba(78,161,255,.12); border-color:rgba(78,161,255,.35);}
+    .pill{font-size:11px; padding:3px 8px; border-radius:999px; border:1px solid var(--border); color:var(--muted); margin-left:auto; white-space:nowrap;}
+    main{
+      background:linear-gradient(180deg,rgba(255,255,255,.05) 0%,rgba(255,255,255,.02) 100%);
+      border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow);
+      overflow:hidden; display:flex; flex-direction:column;
+    }
+    .main-top{display:flex; align-items:center; gap:10px; padding:10px 12px; border-bottom:1px solid var(--border); background:rgba(255,255,255,.03);}
+    .main-title{font-weight:650; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+    .meta{margin-left:auto; color:var(--muted); font-size:12px; display:flex; gap:10px; align-items:center;}
+    iframe{width:100%; height:100%; border:0; background:#fff;}
+    @media (max-width:900px){
+      body{overflow:auto}
+      .layout{grid-template-columns:1fr; height:auto;}
+      aside{max-height:46vh;}
+      main{height:calc(100vh - 56px - 12px - 46vh); min-height:52vh;}
+    }
+    .hidden{display:none !important;}
+    .note{color:var(--muted); font-size:12px; padding:10px 12px; border-top:1px solid var(--border);}
+    .note code{color:#cfe2ff;}
+  
+    /* Tighter, scoreboard-like spacing */
+    nav{ padding:8px 10px; }
+    .link{ margin:2px 0; padding:9px 10px 9px 16px; }
+    .pill{ padding:2px 8px; }
+
+  
+    :root {
+      --orioles-logo: url("https://raw.githubusercontent.com/klunn91/team-logos/master/MLB/twins.png");
+      --team-secondary: #D31145;
+      --orioles-orange: #002B5C;
+    }
+
+    body {
+      background: linear-gradient(180deg, #ffffff 0%, #f2f2f2 100%);
+    }
+
+    /* Sidebar watermark */
+    aside::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--orioles-logo);
+      background-repeat: repeat;
+      background-size: 200px auto;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+    aside {
+      position: relative;
+    }
+
+    /* Main panel faint watermark */
+    main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--orioles-logo);
+      background-repeat: repeat;
+      background-size: 260px auto;
+      opacity: 0.025;
+      pointer-events: none;
+    }
+    main {
+      position: relative;
+    }
+
+  
+    /* Improve sidebar link visibility */
+    .link{
+      background:#ffffff;
+      border:1px solid rgba(0,0,0,.25);
+      color:#000000;
+      font-weight:700;
+    }
+    .link:hover{
+      background:#f5f5f5;
+      border-color:#DF4601;
+      color:#000000;
+    }
+    .link.active{
+      background:#fff7f2;
+      border-color:#DF4601;
+      box-shadow: inset 6px 0 0 #DF4601;
+      color:#000000;
+    }
+    .pill{
+      background:#ffffff;
+      border:1px solid rgba(0,0,0,.35);
+      color:#000000;
+      font-weight:700;
+    }
+
+  
+    /* MLB Network / scoreboard style tiles */
+    nav{
+      padding:10px 12px;
+    }
+    .section-title{
+      margin:14px 6px 8px;
+      padding-top:10px;
+      border-top:1px dashed rgba(0,0,0,.25);
+    }
+    .link{
+      width:100%;
+      border-radius:14px;
+      padding:12px 12px 12px 14px;
+      margin:8px 0;
+      box-shadow: 0 3px 10px rgba(0,0,0,.08);
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .link .icon{
+      width:34px;
+      height:34px;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      border:1px solid rgba(0,0,0,.2);
+      background: linear-gradient(180deg, rgba(223,70,1,.12) 0%, rgba(255,255,255,.95) 100%);
+      flex: 0 0 auto;
+    }
+    .link .label{
+      display:flex;
+      flex-direction:column;
+      line-height:1.05;
+      min-width:0;
+    }
+    .link .label .top{
+      font-size:13px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .link .label .sub{
+      font-size:11px;
+      color:#333;
+      letter-spacing:.02em;
+      margin-top:3px;
+      text-transform:none;
+      font-weight:600;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .pill{
+      margin-left:auto;
+    }
+
+    /* Divider between sidebar and content */
+    .layout{
+      position:relative;
+    }
+    .layout::before{
+      content:"";
+      position:absolute;
+      top:12px;
+      bottom:12px;
+      left:calc(320px + 6px);
+      width:2px;
+      background: linear-gradient(180deg, rgba(223,70,1,.0) 0%, rgba(223,70,1,.65) 50%, rgba(223,70,1,.0) 100%);
+      pointer-events:none;
+      border-radius:999px;
+    }
+    @media (max-width:900px){
+      .layout::before{ display:none; }
+    }
+
+  
+    .link.active{
+      box-shadow: 0 6px 16px rgba(0,0,0,.12);
+      transform: translateY(-1px);
+    }
+
+  
+    .section-title{
+      font-weight:900;
+      color:#000000;
+    }
+
+  
+    /* League-wide navigation bar */
+    .leaguebar-wrap{
+      border-bottom:1px solid rgba(0,0,0,.12);
+      background:#ffffff;
+    }
+    .leaguebar{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      padding:10px 14px;
+      overflow:hidden;
+    }
+    .leaguebar-title{
+      font-weight:900;
+      color:#111;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+    .leaguebar-links{
+      display:flex;
+      gap:8px;
+      overflow:auto;
+      padding-bottom:2px;
+      scrollbar-width:thin;
+    }
+    .teamlink{
+      display:inline-flex;
+      align-items:center;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(0,0,0,.18);
+      background:#fff;
+      color:#111;
+      text-decoration:none;
+      font-weight:750;
+      white-space:nowrap;
+    }
+    .teamlink:hover{
+      border-color: rgba(223,70,1,.75);
+      background:#fff7f2;
+    }
+    .teamlink.active{
+      border-color:#DF4601;
+      box-shadow: inset 0 0 0 2px rgba(223,70,1,.35);
+      background:#fff7f2;
+    }
+
+  
+    /* KPI chips (auto counts) */
+    .kpi{
+      display:inline-flex;
+      gap:6px;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(0,0,0,.18);
+      background: rgba(255,255,255,.75);
+      font-weight:800;
+      color:#111;
+      white-space:nowrap;
+    }
+    .kpi .lbl{ font-weight:800; opacity:.85; }
+    .kpi .val{ font-weight:900; }
+
+  
+.team-switcher{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-left:auto;
+}
+.team-switcher label{
+  font-weight:700;
+  font-size:12px;
+}
+.team-switcher select{
+  padding:4px 6px;
+  border-radius:6px;
+  border:1px solid rgba(0,0,0,.3);
+  font-weight:600;
+}
+
+  
+    /* Team dropdown switcher */
+    .team-switch{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-left: 10px;
+      flex: 0 0 auto;
+    }
+    .team-switch-label{
+      font-weight:800;
+      color:#111;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      font-size:12px;
+      opacity:.9;
+      white-space:nowrap;
+    }
+    .team-select{
+      appearance:none;
+      -webkit-appearance:none;
+      -moz-appearance:none;
+      padding:8px 34px 8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.18);
+      background:#fff;
+      font-weight:800;
+      color:#111;
+      cursor:pointer;
+      position:relative;
+    }
+    .team-select:focus{
+      outline:none;
+      border-color:#DF4601;
+      box-shadow: 0 0 0 3px rgba(223,70,1,.15);
+    }
+    .team-switch{
+      position:relative;
+    }
+    .team-switch::after{
+      content:"▾";
+      position:absolute;
+      right:12px;
+      top:50%;
+      transform:translateY(-50%);
+      pointer-events:none;
+      color:#111;
+      opacity:.7;
+      font-weight:900;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="left">
+      <button class="btn" id="toggleSidebar">☰</button>
+      <div style="min-width:0">
+        <div class="brand">CBL – Minnesota Twins</div>
+        <div class="sub">Manager: Ben Comfort</div>
+        <div class="sub" id="subtitle" style="margin-top:2px;">Hitters (All)</div>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <button class="btn" id="openNewTab">Open in new tab ↗</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="aside-top">
+
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          
+          
+
+          <div>
+            <div style="font-weight:900;color:#000000;">Minnesota Twins</div>
+            <div style="font-size:12px;color:#555;">Clubhouse View</div>
+          </div>
+        </div>
+
+        <input class="search" id="search" placeholder="Filter menu (e.g., vs lhp, pitchers)..." />
+      </div>
+
+      <nav id="nav">
+        <div class="section-title">Hitters</div>
+        <button class="link active" data-title="Hitters (All)" data-url="https://www.fangraphs.com/leaders/major-league?ind=0&lg=all&pos=all&qual=0&season=2025&season1=2025&type=1&stats=bat&month=0&players=26466,10243,24618,11680,27534,18568,18882,13621,20437,18015,31595,27462,2967,14161,18900,25660,14712,10950,19795,7859,5254,22192,25942,25386">Hitters (All) <span class="pill">BAT</span></button>
+        <button class="link" data-title="Hitters vs LHP" data-url="https://www.fangraphs.com/leaders/major-league?ind=0&lg=all&pos=all&qual=0&season=2025&season1=2025&type=1&stats=bat&month=13&players=26466,10243,24618,11680,27534,18568,18882,13621,20437,18015,31595,27462,2967,14161,18900,25660,14712,10950,19795,7859,5254,22192,25942,25386">Hitters vs LHP <span class="pill">vs LHP</span></button>
+        <button class="link" data-title="Hitters vs RHP" data-url="https://www.fangraphs.com/leaders/major-league?ind=0&lg=all&pos=all&qual=0&season=2025&season1=2025&type=1&stats=bat&month=14&players=26466,10243,24618,11680,27534,18568,18882,13621,20437,18015,31595,27462,2967,14161,18900,25660,14712,10950,19795,7859,5254,22192,25942,25386">Hitters vs RHP <span class="pill">vs RHP</span></button>
+
+        <div class="section-title">Pitchers</div>
+        <button class="link" data-title="Pitchers (All)" data-url="https://www.fangraphs.com/leaders/major-league?ind=0&lg=all&pos=all&qual=0&season=2025&season1=2025&type=1&stats=pit&month=0&players=30056,17085,31827,21224,21390,24494,18403,16427,19459,20160,17586,21461,21029,16866,23974,13346">Pitchers (All) <span class="pill">PIT</span></button>
+        <button class="link" data-title="Pitchers vs LHB" data-url="https://www.fangraphs.com/leaders/major-league?ind=0&lg=all&pos=all&qual=0&season=2025&season1=2025&type=1&stats=pit&month=13&players=30056,17085,31827,21224,21390,24494,18403,16427,19459,20160,17586,21461,21029,16866,23974,13346">Pitchers vs LHB <span class="pill">vs LHB</span></button>
+        <button class="link" data-title="Pitchers vs RHB" data-url="https://www.fangraphs.com/leaders/major-league?ind=0&lg=all&pos=all&qual=0&season=2025&season1=2025&type=1&stats=pit&month=14&players=30056,17085,31827,21224,21390,24494,18403,16427,19459,20160,17586,21461,21029,16866,23974,13346">Pitchers vs RHB <span class="pill">vs RHB</span></button>
+        <div class="section-title">Claimable Players</div>
+
+        <button class="link" data-title="Available Hitters" data-url="https://www.fangraphs.com/leaders/major-league?ind=0&lg=all&pos=all&qual=0&season=2025&season1=2025&type=1&stats=bat&month=0&players=24759,19802,24622,33321,31564,24496,33098">
+          <span class="icon">⚡</span>
+          <span class="label">
+            <span class="top">Available Hitters</span>
+            <span class="sub">Available hitters</span>
+          </span>
+          <span class="pill">BAT</span>
+        </button>
+
+        <button class="link" data-title="Available Pitchers" data-url="https://www.fangraphs.com/leaders/major-league?ind=0&lg=all&pos=all&qual=0&season=2025&season1=2025&type=1&stats=pit&month=0&players=27756,24993,10314,25862,23798,18152,15145,19264,26429,30179,30180,21189">
+          <span class="icon">⚡</span>
+          <span class="label">
+            <span class="top">Available Pitchers</span>
+            <span class="sub">Available pitchers</span>
+          </span>
+          <span class="pill">PIT</span>
+        </button>
+
+      </nav>
+
+      
+    </aside>
+
+    <main>
+      <div class="main-top">
+        <div class="main-title" id="mainTitle">Hitters (All)</div>
+        <div class="meta">
+<div class="team-switcher">
+  <label for="teamSelect">Switch Team:</label>
+  <select id="teamSelect" onchange="if(this.value) window.location.href=this.value;">
+    <option value="">Select…</option>
+    <option value="ATN.html">Atlanta Braves</option>
+<option value="BAA.html">Baltimore Orioles</option>
+<option value="BOA.html">Boston Red Sox</option>
+<option value="CHA.html">Chicago White Sox</option>
+<option value="CHN.html">Chicago Cubs</option>
+<option value="CIN.html">Cincinnati Reds</option>
+<option value="CLA.html">Cleveland Indians</option>
+<option value="CON.html">Colorado Rockies</option>
+<option value="DEA.html">Detroit Tigers</option>
+<option value="KCA.html">Kansas City Royals</option>
+<option value="LAA.html">Los Angeles Angels</option>
+<option value="LAN.html">Los Angeles Dodgers</option>
+<option value="MNA.html">Minnesota Twins</option>
+<option value="NYA.html">New York Yankees</option>
+<option value="NYN.html">New York Mets</option>
+<option value="OAA.html">Oakland Athletics</option>
+<option value="PHN.html">Philadelphia Phillies</option>
+<option value="PIN.html">Pittsburgh Pirates</option>
+<option value="SDN.html">San Diego Padres</option>
+<option value="SEA.html">Seattle Mariners</option>
+<option value="SFN.html">San Francisco Giants</option>
+<option value="SLN.html">St. Louis Cardinals</option>
+<option value="TOA.html">Toronto Blue Jays</option>
+<option value="WAN.html">Washington Nationals</option>
+<option value="index.html">index</option>
+  </select>
+</div>
+
+          <span style="font-weight:700;"></span>    <span style="font-weight:700;"></span>    
+          <span id="currentUrlLabel">FanGraphs</span>
+        </div>
+      </div>
+      <iframe id="fgFrame" src="https://www.fangraphs.com/leaders/major-league?ind=0&lg=all&pos=all&qual=0&season=2025&season1=2025&type=1&stats=bat&month=0&players=26466,10243,24618,11680,27534,18568,18882,13621,20437,18015,31595,27462,2967,14161,18900,25660,14712,10950,19795,7859,5254,22192,25942,25386" loading="lazy"></iframe>
+    </main>
+  </div>
+
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const toggleSidebar = document.getElementById('toggleSidebar');
+    const fgFrame = document.getElementById('fgFrame');
+    const mainTitle = document.getElementById('mainTitle');
+    const subtitle = document.getElementById('subtitle');
+    const openNewTab = document.getElementById('openNewTab');
+    const search = document.getElementById('search');
+    const links = Array.from(document.querySelectorAll('.link'));
+    let currentUrl = fgFrame.src;
+
+    function setActive(btn){
+      links.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function loadUrl(btn){
+      const url = btn.getAttribute('data-url');
+      const title = btn.getAttribute('data-title') || btn.textContent.trim();
+      if(!url) return;
+      currentUrl = url;
+      fgFrame.src = url;
+      mainTitle.textContent = title;
+      subtitle.textContent = title;
+      
+      setActive(btn);
+    }
+
+    links.forEach(btn => btn.addEventListener('click', () => loadUrl(btn)));
+
+    toggleSidebar.addEventListener('click', () => {
+      sidebar.classList.toggle('hidden');
+    });
+
+    openNewTab.addEventListener('click', () => {
+      window.open(currentUrl, '_blank', 'noopener');
+    });
+
+    search.addEventListener('input', () => {
+      const q = search.value.trim().toLowerCase();
+      links.forEach(btn => {
+        const text = (btn.textContent + ' ' + (btn.getAttribute('data-title') || '')).toLowerCase();
+        btn.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  
+    // timestamp
+    // highlight active team in league nav
+    (function(){
+      const file = (location.pathname.split('/').pop() || '').toUpperCase();
+      const code = file.endsWith('.HTML') ? file.slice(0,-5) : file;
+      document.querySelectorAll('.teamlink').forEach(a=>{
+        if((a.dataset.team||'').toUpperCase() === code){
+          a.classList.add('active');
+          // keep the active pill visible in the scroller
+          setTimeout(()=>{ try{ a.scrollIntoView({inline:'center', block:'nearest'}); }catch(e){} }, 0);
+        }
+      });
+    })();
+
+  
+    // KPI totals from players= lists in the menu (dynamic counts)
+    (function(){
+      function countPlayers(url){
+        try{
+          const m = url.match(/[?&]players=([^&]+)/);
+          if(!m) return 0;
+          const ids = m[1].split(',').map(s=>s.trim()).filter(Boolean);
+          return ids.length;
+        }catch(e){ return 0; }
+      }
+
+      const links = Array.from(document.querySelectorAll('.link[data-url]'));
+      const byTitle = {};
+      links.forEach(btn=>{
+        const t = btn.getAttribute('data-title') || '';
+        const u = btn.getAttribute('data-url') || '';
+        byTitle[t] = countPlayers(u);
+      });
+
+      const hitters = byTitle["Hitters (All)"] || 0;
+      const pitchers = byTitle["Pitchers (All)"] || 0;
+      const availH = byTitle["Available Hitters"] || 0;
+      const availP = byTitle["Available Pitchers"] || 0;
+
+      const meta = document.querySelector('.main-top .meta');
+      if(meta && !document.getElementById('kpis')){
+        const wrap = document.createElement('span');
+        wrap.id = 'kpis';
+        wrap.style.display = 'flex';
+        wrap.style.gap = '8px';
+        wrap.style.alignItems = 'center';
+
+        wrap.innerHTML = `
+          <span class="kpi"><span class="lbl">Roster</span> <span class="val">${hitters+pitchers}</span></span>
+          <span class="kpi"><span class="lbl">Hitters</span> <span class="val">${hitters}</span></span>
+          <span class="kpi"><span class="lbl">Pitchers</span> <span class="val">${pitchers}</span></span>
+          <span class="kpi"><span class="lbl">Available</span> <span class="val">${availH+availP}</span></span>
+        `;
+        const fgLabel = document.getElementById('currentUrlLabel');
+        if(fgLabel){
+          meta.insertBefore(wrap, fgLabel);
+        }else{
+          meta.appendChild(wrap);
+        }
+      }
+    })();
+
+  
+    // Team dropdown navigation
+    (function(){
+      const sel = document.getElementById('teamSelect');
+      if(!sel) return;
+      const file = (location.pathname.split('/').pop() || '').toUpperCase();
+      const code = file.endsWith('.HTML') ? file.slice(0,-5) : file;
+
+      // set current
+      for(const opt of sel.options){
+        if(opt.value.toUpperCase() === (code + '.HTML')){
+          sel.value = opt.value;
+          break;
+        }
+      }
+      sel.addEventListener('change', ()=>{
+        const v = sel.value;
+        if(v) location.href = v;
+      });
+    })();
+
+  </script>
+</body>
+</html>
