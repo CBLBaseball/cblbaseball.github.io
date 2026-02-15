@@ -1,1 +1,245 @@
-[]
+[
+  {
+    "leftDate": "2005",
+    "rightDate": "2005",
+    "phase": "",
+    "teams": [
+      {
+        "name": "Astros",
+        "items": [
+          "Brad Lidge"
+        ]
+      },
+      {
+        "name": "Pirates",
+        "items": [
+          "Brandon Webb"
+        ]
+      },
+      {
+        "name": "Yankees",
+        "items": [
+          "Kenny Lofton"
+        ]
+      },
+      {
+        "name": "Indians",
+        "items": [
+          "Yankees DP (5th)"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "2005",
+    "rightDate": "2005",
+    "phase": "",
+    "teams": [
+      {
+        "name": "Twins",
+        "items": [
+          "Astros DP (5th)"
+        ]
+      },
+      {
+        "name": "Astros",
+        "items": [
+          "Dan Miceli"
+        ]
+      },
+      {
+        "name": "Astros",
+        "items": [
+          "Jason Lane",
+          "Jesus Colome",
+          "Tim Redding"
+        ]
+      },
+      {
+        "name": "Cardinals",
+        "items": [
+          "Octavio Dotel",
+          "Pedro Feliz",
+          "Luis Terrero"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "2005",
+    "rightDate": "2005",
+    "phase": "",
+    "teams": [
+      {
+        "name": "Mariners",
+        "items": [
+          "Josh Beckett",
+          "Joe Nathan",
+          "Cardinals DP (1st)",
+          "Giants DP (4th)"
+        ]
+      },
+      {
+        "name": "Cardinals",
+        "items": [
+          "Mike Lowell",
+          "Timo Perez",
+          "Billy Hall",
+          "Ray King",
+          "Mariners DP (4th)"
+        ]
+      },
+      {
+        "name": "Giants",
+        "items": [
+          "Edgar Alfonzo",
+          "Mike Cameron",
+          "Mariners DP (8th)"
+        ]
+      },
+      {
+        "name": "",
+        "items": []
+      }
+    ]
+  },
+  {
+    "leftDate": "2005",
+    "rightDate": "2005",
+    "phase": "",
+    "teams": [
+      {
+        "name": "Mets",
+        "items": [
+          "Chipper Jones",
+          "Richard Hidalgo",
+          "Astros DP (8th)"
+        ]
+      },
+      {
+        "name": "Astros",
+        "items": [
+          "Aubrey Huff",
+          "Mets DP (2nd)"
+        ]
+      },
+      {
+        "name": "White Sox",
+        "items": [
+          "Alex Cintron"
+        ]
+      },
+      {
+        "name": "Astros",
+        "items": [
+          "Luis Castillo"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "2005",
+    "rightDate": "2005",
+    "phase": "",
+    "teams": [
+      {
+        "name": "Orioles",
+        "items": [
+          "Carlos Beltran",
+          "Royals DP (1st)"
+        ]
+      },
+      {
+        "name": "Royals",
+        "items": [
+          "Steve Finley",
+          "Curt Schilling",
+          "Jeff Suppan"
+        ]
+      },
+      {
+        "name": "Cubs",
+        "items": [
+          "Cardinals DP (3rd)"
+        ]
+      },
+      {
+        "name": "Cardinals",
+        "items": [
+          "So Taguchi"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "2005",
+    "rightDate": "2005",
+    "phase": "",
+    "teams": [
+      {
+        "name": "Mets",
+        "items": [
+          "Victor Zambrano",
+          "Julian Tavarez"
+        ]
+      },
+      {
+        "name": "White Sox",
+        "items": [
+          "Tim Wakefield",
+          "David Dellucci"
+        ]
+      },
+      {
+        "name": "Orioles",
+        "items": [
+          "Brian Roberts",
+          "Tigers DP (2nd)"
+        ]
+      },
+      {
+        "name": "Tigers",
+        "items": [
+          "Kevin Millwood",
+          "Jason LaRue"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "2005",
+    "rightDate": "2005",
+    "phase": "",
+    "teams": [
+      {
+        "name": "Cubs",
+        "items": [
+          "Armando Benitez",
+          "Royce Clayton"
+        ]
+      },
+      {
+        "name": "Mets",
+        "items": [
+          "Mike Piazza"
+        ]
+      },
+      {
+        "name": "Pirates",
+        "items": [
+          "Matt Morris",
+          "Kip Wells",
+          "Brad Lidge"
+        ]
+      },
+      {
+        "name": "White Sox",
+        "items": [
+          "Fred Garcia",
+          "Jon Garland",
+          "Orioles DP (1st)"
+        ]
+      }
+    ]
+  }
+]
