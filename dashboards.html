@@ -8,7 +8,7 @@
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:24px;background:#fff;color:#111}
     h1{margin:0 0 8px}
     .sub{color:#555;margin:0 0 18px}
-    ul{columns:2; column-gap:40px; padding-left:18px}
+    ul{padding-left:18px}
     li{break-inside:avoid; margin:8px 0}
     a{color:#DF4601; font-weight:700; text-decoration:none}
     a:hover{text-decoration:underline}
@@ -166,6 +166,90 @@ body::after {
 
 
 
+
+    /* Team list w/ logos */
+    ul.teamlist{
+      columns: 2;
+      column-gap: 40px;
+      padding-left: 0;
+      list-style: none;
+      margin: 0;
+    }
+    ul.teamlist li{
+      break-inside: avoid;
+      margin: 10px 0;
+      padding: 10px 12px;
+      border: 1px solid rgba(0,0,0,.14);
+      border-radius: 14px;
+      background: rgba(255,255,255,.82);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      box-shadow: 0 6px 16px rgba(0,0,0,.08);
+    }
+    ul.teamlist li:hover{
+      border-color: rgba(223,70,1,.55);
+      background: #fff7f2;
+    }
+    .tlogo{
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: rgba(0,0,0,.05);
+      border: 1px solid rgba(0,0,0,.12);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex: 0 0 auto;
+      overflow:hidden;
+    }
+    .tlogo img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display:block;
+    }
+    .tmeta{
+      display:flex;
+      flex-direction:column;
+      gap: 2px;
+      min-width: 0;
+    }
+    .tmeta .row1{
+      display:flex;
+      gap:10px;
+      align-items:baseline;
+      flex-wrap:wrap;
+      min-width: 0;
+    }
+    .tmeta .row2{
+      color:#333;
+      font-weight:800;
+    }
+    .tmeta a.team{
+      color:#DF4601;
+      font-weight:950;
+      text-decoration:none;
+    }
+    .tmeta a.team:hover{ text-decoration:underline; }
+    .mgr a{ color:#0b4a7d; font-weight:950; text-decoration:none; }
+    .mgr a:hover{ text-decoration:underline; }
+    .pillcode{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,.16);
+      background: rgba(11,74,125,.06);
+      color:#0b4a7d;
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing:.06em;
+      white-space:nowrap;
+    }
+    @media (max-width:900px){ ul.teamlist{columns:1} }
+
 </style>
 </head>
 <body style="position:relative; z-index:1;">
@@ -174,31 +258,247 @@ body::after {
 
   <p class="sub">Hitters/Pitchers + splits + Available Players for each team.</p>
 <p><a href="mailto:Gatormanddd@comcast.net,kmgordon8@gmail.com,cdhcomfort@msn.com,kimwcomfort@gmail.com,arient@charter.net,steinlit@gmail.com,bereamudcats@hotmail.com,snieroda@gmail.com,b.comfort@centurylink.net,jakecomfort1@gmail.com,kpcomfort7580@gmail.com,rjcalia23@gmail.com,benrcomfort@gmail.com,andydcomfort@gmail.com,m2t4@juno.com,vvcblas@yahoo.com,joelcomfort@icloud.com,fleming2244@yahoo.com,jlnorthway@gmail.com,jcomfort@zagmail.gonzaga.edu,redwingmick1@aol.com,jimwerschler@accesscomm.ca,brianaucoin35@gmail.com?subject=CBL League Wide Email">📧 League Wide Email</a></p>
-  <ul>
-    <li><a href="teams/ATN.html">Atlanta Braves (ATN)</a> — Manager: <a href="mailto:Gatormanddd@comcast.net">Don Decker</a></li>
-<li><a href="teams/BAA.html">Baltimore Orioles (BAA)</a> — Manager: <a href="mailto:kmgordon8@gmail.com">Kevin Gordon</a></li>
-<li><a href="teams/BOA.html">Boston Red Sox (BOA)</a> — Manager: <a href="mailto:cdhcomfort@msn.com">Cam Comfort</a></li>
-<li><a href="teams/CHA.html">Chicago White Sox (CHA)</a> — Manager: <a href="mailto:kimwcomfort@gmail.com">Kim Comfort</a></li>
-<li><a href="teams/CHN.html">Chicago Cubs (CHN)</a> — Manager: <a href="mailto:arient@charter.net">John Arient</a></li>
-<li><a href="teams/CIN.html">Cincinnati Reds (CIN)</a> — Manager: <a href="mailto:steinlit@gmail.com">David Steinman</a></li>
-<li><a href="teams/CLA.html">Cleveland Indians (CLA)</a> — Manager: <a href="mailto:bereamudcats@hotmail.com">Ken Atkins</a></li>
-<li><a href="teams/CON.html">Colorado Rockies (CON)</a> — Manager: <a href="mailto:snieroda@gmail.com">Steve Nieroda</a></li>
-<li><a href="teams/DEA.html">Detroit Tigers (DEA)</a> — Manager: <a href="mailto:b.comfort@centurylink.net">Brian Comfort</a></li>
-<li><a href="teams/KCA.html">Kansas City Royals (KCA)</a> — Manager: <a href="mailto:jakecomfort1@gmail.com">Jake Comfort</a></li>
-<li><a href="teams/LAA.html">Los Angeles Angels (LAA)</a> — Manager: <a href="mailto:kpcomfort7580@gmail.com">Kevin Comfort</a></li>
-<li><a href="teams/LAN.html">Los Angeles Dodgers (LAN)</a> — Manager: <a href="mailto:rjcalia23@gmail.com">Rob Calia</a></li>
-<li><a href="teams/MNA.html">Minnesota Twins (MNA)</a> — Manager: <a href="mailto:benrcomfort@gmail.com">Ben Comfort</a></li>
-<li><a href="teams/NYA.html">New York Yankees (NYA)</a> — Manager: <a href="mailto:andydcomfort@gmail.com">Andy Comfort</a></li>
-<li><a href="teams/NYN.html">New York Mets (NYN)</a> — Manager: <a href="mailto:m2t4@juno.com">Matt Slippy</a></li>
-<li><a href="teams/OAA.html">Oakland Athletics (OAA)</a> — Manager: <a href="mailto:vvcblas@yahoo.com">Chris Speer</a></li>
-<li><a href="teams/PHN.html">Philadelphia Phillies (PHN)</a> — Manager: <a href="mailto:joelcomfort@icloud.com">Joel Comfort</a></li>
-<li><a href="teams/PIN.html">Pittsburgh Pirates (PIN)</a> — Manager: <a href="mailto:fleming2244@yahoo.com">Steve Fleming</a></li>
-<li><a href="teams/SDN.html">San Diego Padres (SDN)</a> — Manager: OPEN</li>
-<li><a href="teams/SFN.html">San Francisco Giants (SFN)</a> — Manager: <a href="mailto:jlnorthway@gmail.com">Jason Northway</a></li>
-<li><a href="teams/SEA.html">Seattle Mariners (SEA)</a> — Manager: <a href="mailto:jcomfort@zagmail.gonzaga.edu">Josh Comfort</a></li>
-<li><a href="teams/SLN.html">St. Louis Cardinals (SLN)</a> — Manager: <a href="mailto:redwingmick1@aol.com">Mick Bauchan</a></li>
-<li><a href="teams/TOA.html">Toronto Blue Jays (TOA)</a> — Manager: <a href="mailto:jimwerschler@accesscomm.ca">Jim Werschler</a></li>
-<li><a href="teams/WAN.html">Washington Nationals (WAN)</a> — Manager: <a href="mailto:brianaucoin35@gmail.com">Brian Aucoin</a></li>
+  <ul class="teamlist">
+<li data-team="ATN">
+      <div class="tlogo"><img src="team-logos/ATN.png" alt="ATN logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/ATN.html">Atlanta Braves</a>
+          <span class="pillcode">ATN</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:Gatormanddd@comcast.net">Don Decker</a></span></div>
+      </div>
+    </li>
+<li data-team="BAA">
+      <div class="tlogo"><img src="team-logos/Baltimore.png" alt="BAA logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/BAA.html">Baltimore Orioles</a>
+          <span class="pillcode">BAA</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:kmgordon8@gmail.com">Kevin Gordon</a></span></div>
+      </div>
+    </li>
+<li data-team="BOA">
+      <div class="tlogo"><img src="team-logos/Boston.png" alt="BOA logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/BOA.html">Boston Red Sox</a>
+          <span class="pillcode">BOA</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:cdhcomfort@msn.com">Cam Comfort</a></span></div>
+      </div>
+    </li>
+<li data-team="CHA">
+      <div class="tlogo"><img src="team-logos/ChicagoWhiteSox.png" alt="CHA logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/CHA.html">Chicago White Sox</a>
+          <span class="pillcode">CHA</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:kimwcomfort@gmail.com">Kim Comfort</a></span></div>
+      </div>
+    </li>
+<li data-team="CHN">
+      <div class="tlogo"><img src="team-logos/ChicagoCubs.png" alt="CHN logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/CHN.html">Chicago Cubs</a>
+          <span class="pillcode">CHN</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:arient@charter.net">John Arient</a></span></div>
+      </div>
+    </li>
+<li data-team="CIN">
+      <div class="tlogo"><img src="team-logos/Cincinnati.png" alt="CIN logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/CIN.html">Cincinnati Reds</a>
+          <span class="pillcode">CIN</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:steinlit@gmail.com">David Steinman</a></span></div>
+      </div>
+    </li>
+<li data-team="CLA">
+      <div class="tlogo"><img src="team-logos/Cleveland.png" alt="CLA logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/CLA.html">Cleveland Indians</a>
+          <span class="pillcode">CLA</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:bereamudcats@hotmail.com">Ken Atkins</a></span></div>
+      </div>
+    </li>
+<li data-team="CON">
+      <div class="tlogo"><img src="team-logos/Colorado.png" alt="CON logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/CON.html">Colorado Rockies</a>
+          <span class="pillcode">CON</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:snieroda@gmail.com">Steve Nieroda</a></span></div>
+      </div>
+    </li>
+<li data-team="DEA">
+      <div class="tlogo"><img src="team-logos/Detroit.png" alt="DEA logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/DEA.html">Detroit Tigers</a>
+          <span class="pillcode">DEA</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:b.comfort@centurylink.net">Brian Comfort</a></span></div>
+      </div>
+    </li>
+<li data-team="KCA">
+      <div class="tlogo"><img src="team-logos/KansasCity.png" alt="KCA logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/KCA.html">Kansas City Royals</a>
+          <span class="pillcode">KCA</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:jakecomfort1@gmail.com">Jake Comfort</a></span></div>
+      </div>
+    </li>
+<li data-team="LAA">
+      <div class="tlogo"><img src="team-logos/LAAngels.png" alt="LAA logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/LAA.html">Los Angeles Angels</a>
+          <span class="pillcode">LAA</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:kpcomfort7580@gmail.com">Kevin Comfort</a></span></div>
+      </div>
+    </li>
+<li data-team="LAN">
+      <div class="tlogo"><img src="team-logos/LADodgers.png" alt="LAN logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/LAN.html">Los Angeles Dodgers</a>
+          <span class="pillcode">LAN</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:rjcalia23@gmail.com">Rob Calia</a></span></div>
+      </div>
+    </li>
+<li data-team="MNA">
+      <div class="tlogo"><img src="team-logos/Minnesota.png" alt="MNA logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/MNA.html">Minnesota Twins</a>
+          <span class="pillcode">MNA</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:benrcomfort@gmail.com">Ben Comfort</a></span></div>
+      </div>
+    </li>
+<li data-team="NYA">
+      <div class="tlogo"><img src="team-logos/NYYankees.png" alt="NYA logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/NYA.html">New York Yankees</a>
+          <span class="pillcode">NYA</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:andydcomfort@gmail.com">Andy Comfort</a></span></div>
+      </div>
+    </li>
+<li data-team="NYN">
+      <div class="tlogo"><img src="team-logos/NYMets.png" alt="NYN logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/NYN.html">New York Mets</a>
+          <span class="pillcode">NYN</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:m2t4@juno.com">Matt Slippy</a></span></div>
+      </div>
+    </li>
+<li data-team="OAA">
+      <div class="tlogo"><img src="team-logos/Oakland.png" alt="OAA logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/OAA.html">Oakland Athletics</a>
+          <span class="pillcode">OAA</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:vvcblas@yahoo.com">Chris Speer</a></span></div>
+      </div>
+    </li>
+<li data-team="PHN">
+      <div class="tlogo"><img src="team-logos/Philadelphia.png" alt="PHN logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/PHN.html">Philadelphia Phillies</a>
+          <span class="pillcode">PHN</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:joelcomfort@icloud.com">Joel Comfort</a></span></div>
+      </div>
+    </li>
+<li data-team="PIN">
+      <div class="tlogo"><img src="team-logos/Pittsburgh.png" alt="PIN logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/PIN.html">Pittsburgh Pirates</a>
+          <span class="pillcode">PIN</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:fleming2244@yahoo.com">Steve Fleming</a></span></div>
+      </div>
+    </li>
+<li data-team="SDN">
+      <div class="tlogo"><img src="team-logos/SanDiego.png" alt="SDN logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/SDN.html">San Diego Padres</a>
+          <span class="pillcode">SDN</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr">OPEN</span></div>
+      </div>
+    </li>
+<li data-team="SFN">
+      <div class="tlogo"><img src="team-logos/SanFrancisco.png" alt="SFN logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/SFN.html">San Francisco Giants</a>
+          <span class="pillcode">SFN</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:jlnorthway@gmail.com">Jason Northway</a></span></div>
+      </div>
+    </li>
+<li data-team="SEA">
+      <div class="tlogo"><img src="team-logos/Seattle.png" alt="SEA logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/SEA.html">Seattle Mariners</a>
+          <span class="pillcode">SEA</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:jcomfort@zagmail.gonzaga.edu">Josh Comfort</a></span></div>
+      </div>
+    </li>
+<li data-team="SLN">
+      <div class="tlogo"><img src="team-logos/StLouis.png" alt="SLN logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/SLN.html">St. Louis Cardinals</a>
+          <span class="pillcode">SLN</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:redwingmick1@aol.com">Mick Bauchan</a></span></div>
+      </div>
+    </li>
+<li data-team="TOA">
+      <div class="tlogo"><img src="team-logos/Toronto.png" alt="TOA logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/TOA.html">Toronto Blue Jays</a>
+          <span class="pillcode">TOA</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:jimwerschler@accesscomm.ca">Jim Werschler</a></span></div>
+      </div>
+    </li>
+<li data-team="WAN">
+      <div class="tlogo"><img src="team-logos/Washington.png" alt="WAN logo" onerror="this.style.display='none'"></div>
+      <div class="tmeta">
+        <div class="row1">
+          <a class="team" href="teams/WAN.html">Washington Nationals</a>
+          <span class="pillcode">WAN</span>
+        </div>
+        <div class="row2">Manager: <span class="mgr"><a href="mailto:brianaucoin35@gmail.com">Brian Aucoin</a></span></div>
+      </div>
+    </li>
   </ul>
 <script>
     // highlight active team in league nav
