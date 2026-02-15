@@ -1,1 +1,1723 @@
-[]
+[
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Orioles",
+        "items": [
+          "Tor Thomas,Frank",
+          "Nym Feliciano,Pedro"
+        ]
+      },
+      {
+        "name": "Padres",
+        "items": [
+          "Fla Jacobs,Mike",
+          "Tex Cruz,Nelson"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Indians",
+        "items": [
+          "Col Cook,Aaron",
+          "DP Nym # 4"
+        ]
+      },
+      {
+        "name": "Mets",
+        "items": [
+          "Nym Milledge,Lasting",
+          "Nym Heilman,Aaron"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Nationals",
+        "items": [
+          "DP Chc # 5"
+        ]
+      },
+      {
+        "name": "Cubs",
+        "items": [
+          "Sea Vidro,Jose"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Nationals",
+        "items": [
+          "DP Nym # 3"
+        ]
+      },
+      {
+        "name": "Mets",
+        "items": [
+          "Sea Weaver,Jeff",
+          "Tex Wilkerson,Brad"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Pirates",
+        "items": [
+          "DP KC # 3"
+        ]
+      },
+      {
+        "name": "Royals",
+        "items": [
+          "KC Grudzielanek,Mark"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Indians",
+        "items": [
+          "DP Nyy # 1",
+          "DP Bal # 1"
+        ]
+      },
+      {
+        "name": "Padres",
+        "items": [
+          "SD Kouzmanoff,Kevin",
+          "DP Cle # 2"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Nationals",
+        "items": [
+          "Was Johnson,Nick",
+          "DP SD # 8"
+        ]
+      },
+      {
+        "name": "Padres",
+        "items": [
+          "DP Was # 2"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Cardinals",
+        "items": [
+          "Ari Young,Chris"
+        ]
+      },
+      {
+        "name": "Tigers",
+        "items": [
+          "Atl Hudson,Tim"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Cubs",
+        "items": [
+          "Tex Wilson,Chris"
+        ]
+      },
+      {
+        "name": "Reds",
+        "items": [
+          "Cin Conine,Jeff"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Indians",
+        "items": [
+          "Cin Hooper,Norris"
+        ]
+      },
+      {
+        "name": "Mariners",
+        "items": [
+          "Nym Pelfrey,Mike",
+          "DP Bal # 1"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Red Sox",
+        "items": [
+          "Nyy Posada,Jorge",
+          "Bos Schilling,Curt"
+        ]
+      },
+      {
+        "name": "Mariners",
+        "items": [
+          "Htn Berkman,Lance",
+          "Col Hirsh,Jason"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Reds",
+        "items": [
+          "Cin Hatteberg,Scott",
+          "Ari Davis,Doug",
+          "DP NYY # 1"
+        ]
+      },
+      {
+        "name": "Indians",
+        "items": [
+          "Tor Stairs,Matt",
+          "DP Cin # 1",
+          "DP Cin # 3"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "A's",
+        "items": [
+          "DP Stl # 5"
+        ]
+      },
+      {
+        "name": "Padres",
+        "items": [
+          "TB Jackson,Edwin"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Phillies",
+        "items": [
+          "Col Lopez,Rodrigo",
+          "DP LA # 3"
+        ]
+      },
+      {
+        "name": "Dodgers",
+        "items": [
+          "LA Gonzalez,Luis",
+          "DP Phi # 6"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Cardinals",
+        "items": [
+          "Nym Green,Shawn",
+          "Stl Branyan,Russ",
+          "DP Stl # 4"
+        ]
+      },
+      {
+        "name": "Padres",
+        "items": [
+          "Stl Carpenter,Chris",
+          "Bos Varitek,Jason"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Red Sox",
+        "items": [
+          "DP LA # 1"
+        ]
+      },
+      {
+        "name": "Dodgers",
+        "items": [
+          "Cin Arroyo,Bronson"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Cubs",
+        "items": [
+          "Chc Trachsel,Steve"
+        ]
+      },
+      {
+        "name": "Dodgers",
+        "items": [
+          "Oak Scutaro,Marcus"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Indians",
+        "items": [
+          "Mil Hart,Corey"
+        ]
+      },
+      {
+        "name": "Astros",
+        "items": [
+          "DP Cle # 1"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Cardinals",
+        "items": [
+          "Stl Eckstein,David"
+        ]
+      },
+      {
+        "name": "Orioles",
+        "items": [
+          "DP SD # 2",
+          "DP Stl # 2"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Phillies",
+        "items": [
+          "Phi Bourn,Michael"
+        ]
+      },
+      {
+        "name": "Astros",
+        "items": [
+          "Htn Wheeler,Dan"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Twins",
+        "items": [
+          "Min Perkins,Glenn"
+        ]
+      },
+      {
+        "name": "Red Sox",
+        "items": [
+          "DP Min # 1"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Indians",
+        "items": [
+          "Nym Hernandez,Orlando"
+        ]
+      },
+      {
+        "name": "Braves",
+        "items": [
+          "DP Cin # 1"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Mets",
+        "items": [
+          "Bos Varitek,Jason",
+          "Oak Embree,Alan"
+        ]
+      },
+      {
+        "name": "Padres",
+        "items": [
+          "Ana Matthews,Gary",
+          "Cle Nixon,Trot",
+          "DP Nym # 8"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Dodgers",
+        "items": [
+          "LA Hendrickson,Mark"
+        ]
+      },
+      {
+        "name": "Blue Jays",
+        "items": [
+          "DP LA # 5"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Cubs",
+        "items": [
+          "Col Hawpe,Brad"
+        ]
+      },
+      {
+        "name": "Angels",
+        "items": [
+          "Htn Rodriguez,Wandy"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Nationals",
+        "items": [
+          "Nym Castillo,Luis"
+        ]
+      },
+      {
+        "name": "Angels",
+        "items": [
+          "Ana Saunders,Joe"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Astros",
+        "items": [
+          "DP Phi # 1"
+        ]
+      },
+      {
+        "name": "Phillies",
+        "items": [
+          "Nyy Pettitte,Andy"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Pirates",
+        "items": [
+          "Cle Hafner,Travis"
+        ]
+      },
+      {
+        "name": "Phillies",
+        "items": [
+          "Phi Myers,Bret",
+          "Atl Gonzalez,Mike",
+          "DP Pit # 2"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Red Sox",
+        "items": [
+          "Bos Lowell,Mike",
+          "DP Stl # 4"
+        ]
+      },
+      {
+        "name": "Cardinals",
+        "items": [
+          "Col Jimenez,Ubaldo",
+          "DP Bos # 1",
+          "DP Bos # 2",
+          "DP Bos # 7"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Mets",
+        "items": [
+          "Det Rogers,Kenny"
+        ]
+      },
+      {
+        "name": "Yankees",
+        "items": [
+          "Nyy Molina,Jose"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Dodgers",
+        "items": [
+          "Sea Broussard,Ben"
+        ]
+      },
+      {
+        "name": "Twins",
+        "items": [
+          "DP LA # 4"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "11/27/2007",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Phillies",
+        "items": [
+          "Cin Griffey,Ken",
+          "DP Atl # 8"
+        ]
+      },
+      {
+        "name": "Braves",
+        "items": [
+          "Stl Rolen,Scott",
+          "Atl Gonzalez,Mike"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Pirates",
+        "items": [
+          "Col Corpas,Manny"
+        ]
+      },
+      {
+        "name": "Twins",
+        "items": [
+          "Pit Bautista,Jose"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Phillies",
+        "items": [
+          "Min Redmond,Mike"
+        ]
+      },
+      {
+        "name": "Cubs",
+        "items": [
+          "Col Lopez,Rodrigo"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Phillies",
+        "items": [
+          "Cin Freel,Ryan"
+        ]
+      },
+      {
+        "name": "A's",
+        "items": [
+          "DP Phi # 7"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Dodgers",
+        "items": [
+          "LA Wells,David"
+        ]
+      },
+      {
+        "name": "Padres",
+        "items": [
+          "SD Tomko,Brett"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Dodgers",
+        "items": [
+          "DP Htn # 3"
+        ]
+      },
+      {
+        "name": "Astros",
+        "items": [
+          "Col Matsui,Kazuo"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Phillies",
+        "items": [
+          "Phi Moyer,Jamie",
+          "DP Sea # 2"
+        ]
+      },
+      {
+        "name": "Mariners",
+        "items": [
+          "Chw Dye,Jermaine"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Orioles",
+        "items": [
+          "Bos Gagne,Eric"
+        ]
+      },
+      {
+        "name": "Indians",
+        "items": [
+          "DP Bal # 2"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Orioles",
+        "items": [
+          "Bal Hernandez,Ramon"
+        ]
+      },
+      {
+        "name": "Indians",
+        "items": [
+          "DP Bal # 3"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Orioles",
+        "items": [
+          "Mil Hardy,J.J."
+        ]
+      },
+      {
+        "name": "Astros",
+        "items": [
+          "Sea Beltre,Adrian"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Astros",
+        "items": [
+          "DP Was # 1",
+          "DP Nym # 1"
+        ]
+      },
+      {
+        "name": "Nationals",
+        "items": [
+          "DP Htn # 1"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Astros",
+        "items": [
+          "Ana Santana,Ervin"
+        ]
+      },
+      {
+        "name": "Angels",
+        "items": [
+          "DP Phi # 1"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Giants",
+        "items": [
+          "SF Frandsen,Kevin"
+        ]
+      },
+      {
+        "name": "Red Sox",
+        "items": [
+          "DP SF # 3"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Giants",
+        "items": [
+          "NYM Castillo,Luis",
+          "DP SD # 8"
+        ]
+      },
+      {
+        "name": "Nationals",
+        "items": [
+          "Was Lopez,Felipe",
+          "DP SF # 2"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Reds",
+        "items": [
+          "LA Pierre,Juan"
+        ]
+      },
+      {
+        "name": "Angels",
+        "items": [
+          "DP Nyy # 1"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Braves",
+        "items": [
+          "Cle Barfield,Josh"
+        ]
+      },
+      {
+        "name": "Padres",
+        "items": [
+          "Stl Edmonds,Jim"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Orioles",
+        "items": [
+          "Stl Springer,Russ"
+        ]
+      },
+      {
+        "name": "Mariners",
+        "items": [
+          "DP Stl # 2"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Dodgers",
+        "items": [
+          "Nym Delgado,Carlos"
+        ]
+      },
+      {
+        "name": "Mariners",
+        "items": [
+          "Cle Gutierrez,Franklin"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Astros",
+        "items": [
+          "DP Bal # 7"
+        ]
+      },
+      {
+        "name": "Orioles",
+        "items": [
+          "Fla Olivo,Miguel"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Twins",
+        "items": [
+          "DP Phi # 1",
+          "DP Ana # 1"
+        ]
+      },
+      {
+        "name": "Angels",
+        "items": [
+          "Min Hunter,Tori"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Mets",
+        "items": [
+          "Mil Graffanino,Tony",
+          "DP LA # 8"
+        ]
+      },
+      {
+        "name": "Dodgers",
+        "items": [
+          "DP Nym # 6"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Mets",
+        "items": [
+          "SF Roberts,Dave"
+        ]
+      },
+      {
+        "name": "Pirates",
+        "items": [
+          "Fla Gregg,Kevin"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Twins",
+        "items": [
+          "Htn Everett,Adam",
+          "KC Peralta,Joel",
+          "DP Cin # 4"
+        ]
+      },
+      {
+        "name": "Reds",
+        "items": [
+          "Min Bartlett,Jason"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Nationals",
+        "items": [
+          "DP KC # 6"
+        ]
+      },
+      {
+        "name": "Royals",
+        "items": [
+          "Was Logan,Nook"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Astros",
+        "items": [
+          "Htn Williams,Woody"
+        ]
+      },
+      {
+        "name": "Royals",
+        "items": [
+          "DP Htn # 5"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Phillies",
+        "items": [
+          "Col Taveras,Willy",
+          "Mil Sheets,Ben"
+        ]
+      },
+      {
+        "name": "Yankees",
+        "items": [
+          "Cin Griffey,Ken",
+          "Nyy Pettitte,Andy",
+          "Nym Martinez,Pedro"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Nationals",
+        "items": [
+          "DP Phi # 4"
+        ]
+      },
+      {
+        "name": "Phillies",
+        "items": [
+          "Chc Wood,Kerry"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Indians",
+        "items": [
+          "DP LA # 6"
+        ]
+      },
+      {
+        "name": "Dodgers",
+        "items": [
+          "Bos Lugo,Julio"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Mets",
+        "items": [
+          "DP Det # 6"
+        ]
+      },
+      {
+        "name": "Tigers",
+        "items": [
+          "Det Rogers,Kenny"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Cubs",
+        "items": [
+          "DP Cin # 2",
+          "DP Nyy # 2"
+        ]
+      },
+      {
+        "name": "Yankees",
+        "items": [
+          "Nyy Damon,Johnny",
+          "Nyy Clemens,Roger"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Orioles",
+        "items": [
+          "DP Det # 5"
+        ]
+      },
+      {
+        "name": "Tigers",
+        "items": [
+          "Cle Gomez,Chris"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Reds",
+        "items": [
+          "Cin Valentin,Javier"
+        ]
+      },
+      {
+        "name": "Tigers",
+        "items": [
+          "DP Cin # 5"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Tigers",
+        "items": [
+          "DP KC # 2"
+        ]
+      },
+      {
+        "name": "Royals",
+        "items": [
+          "Ana Speier,Justin",
+          "DP Det # 7"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "1/15/2008",
+    "rightDate": "",
+    "phase": "Pre-Draft",
+    "teams": [
+      {
+        "name": "Indians",
+        "items": [
+          "DP Cle # 7"
+        ]
+      },
+      {
+        "name": "Mets",
+        "items": [
+          "LA Wolf,Randy"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Mets",
+        "items": [
+          "SD Cameron,Mike",
+          "DP SD # 8"
+        ]
+      },
+      {
+        "name": "Padres",
+        "items": [
+          "Chc Floyd,Cliff",
+          "DP Nym # 4",
+          "DP Nym # 5"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Mets",
+        "items": [
+          "Phi Rowand,Aaron",
+          "Was Redding,Tim"
+        ]
+      },
+      {
+        "name": "Nationals",
+        "items": [
+          "Nym Milledge,Lastings",
+          "Nym Gomez,Chris",
+          "DP Nym #1",
+          "DP Nym # 3"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Tigers",
+        "items": [
+          "Bos Gonzalez,Alex",
+          "DP Nym # 1"
+        ]
+      },
+      {
+        "name": "Nationals",
+        "items": [
+          "LA Furcal,Rafael"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Cubs",
+        "items": [
+          "Htn Sampson,Chris",
+          "Oak Johnson,Dan"
+        ]
+      },
+      {
+        "name": "Indians",
+        "items": [
+          "Tex Murphy,David"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Cubs",
+        "items": [
+          "Chc Dempster,Ryan"
+        ]
+      },
+      {
+        "name": "Astros",
+        "items": [
+          "DP Chc # 3",
+          "DP Chc # 8"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Orioles",
+        "items": [
+          "Fla Gardner,Lee",
+          "Htn Scott,Luke"
+        ]
+      },
+      {
+        "name": "Astros",
+        "items": [
+          "Chc Dempster,Ryan",
+          "DP Bal # 1",
+          "DP Bal # 6"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Nationals",
+        "items": [
+          "Nym Smith,Joe"
+        ]
+      },
+      {
+        "name": "Phillies",
+        "items": [
+          "DP Was # 8"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Orioles",
+        "items": [
+          "Htn Albers,Matt",
+          "Was Colome,Jesus",
+          "Phi Helms,Wes"
+        ]
+      },
+      {
+        "name": "Pirates",
+        "items": [
+          "Tex Wright,Jamey",
+          "DP Bal # 4"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Reds",
+        "items": [
+          "Tor Wolfe,Brian"
+        ]
+      },
+      {
+        "name": "Pirates",
+        "items": [
+          "DP Cin # 3"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Phillies",
+        "items": [
+          "Phi Dobbs,Greg"
+        ]
+      },
+      {
+        "name": "Twins",
+        "items": [
+          "DP Phi # 3"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Yankees",
+        "items": [
+          "Tex Metcalf,Travis"
+        ]
+      },
+      {
+        "name": "Twins",
+        "items": [
+          "Nyy Clemens,Roger"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Angels",
+        "items": [
+          "Chw Garland,Jon",
+          "Ari Callaspo,Alberto"
+        ]
+      },
+      {
+        "name": "White Sox",
+        "items": [
+          "Col Morales,Franklin",
+          "Col Fogg,Josh",
+          "Mil Mench,Kevin",
+          "DP Ana # 1"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Phillies",
+        "items": [
+          "Htn Biggio,Craig",
+          "Htn Lidge,Brad",
+          "Fla Willingham,Josh"
+        ]
+      },
+      {
+        "name": "Astros",
+        "items": [
+          "Phi Bourn,Michael",
+          "DP Phi # 1",
+          "DP Phi # 8"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Mets",
+        "items": [
+          "Nyy Mussina,Mike",
+          "Nym Alou,Moises"
+        ]
+      },
+      {
+        "name": "Braves",
+        "items": [
+          "Atl Glavine,Tom",
+          "SD Ensberg,Morgan",
+          "Oak Kotasy,Mark"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Cardinals",
+        "items": [
+          "Bos Drew,JD",
+          "Sea Balentien,Wladimir",
+          "Ari Montero,Miguel"
+        ]
+      },
+      {
+        "name": "Pirates",
+        "items": [
+          "Tex Saltalamacchia,Jarrod",
+          "Det Jurrjens,Jair",
+          "Stl Taguchi,So",
+          "Stl Encarnacion,Juan"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Giants",
+        "items": [
+          "Fla Gregg,Kevin"
+        ]
+      },
+      {
+        "name": "Pirates",
+        "items": [
+          "DP SF # 1"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Cardinals",
+        "items": [
+          "Ari Drew,Stephen",
+          "DP Bal # 2"
+        ]
+      },
+      {
+        "name": "Orioles",
+        "items": [
+          "Stl Isringhausen,Jason",
+          "Col Jimenez,Ubaldo",
+          "DP Stl # 1"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Cardinals",
+        "items": [
+          "TB Harris,Brendan"
+        ]
+      },
+      {
+        "name": "Giants",
+        "items": [
+          "Stl Eckstein,David",
+          "Sea Balentien,Wladimir"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Pirates",
+        "items": [
+          "DP Min # 4"
+        ]
+      },
+      {
+        "name": "Phillies",
+        "items": [
+          "Fla Boone,Aaron"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Pirates",
+        "items": [
+          "Stl Pujols,Albert",
+          "DP Stl # 3"
+        ]
+      },
+      {
+        "name": "Cardinals",
+        "items": [
+          "Tor Overbya,Lyle",
+          "TB Dukes,Elijah",
+          "Det Jurrjens,Jair",
+          "DP Pit # 1",
+          "DP SF # 1"
+        ]
+      }
+    ]
+  },
+  {
+    "leftDate": "3/18/2008",
+    "rightDate": "",
+    "phase": "Post Draft",
+    "teams": [
+      {
+        "name": "Indians",
+        "items": [
+          "DP Chc # 4"
+        ]
+      },
+      {
+        "name": "Cubs",
+        "items": [
+          "LA Seanez,Rudy"
+        ]
+      }
+    ]
+  }
+]
