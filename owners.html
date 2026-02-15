@@ -10,6 +10,21 @@
     a:hover{text-decoration:underline}
     .card{max-width:920px;margin:0 auto;border:1px solid rgba(0,0,0,.12);border-radius:16px;padding:18px;box-shadow:0 12px 28px rgba(0,0,0,.10)}
     .muted{color:#555;font-weight:700}
+    .table-wrap{overflow:auto;border:1px solid rgba(0,0,0,.10);border-radius:14px}
+    table.owners{
+            width:100%;
+            border-collapse:collapse;
+            background:#fff;
+            table-layout:fixed;
+        }
+    table.owners thead th{position:sticky;top:0;background:#f7f7f7;border-bottom:1px solid rgba(0,0,0,.12);text-align:left;padding:10px 12px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+    table.owners tbody td{border-bottom:1px solid rgba(0,0,0,.08);padding:10px 12px;vertical-align:top;font-weight:700}
+    table.owners tbody tr:hover{background:#fbfbfb}
+    td.div{color:#444;font-weight:900}
+    td.team{font-weight:900}
+    td.email, td.mgr{font-weight:800}
+    .na{color:#777;font-weight:800}
+    @media (max-width:640px){table.owners thead{display:none} table.owners, table.owners tbody, table.owners tr, table.owners td{display:block;width:100%} table.owners tr{border-bottom:1px solid rgba(0,0,0,.12)} table.owners tbody td{border-bottom:none} table.owners tbody td::before{content:attr(data-label);display:block;color:#666;font-weight:900;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}}
   </style>
 </head>
 <body>
@@ -17,8 +32,180 @@
     <h1 style="margin:0 0 8px;">Owners</h1>
     <p class="muted">League Owners & Contact Information</p>
 <p><a href="mailto:Gatormanddd@comcast.net,kmgordon8@gmail.com,cdhcomfort@msn.com,kimwcomfort@gmail.com,arient@charter.net,steinlit@gmail.com,bereamudcats@hotmail.com,snieroda@gmail.com,b.comfort@centurylink.net,jakecomfort1@gmail.com,kpcomfort7580@gmail.com,rjcalia23@gmail.com,benrcomfort@gmail.com,andydcomfort@gmail.com,m2t4@juno.com,vvcblas@yahoo.com,joelcomfort@icloud.com,fleming2244@yahoo.com,jlnorthway@gmail.com,jcomfort@zagmail.gonzaga.edu,redwingmick1@aol.com,jimwerschler@accesscomm.ca,brianaucoin35@gmail.com?subject=CBL League Wide Email">📧 League Wide Email</a></p>
-    <p><a href="index.html">← Back to Home</a> &nbsp;|&nbsp; <a href="dashboards.html">Dashboards</a><a class="teamlink" href="CBL_Free_Agent_Pool.html">Free Agent Pool</a></p>
-  <hr><h3>League Contacts</h3><ul><li><strong>Don Decker</strong> — <a href="mailto:Gatormanddd@comcast.net">Gatormanddd@comcast.net</a></li><li><strong>Kevin Gordon</strong> — <a href="mailto:kmgordon8@gmail.com">kmgordon8@gmail.com</a></li><li><strong>Cam Comfort</strong> — <a href="mailto:cdhcomfort@msn.com">cdhcomfort@msn.com</a></li><li><strong>Kim Comfort</strong> — <a href="mailto:kimwcomfort@gmail.com">kimwcomfort@gmail.com</a></li><li><strong>John Arient</strong> — <a href="mailto:arient@charter.net">arient@charter.net</a></li><li><strong>David Steinman</strong> — <a href="mailto:steinlit@gmail.com">steinlit@gmail.com</a></li><li><strong>Ken Atkins</strong> — <a href="mailto:bereamudcats@hotmail.com">bereamudcats@hotmail.com</a></li><li><strong>Steve Nieroda</strong> — <a href="mailto:snieroda@gmail.com">snieroda@gmail.com</a></li><li><strong>Brian Comfort</strong> — <a href="mailto:b.comfort@centurylink.net">b.comfort@centurylink.net</a></li><li><strong>Jake Comfort</strong> — <a href="mailto:jakecomfort1@gmail.com">jakecomfort1@gmail.com</a></li><li><strong>Kevin Comfort</strong> — <a href="mailto:kpcomfort7580@gmail.com">kpcomfort7580@gmail.com</a></li><li><strong>Rob Calia</strong> — <a href="mailto:rjcalia23@gmail.com">rjcalia23@gmail.com</a></li><li><strong>Ben Comfort</strong> — <a href="mailto:benrcomfort@gmail.com">benrcomfort@gmail.com</a></li><li><strong>Andy Comfort</strong> — <a href="mailto:andydcomfort@gmail.com">andydcomfort@gmail.com</a></li><li><strong>Matt Slippy</strong> — <a href="mailto:m2t4@juno.com">m2t4@juno.com</a></li><li><strong>Chris Speer</strong> — <a href="mailto:vvcblas@yahoo.com">vvcblas@yahoo.com</a></li><li><strong>Joel Comfort</strong> — <a href="mailto:joelcomfort@icloud.com">joelcomfort@icloud.com</a></li><li><strong>Steve Fleming</strong> — <a href="mailto:fleming2244@yahoo.com">fleming2244@yahoo.com</a></li><li><strong>Jason Northway</strong> — <a href="mailto:jlnorthway@gmail.com">jlnorthway@gmail.com</a></li><li><strong>Josh Comfort</strong> — <a href="mailto:jcomfort@zagmail.gonzaga.edu">jcomfort@zagmail.gonzaga.edu</a></li><li><strong>Mick Bauchan</strong> — <a href="mailto:redwingmick1@aol.com">redwingmick1@aol.com</a></li><li><strong>Jim Werschler</strong> — <a href="mailto:jimwerschler@accesscomm.ca">jimwerschler@accesscomm.ca</a></li><li><strong>Brian Aucoin</strong> — <a href="mailto:brianaucoin35@gmail.com">brianaucoin35@gmail.com</a></li></ul>
-</div>
-</body>
+    <p><a href="index.html">← Back to Home</a> &nbsp;|&nbsp; </p>
+  <hr><h3 style="margin-top:30px;border-bottom:2px solid #222;padding-bottom:6px;">AL East</h3><table class="owners">
+    <colgroup>
+        <col style="width:30%">
+        <col style="width:35%">
+        <col style="width:35%">
+    </colgroup><thead><tr><th>Team</th><th>Manager</th><th>Email</th></tr></thead><tbody>
+        <tr>
+            <td><strong>Blue Jays</strong></td>
+            <td><a href="mailto:jimwerschler@accesscomm.ca">Jim Werschler</a></td>
+            <td><a href="mailto:jimwerschler@accesscomm.ca">jimwerschler@accesscomm.ca</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Orioles</strong></td>
+            <td><a href="mailto:kmgordon8@gmail.com">Kevin Gordon</a></td>
+            <td><a href="mailto:kmgordon8@gmail.com">kmgordon8@gmail.com</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Red Sox</strong></td>
+            <td><a href="mailto:cdhcomfort@msn.com">Cam Comfort</a></td>
+            <td><a href="mailto:cdhcomfort@msn.com">cdhcomfort@msn.com</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Yankees</strong></td>
+            <td><a href="mailto:andydcomfort@gmail.com">Andy Comfort</a></td>
+            <td><a href="mailto:andydcomfort@gmail.com">andydcomfort@gmail.com</a></td>
+        </tr>
+        </tbody></table><h3 style="margin-top:30px;border-bottom:2px solid #222;padding-bottom:6px;">AL Central</h3><table class="owners">
+    <colgroup>
+        <col style="width:30%">
+        <col style="width:35%">
+        <col style="width:35%">
+    </colgroup><thead><tr><th>Team</th><th>Manager</th><th>Email</th></tr></thead><tbody>
+        <tr>
+            <td><strong>Guardians</strong></td>
+            <td><a href="mailto:bereamudcats@hotmail.com">Ken Atkins</a></td>
+            <td><a href="mailto:bereamudcats@hotmail.com">bereamudcats@hotmail.com</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>White Sox</strong></td>
+            <td><a href="mailto:kimwcomfort@gmail.com">Kim Comfort</a></td>
+            <td><a href="mailto:kimwcomfort@gmail.com">kimwcomfort@gmail.com</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Tigers</strong></td>
+            <td><a href="mailto:b.comfort@centurylink.net">Brian Comfort</a></td>
+            <td><a href="mailto:b.comfort@centurylink.net">b.comfort@centurylink.net</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Twins</strong></td>
+            <td><a href="mailto:benrcomfort@gmail.com">Ben Comfort</a></td>
+            <td><a href="mailto:benrcomfort@gmail.com">benrcomfort@gmail.com</a></td>
+        </tr>
+        </tbody></table><h3 style="margin-top:30px;border-bottom:2px solid #222;padding-bottom:6px;">AL West</h3><table class="owners">
+    <colgroup>
+        <col style="width:30%">
+        <col style="width:35%">
+        <col style="width:35%">
+    </colgroup><thead><tr><th>Team</th><th>Manager</th><th>Email</th></tr></thead><tbody>
+        <tr>
+            <td><strong>Mariners</strong></td>
+            <td><a href="mailto:jcomfort@zagmail.gonzaga.edu">Josh Comfort</a></td>
+            <td><a href="mailto:jcomfort@zagmail.gonzaga.edu">jcomfort@zagmail.gonzaga.edu</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Angels</strong></td>
+            <td><a href="mailto:kpcomfort7580@gmail.com">Kevin Comfort</a></td>
+            <td><a href="mailto:kpcomfort7580@gmail.com">kpcomfort7580@gmail.com</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>A's</strong></td>
+            <td><a href="mailto:vvcblas@yahoo.com">Chris Speer</a></td>
+            <td><a href="mailto:vvcblas@yahoo.com">vvcblas@yahoo.com</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Royals</strong></td>
+            <td><a href="mailto:jakecomfort1@gmail.com">Jake Comfort</a></td>
+            <td><a href="mailto:jakecomfort1@gmail.com">jakecomfort1@gmail.com</a></td>
+        </tr>
+        </tbody></table><h3 style="margin-top:30px;border-bottom:2px solid #222;padding-bottom:6px;">NL East</h3><table class="owners">
+    <colgroup>
+        <col style="width:30%">
+        <col style="width:35%">
+        <col style="width:35%">
+    </colgroup><thead><tr><th>Team</th><th>Manager</th><th>Email</th></tr></thead><tbody>
+        <tr>
+            <td><strong>Nationals</strong></td>
+            <td><a href="mailto:brianaucoin35@gmail.com">Brian Aucoin</a></td>
+            <td><a href="mailto:brianaucoin35@gmail.com">brianaucoin35@gmail.com</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Mets</strong></td>
+            <td><a href="mailto:m2t4@juno.com">Matt Slippy</a></td>
+            <td><a href="mailto:m2t4@juno.com">m2t4@juno.com</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Braves</strong></td>
+            <td><a href="mailto:Gatormanddd@comcast.net">Don Decker</a></td>
+            <td><a href="mailto:Gatormanddd@comcast.net">Gatormanddd@comcast.net</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Phillies</strong></td>
+            <td><a href="mailto:joelcomfort@icloud.com">Joel Comfort</a></td>
+            <td><a href="mailto:joelcomfort@icloud.com">joelcomfort@icloud.com</a></td>
+        </tr>
+        </tbody></table><h3 style="margin-top:30px;border-bottom:2px solid #222;padding-bottom:6px;">NL Central</h3><table class="owners">
+    <colgroup>
+        <col style="width:30%">
+        <col style="width:35%">
+        <col style="width:35%">
+    </colgroup><thead><tr><th>Team</th><th>Manager</th><th>Email</th></tr></thead><tbody>
+        <tr>
+            <td><strong>Cubs</strong></td>
+            <td><a href="mailto:arient@charter.net">John Arient</a></td>
+            <td><a href="mailto:arient@charter.net">arient@charter.net</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Reds</strong></td>
+            <td><a href="mailto:steinlit@gmail.com">David Steinman</a></td>
+            <td><a href="mailto:steinlit@gmail.com">steinlit@gmail.com</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Pirates</strong></td>
+            <td><a href="mailto:fleming2244@yahoo.com">Steve Fleming</a></td>
+            <td><a href="mailto:fleming2244@yahoo.com">fleming2244@yahoo.com</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Cardinals</strong></td>
+            <td><a href="mailto:redwingmick1@aol.com">Mick Bauchan</a></td>
+            <td><a href="mailto:redwingmick1@aol.com">redwingmick1@aol.com</a></td>
+        </tr>
+        </tbody></table><h3 style="margin-top:30px;border-bottom:2px solid #222;padding-bottom:6px;">NL West</h3><table class="owners">
+    <colgroup>
+        <col style="width:30%">
+        <col style="width:35%">
+        <col style="width:35%">
+    </colgroup><thead><tr><th>Team</th><th>Manager</th><th>Email</th></tr></thead><tbody>
+        <tr>
+            <td><strong>Dodgers</strong></td>
+            <td><a href="mailto:rjcalia23@gmail.com">Rob Calia</a></td>
+            <td><a href="mailto:rjcalia23@gmail.com">rjcalia23@gmail.com</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Padres</strong></td>
+            <td>—</td>
+            <td>—</td>
+        </tr>
+        
+        <tr>
+            <td><strong>Rockies</strong></td>
+            <td><a href="mailto:snieroda@gmail.com">Steve Nieroda</a></td>
+            <td><a href="mailto:snieroda@gmail.com">snieroda@gmail.com</a></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Giants</strong></td>
+            <td><a href="mailto:jlnorthway@gmail.com">Jason Northway</a></td>
+            <td><a href="mailto:jlnorthway@gmail.com">jlnorthway@gmail.com</a></td>
+        </tr>
+        </tbody></table></div></body>
 </html>
