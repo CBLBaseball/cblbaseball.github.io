@@ -1,11 +1,7 @@
 [
   {
     "leftDate": "2/16/2026",
-<<<<<<< HEAD
     "rightDate": "2/16/2026",
-=======
-    "rightDate": "",
->>>>>>> dbc15693c395ae6bb70b2bca095748be076a78f9
     "phase": "",
     "teams": [
       {
@@ -21,7 +17,6 @@
         ]
       },
       {
-<<<<<<< HEAD
         "name": "Orioles",
         "items": [
           "Trevor Rogers"
@@ -33,14 +28,6 @@
           "Grayson Rodriguez",
           "BAA DP (1st)"
         ]
-=======
-        "name": "",
-        "items": []
-      },
-      {
-        "name": "",
-        "items": []
->>>>>>> dbc15693c395ae6bb70b2bca095748be076a78f9
       }
     ]
   },
