@@ -1,5 +1,37 @@
 [
   {
+    "leftDate": "2/16/2026",
+    "rightDate": "2/16/2026",
+    "phase": "",
+    "teams": [
+      {
+        "name": "Reds",
+        "items": [
+          "KCA DP (9th)"
+        ]
+      },
+      {
+        "name": "Royals",
+        "items": [
+          "Jonathan India"
+        ]
+      },
+      {
+        "name": "Orioles",
+        "items": [
+          "Trevor Rogers"
+        ]
+      },
+      {
+        "name": "Angels",
+        "items": [
+          "Grayson Rodriguez",
+          "BAA DP (1st)"
+        ]
+      }
+    ]
+  },
+  {
     "leftDate": "2/8/2026",
     "rightDate": "2/13/2026",
     "phase": "",
