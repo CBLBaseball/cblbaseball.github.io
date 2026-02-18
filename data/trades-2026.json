@@ -5,6 +5,35 @@
     "phase": "",
     "teams": [
       {
+        "name": "Padres",
+        "items": [
+          "Freddy Fermin",
+          "Brady Singer"
+        ]
+      },
+      {
+        "name": "Royals",
+        "items": [
+          "Nathan Lukes",
+          "Stephen Kolek"
+        ]
+      },
+      {
+        "name": "",
+        "items": []
+      },
+      {
+        "name": "",
+        "items": []
+      }
+    ]
+  },
+  {
+    "leftDate": "2/18/2026",
+    "rightDate": "2/18/2006",
+    "phase": "",
+    "teams": [
+      {
         "name": "Twins",
         "items": [
           "Isiah Kiner-Falefa",
@@ -18,12 +47,16 @@
         ]
       },
       {
-        "name": "",
-        "items": []
+        "name": "Dodgers",
+        "items": [
+          "Harrison Bader"
+        ]
       },
       {
-        "name": "",
-        "items": []
+        "name": "Nationals",
+        "items": [
+          "LAD DP (1st)"
+        ]
       }
     ]
   },
