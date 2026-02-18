@@ -1,5 +1,33 @@
 [
   {
+    "leftDate": "2/18/2026",
+    "rightDate": "",
+    "phase": "",
+    "teams": [
+      {
+        "name": "Twins",
+        "items": [
+          "Isiah Kiner-Falefa",
+          "NYA DP (1st)"
+        ]
+      },
+      {
+        "name": "Yankees",
+        "items": [
+          "Jhoan Duran"
+        ]
+      },
+      {
+        "name": "",
+        "items": []
+      },
+      {
+        "name": "",
+        "items": []
+      }
+    ]
+  },
+  {
     "leftDate": "2/16/2026",
     "rightDate": "2/16/2026",
     "phase": "",
