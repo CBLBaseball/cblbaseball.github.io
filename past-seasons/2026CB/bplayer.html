@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 3.2 FINAL//EN'>
+<!-- Copyright 2002 (c) Strat-O-Matic Game Co. -->
+<!-- Knowledge of HMTL and Javascript is recommended before editing this document -->
+<!-- Be sure to make backup copies before any changes -->
+<!-- For use with Web Builder 1.3  -->
+<HTML>
+<HEAD>
+  <TITLE>Strat-O-Matic Batter Statistics</TITLE>
+   <LINK REL=stylesheet TYPE="text/css" HREF="stats.css">
+   	<SCRIPT LANGUAGE=JAVASCRIPT1.2 src='custom.js'></SCRIPT>
+  	<SCRIPT LANGUAGE=JAVASCRIPT1.2 src='stats.js'></SCRIPT>
+	<SCRIPT LANGUAGE=JAVASCRIPT1.2 src='players.js'></SCRIPT>
+	<SCRIPT LANGUAGE=JAVASCRIPT1.2>	
+		var vP = getPlayerName(0);
+		var dataFile;
+		if(vP == "defplayer")
+			 dataFile =  "defbatter.js";
+		else
+		{
+			if(vP.substring(0,3) == "***" )
+					dataFile = "traded.js";
+			else
+				dataFile =  "b" + vP.substring(0,3) + ".js";
+		}
+
+
+
+		
+		
+	</SCRIPT>
+  	<SCRIPT LANGUAGE=JAVASCRIPT1.2 src='dyndata.js'></SCRIPT>
+</HEAD>
+  	
+<BODY topmargin=0 background='back.jpg' bgcolor=Silver>
+
+
+	<SCRIPT LANGUAGE=JAVASCRIPT1.2>	
+		var vPlayerName = getPlayerName(2);
+		var vName = getPlayerName(1);
+		batter = vName.substring(3);
+		
+		
+		
+		
+		document.write("<TABLE align=center cellspacing=0 cellpadding=0><TR><TD bgcolor='" + backColor + "'>");
+		DisplayBanner();
+		DisplayHeader();	
+		
+		if(typeof(batter) != "undefined" )
+		{
+			var singles = eval(batter)[9] - eval(batter)[13] - eval(batter)[14] - eval(batter)[15];
+			var dteam = eval(batter)[92] + " " + eval(batter)[93];
+		
+			document.write("<TABLE bgColor='white' align=center width=600>");
+			document.write("<TR>");
+		
+					
+			document.write("<TD align='right' class='PlayerName' >");
+			
+			document.write(eval(batter)[89] + "<br>");
+			document.write("<img align=left src='batter.gif'>");
+			document.write(eval(batter)[10] + "<BR><BR>");
+			if(  eval(batter)[92] !=  "***")
+			document.write(DisplayCityURL( dteam, eval(batter)[282] )  );
+			document.write("</TD>");
+
+			document.write("<TD>");
+			document.write("<TABLE align=center  class='PlayerStats'>");
+			document.write("<TR><TD class='PlayerStats' align=center colspan=3>");
+			document.write("Doubles " + eval(batter)[13] + "</TD></TR>");
+			document.write("<TR>");
+			document.write("<TD class='PlayerStats' align=center>Triples<br>" + eval(batter)[14] + "</TD>");
+			document.write("<TD><img src='diamond.gif'></TD>");
+			document.write("<TD class='PlayerStats' align=center>Singles<br>" + singles + "</TD></TR>");
+			document.write("<TD class='PlayerStats' align=center colspan=3>");
+			document.write("Home Runs " + eval(batter)[15] + "</TD>");
+			document.write("</TR></TABLE>");
+			document.write("</TD>");
+
+
+			document.write("<TD>");
+			document.write("<TABLE CELLPADDING=0 CELLSPACING=0 border=2 align=center>");
+			document.write("<TR><TD class='THead' align=center colspan=2 >Quick Stats</TD>");
+			document.write("<TR><TD class='PlayerData1'>At Bats</TD>");
+			document.write("<TD class='PlayerData1' align='center'>" + eval(batter)[7] + "</TD></TR>");
+			document.write("<TR><TD class='PlayerData2'>Hits</TD>");
+			document.write("<TD class='PlayerData2' align='center'>" + eval(batter)[9] + "</TD></TR>");
+			document.write("<TR><TD class='PlayerData1'>Runs Batted In</TD>");
+			document.write("<TD class='PlayerData1'align='center'>" + eval(batter)[16] + "</TD></TR>");
+			document.write("<TR><TD class='PlayerData2'>Walks</TD>");
+			document.write("<TD class='PlayerData2' align='center'>" + eval(batter)[22] + "</TD></TR>");
+			document.write("<TR><TD class='PlayerData1'>Intentional Walks</TD>");
+			document.write("<TD class='PlayerData1' align='center'>" + eval(batter)[23] + "</TD></TR>");
+			document.write("<TR><TD class='PlayerData2'>Strike Outs</TD>");
+			document.write("<TD class='PlayerData2' align='center'>" + eval(batter)[24] + "</TD></TR>");
+			document.write("</TABLE>");
+			document.write("</TD>");
+		
+		
+			document.write("</TR></TABLE>");
+		
+		
+			document.write("<TABLE bgColor='white' align=center width=600>");
+			document.write("<TD align='center'>");
+			B1PlayerDetailTable( batter );
+			document.write("</TD></TR>");  //</TABLE>");
+			
+			document.write("<tr><td align='center' width='100%'>");
+			document.write("<hr color=white> </td></tr>");
+
+			//document.write("<TABLE bgColor='white' align=center width=600>");
+			document.write("<TR><TD align='center'>");
+			B2PlayerDetailTable( batter );
+			document.write("</TD></TR></TABLE>");
+
+		}
+	
+		
+		DisplayFooter();
+	</SCRIPT>
+</TD></TR></TABLE>
+	
+</BODY>
+</HTML>

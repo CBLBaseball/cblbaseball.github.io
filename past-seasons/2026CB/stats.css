@@ -1,0 +1,449 @@
+A:link
+{
+    COLOR: Black;
+    text-decoration: none
+}
+A:active
+{
+    COLOR: Black;
+    text-decoration: none
+}
+A:visited
+{
+    COLOR: Black;
+   text-decoration: none
+}
+A:hover
+{
+    COLOR: Blue;
+    text-decoration: underline
+}
+
+.Team
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif
+
+}
+
+.Player
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif
+}
+
+.TeamPad
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+   padding-left: 4px;
+   padding-right: 4px
+
+}
+
+.PlayerPad
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+   padding-left: 4px;
+   padding-right: 4px
+}
+
+.PlayerName
+{
+    FONT-WEIGHT: Bold;
+    FONT-SIZE: 24px;
+    COLOR: Black;
+    FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+.PlayerStats
+{
+    FONT-WEIGHT: Bold;
+    FONT-SIZE: 12px;
+    COLOR: Black;
+    FONT-FAMILY: Arial, Helvetica,sans-serif
+}
+.PlayerData1
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #ffffff;
+   padding-left: 6px;
+   padding-right: 8px
+}
+
+.PlayerData2
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #e9e9e9;
+   padding-left: 6px;
+   padding-right: 8px
+}
+.PlayerMenu
+{
+    FONT-SIZE: 12px;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    COLOR: #000066;
+   padding-left: 2px;
+   padding-right: 2px
+}
+
+.PlayerMenu A:link
+{
+    COLOR: #000066;
+    text-decoration: underline
+}
+
+.PlayerMenu A:visited
+{
+    COLOR: #000066;
+    text-decoration: underline
+}
+
+
+
+.MenuText1
+{
+    FONT-WEIGHT: Bold;
+    FONT-SIZE: 12px;
+    COLOR: white;
+    LINE-HEIGHT: 14px;
+    FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+.MenuText1 A:link
+{
+    COLOR: white
+}
+.MenuText1 A:visited
+{
+    COLOR: white
+}
+.MenuText1 A:hover
+{
+    COLOR: #ccccff
+}
+
+
+
+.MenuText2
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 10px;
+    COLOR: white;
+    LINE-HEIGHT: 12px;
+    FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+.MenuText2 A:link
+{
+    COLOR: white
+}
+.MenuText2 A:visited
+{
+    COLOR: white
+}
+.MenuText2 A:hover
+{
+    COLOR: #ccccff
+}
+
+
+
+.Copyright
+{
+    FONT-SIZE: 10px;
+    COLOR: #000000;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    TEXT-DECORATION: none
+}
+.Header
+{
+    FONT-WEIGHT: 900;
+    FONT-SIZE: 12px;
+    COLOR: #ffffff;
+    FONT-STYLE: italic;
+    FONT-FAMILY: Helvetica;
+    BACKGROUND-COLOR: #000000
+}
+.TTitle
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 16px;
+    COLOR: Black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: slategrey
+}
+.TSubTitle
+{
+    FONT-WEIGHT: 700;
+    FONT-SIZE: 13px;
+    COLOR: white;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: black;
+    padding-left: 4;
+    padding-right: 4
+
+}
+
+.BoxHead
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 14px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: lightslategray;
+    padding-left: 4;
+    padding-right: 2
+
+}
+.BoxHead2
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR:  #dcdcdc;
+    padding-left: 4;
+    padding-right: 2
+}
+.BoxHead3
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12px;
+    LINE-HEIGHT: 14px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #acacac;
+    padding-left: 4;
+    padding-right: 2
+
+}
+
+.ALSubHead
+{
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: Bold;
+    COLOR: white;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #CC0000;
+    padding-left: 4;
+    padding-right: 4
+
+}
+
+.NLSubHead
+{
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: Bold;
+    COLOR: white;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #000066;
+    padding-left: 4;
+    padding-right: 4
+
+}
+
+.THead
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 14px;
+    COLOR: white;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: SteelBlue
+}
+
+
+.TSubHead
+{
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: Bold;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: DeepSkyBlue
+}
+.TSubHead A:link
+{
+    FONT-SIZE: 10px;
+    COLOR: #000099;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: DeepSkyBlue
+}
+.TSubHead A:visited
+{
+    FONT-SIZE: 10px;
+    COLOR: #000099;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #cccc99
+}
+.TSubHead A:hover
+{
+    FONT-SIZE: 10px;
+    COLOR: blue;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #cccc99
+}
+.TMSubHead
+{
+    FONT-SIZE: 14px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #cccc99
+}
+
+
+
+
+.TSubHead2
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12px;
+    COLOR: white;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #6c6c6c;
+    padding-left: 4;
+    padding-right: 4
+}
+
+.TSubHead2 A:link
+{
+    COLOR: white;
+    text-decoration: underline
+}
+.TSubHead2 A:active
+{
+    COLOR: white;
+    text-decoration: underline
+}
+.TSubHead2 A:visited
+{
+    COLOR: white;
+    text-decoration: underline
+}
+
+.TSubHead2 A:hover
+{
+    COLOR: blue;
+   text-decoration: none
+}
+
+
+.TSubHead3
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #acacac
+}
+
+.TData0
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #dcdcdc;
+   padding-left: 2px;
+   padding-right: 2px
+}
+
+
+.TData1
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #ffffff;
+   padding-left: 4px;
+   padding-right: 2px
+}
+
+.TData2
+{
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #e3e3e3;
+   padding-left: 4px;
+   padding-right: 2px
+}
+
+
+
+
+.TBData1
+{
+    FONT-SIZE: 20px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #ffffff
+}
+.TMData1
+{
+    FONT-SIZE: 14px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #ffffff
+}
+.TMData1 A:link
+{
+    FONT-SIZE: 14px;
+    COLOR: #000099;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #ffffff
+}
+.TMData1 A:visited
+{
+    FONT-SIZE: 14px;
+    COLOR: #000099;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #ffffff
+}
+.TMData1 A:hover
+{
+    FONT-SIZE: 14px;
+    COLOR: blue;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #ffffff
+}
+
+.TBData2
+{
+    FONT-SIZE: 20px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #e7e7e7
+}
+.TMData2
+{
+    FONT-SIZE: 14px;
+    COLOR: black;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #e7e7e7
+}
+.TMData2 A:link
+{
+    FONT-SIZE: 14px;
+    COLOR: #000099;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #e7e7e7
+}
+.TMData2 A:visited
+{
+    FONT-SIZE: 14px;
+    COLOR: #000099;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #e7e7e7
+}
+.TMData2 A:hover
+{
+    FONT-SIZE: 14px;
+    COLOR: blue;
+    FONT-FAMILY: Helvetica,Arial,sans-serif;
+    BACKGROUND-COLOR: #e7e7e7
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 3.2 FINAL//EN'>
+<!-- Copyright 2002 (c) Strat-O-Matic Game Co. -->
+<!-- Knowledge of HMTL and Javascript is recommended before editing this document -->
+<!-- Be sure to make backup copies before any changes -->
+<!-- For use with Web Builder 1.3  -->
+<HTML>
+<HEAD>
+  <META NAME="description" CONTENT="Stat-o-Matic Baseball Team Batting Totals">
+  <META NAME="keywords" CONTENT="leaders, doubles,triples, hits, batting ave, baseball, stats">  
+  <TITLE>Team Batting Totals</TITLE>
+  <LINK REL=stylesheet TYPE="text/css" HREF="stats.css">
+  <SCRIPT LANGUAGE=JAVASCRIPT1.2 src='custom.js'></SCRIPT>
+  <SCRIPT LANGUAGE=JAVASCRIPT src="leaguedata.js"></SCRIPT>        
+  <SCRIPT LANGUAGE=JAVASCRIPT src="stats.js"></SCRIPT>    
+  	<SCRIPT LANGUAGE=JAVASCRIPT1.2>	
+		var vParam = getParam("subleague");
+		var dataFile;
+
+		if(vParam == "")
+			 dataFile =  "totals.js";
+		else
+			dataFile =  vParam + "totals.js"
+	</SCRIPT>
+  
+  	<SCRIPT LANGUAGE=JAVASCRIPT1.2 src='dyndata.js'></SCRIPT>
+  
+  
+  
+</HEAD>
+
+<BODY  topmargin=0 background='back.jpg'>
+
+
+<SCRIPT LANGUAGE=JAVASCRIPT >
+	document.write("<TABLE align=center><TR><TD bgcolor='" + backColor + "'>");
+	DisplayBanner();
+	DisplayHeader();
+	document.write("<TABLE width=600 align=center bgcolor=" + backColor + ">");
+	document.write("<TR><TD class='THead' align=center>");
+</SCRIPT>
+
+
+			<form action="grand1.html" method=get id=form1 name=form1>
+			<table width=480 border='0' cellpadding="0" cellspacing="0"  align=right>
+				<tr><TD class='THead' align=left>Team Batting Totals</TD>
+					<td valign=bottom align=right>
+			<SCRIPT LANGUAGE=JAVASCRIPT >
+					var iSubCount = sub.length;
+					var i;
+					var	sel=getParam("subleague");
+					if(sel == "")  sel="All Leaders";
+					
+					document.write("<SELECT id=subleague name=subleague size=1 title=topics value='All'>");
+					document.write("<OPTION value=''>All Leaders");
+					if(iSubCount > 1)
+					{
+						for(i=0; i<iSubCount; i++)
+						{
+							if(sub[i] == sel)
+								document.write("<OPTION selected value='" + sub[i] + "'>" + sub[i] );
+							else
+								document.write("<OPTION value='" + sub[i] + "'>" + sub[i] );
+						}
+					}
+
+					document.write("</SELECT>");
+				
+			</SCRIPT>
+					
+					
+			</td>
+				<td align=left valign=bottom><INPUT type='submit'  value='Update'  id='submit'1 name='submit'1>
+				</td >
+				</tr></table>
+				</form>
+			</TD></TR></TABLE>
+	
+	
+	
+<SCRIPT LANGUAGE=JAVASCRIPT>
+	BeginTable( backColor);
+</SCRIPT>
+
+
+
+<SCRIPT LANGUAGE=JAVASCRIPT>
+	var Batting = myLeague + " Team Batting";
+	var sortColumn = getParam("sort");
+	if ( sortColumn == "")
+		sortColumn = 1;		// default sort
+	else
+		sortColumn = sortColumn - 0;
+	
+ 		BoxLeaderTable( Batting, 24, "headGrandB1", "B1Grand", "BatTotals", 520, sortColumn,1);
+
+</SCRIPT>
+
+
+
+
+
+
+<!-- Display Copyright information -->
+<SCRIPT LANGUAGE=JAVASCRIPT>
+		EndTable();
+		DisplayFooter();
+</SCRIPT>    
+
+
+</TD></TR></TABLE>
+</BODY></HTML>
